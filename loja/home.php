@@ -5,7 +5,6 @@
 	<title>Página Inicial</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -14,14 +13,12 @@
         -moz-user-select: none;
         user-select: none;
       }
-
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
       }
     </style>
-
 </head>
 <body>
     <header class="site-header sticky-top py-1" style="background-color: black;">
@@ -37,41 +34,36 @@
             <a class="py-2 d-none d-md-inline-block" href="#">Carrinho</a>
                 <div id="divBusca">
                 <input type="text" id="txtBusca" placeholder="Buscar..."/>
-                <a href="https://www.google.com"><img src="galeria/Lupa.png" id="btnBusca" alt="Buscar" width="24" height="24"/></a>
+                <a href="https://www.google.com"><img src="../imagens/Lupa.png" id="btnBusca" alt="Buscar" width="24" height="24"/></a>
                 </div>
-                <img src="galeria/Login.jpg" id="Login" alt="Login" width="24" height="24"/>
+                <img src="../imagens/Login.jpg" id="Login" alt="Login" width="24" height="24"/>
                 <a class="py-2 d-none d-md-inline-block" href="#">Cadastra-se</a>
         </nav>
     </header>
     <div class="container">
         <div class="row">
-
         <!----Linha-->
         <br style="p-3">
         <!---- Fim Linha-->
-
         <!----Slide Central-->
         <div class="row">
             <div class="col btn">
-                <img src="galeria/camisetas1.jpg" id="Slide1" alt="Slide1"/>
+                <img src="../imagens/camisetas1.jpg" id="Slide1" alt="Slide1"/>
             </div>
         </div>
         <!----Fim Slide Central-->
-
-
         <div class="row">
             <div class="col">
                 <h3 style="text-align: center;"><b>Em estoque - Marcas Famosas - Aproveite as promoções </b></h3>
             </div>
         </div>
-
         <!----Linha-->
         <br style="p-3">
         <!---- Fim Linha-->
         <div class="row">
             <div class="col-3 btn">
                 <div class="card" style="width: 18rem;">
-                        <img src="galeria/camisas2.jpg" class="card-img-top" alt="camisasC">
+                        <img src="../imagens/camisas2.jpg" class="card-img-top" alt="camisasC">
                     <div class="card-body">
                         <h5 class="card-title">Marca e Estampa</h5>
                         <p class="card-text">R$00,00</p>
@@ -81,7 +73,7 @@
             </div>
             <div class="col-3 btn">
                 <div class="card" style="width: 18rem;">
-                        <img src="galeria/camisas2.jpg" class="card-img-top" alt="camisasC">
+                        <img src="../imagens/camisas3.jpg" class="card-img-top" alt="camisasC">
                     <div class="card-body">
                         <h5 class="card-title">Marca e Estampa</h5>
                         <p class="card-text">R$00,00</p>
@@ -91,7 +83,7 @@
             </div>
             <div class="col-3 btn">
                 <div class="card" style="width: 18rem;">
-                        <img src="galeria/camisas2.jpg" class="card-img-top" alt="camisasC">
+                        <img src="../imagens/camisas2.jpg" class="card-img-top" alt="camisasC">
                     <div class="card-body">
                         <h5 class="card-title">Marca e Estampa</h5>
                         <p class="card-text">R$00,00</p>
@@ -101,7 +93,7 @@
             </div>
             <div class="col-3 btn">
                 <div class="card" style="width: 18rem;">
-                        <img src="galeria/camisas2.jpg" class="card-img-top" alt="camisasC">
+                        <img src="../imagens/camisas3.jpg" class="card-img-top" alt="camisasC">
                     <div class="card-body">
                         <h5 class="card-title">Marca e Estampa</h5>
                         <p class="card-text">R$00,00</p>
@@ -110,7 +102,6 @@
                 </div>
             </div>
         </div>
-
         <!----Linha-->
         <div class="row">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -121,13 +112,13 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="galeria/camisas1.jpg" style="height: 500px; width: 120" class="d-block w-100" alt="carrosel1">
+                        <img src="../imagens/camisas1.jpg" style="height: 500px; width: 120" class="d-block w-100" alt="carrosel1">
                     </div>
                     <div class="carousel-item">
-                        <img src="galeria/camisas2.jpg" style="height: 500px; width: 120" class="d-block w-100" alt="carrosel2">
+                        <img src="../imagens/camisas2.jpg" style="height: 500px; width: 120" class="d-block w-100" alt="carrosel2">
                     </div>
                     <div class="carousel-item">
-                        <img src="galeria/camisas3.jpg" style="height: 500px; width: 120" class="d-block w-100" alt="carrosel3">
+                        <img src="../imagens/camisas3.jpg" style="height: 500px; width: 120" class="d-block w-100" alt="carrosel3">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -142,7 +133,6 @@
         <div>
         <!----Linha-->
     </div> 
-
     <footer class="container py-5">
         <div class="row">
             <div class="col-12 col-md">
