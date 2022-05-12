@@ -1,7 +1,7 @@
 <?php
 	include "conexao.php";
 	$titlePage = "Página exemplo";
-	include "header.php";
+	include "cabecalho.php";
 ?>
 <div class="container">
 	<div class="row">
