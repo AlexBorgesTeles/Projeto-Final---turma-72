@@ -18,7 +18,7 @@
    <div class="row">
      <div class="col">
          <div class="card">
-             <img width="100" height="300" src="../imagens/Formoza.jpg" alt "" class="card-img-top"/>
+             <img width="100" height="300" src="../imagens/Formoza(1).jpg" alt "" class="card-img-top"/>
              <div class="card-body">
                  <p class"card-text">De R$ 00.00</p>
                  <p>Por apenas R$00.00</p>
@@ -28,7 +28,7 @@
      </div>
       <div class="col">
           <div class="card">
-             <img width="100" height="300" src="../imagens/Formozo.jpg" alt "" class="card-img-top"/>
+             <img width="100" height="300" src="../imagens/Formozo(1).jpg" alt "" class="card-img-top"/>
              <div class="card-body">
                  <p class"card-text">De R$ 00.00</p>
                  <p>Por apenas R$00.00</p>
@@ -40,7 +40,7 @@
     <div class="row">
      <div class="col">
           <div class="card">
-             <img width="100" height="300" src="../imagens/Red.jpg" alt "" class="card-img-top"/>
+             <img width="100" height="300" src="../imagens/Red(1).jpg" alt "" class="card-img-top"/>
              <div class="card-body">
                  <p class"card-text">De R$ 00.00</p>
                  <p>Por apenas R$00.00</p>
@@ -50,7 +50,7 @@
      </div>
    <div class="col">
           <div class="card">
-             <img width="100" height="300" src="../imagens/Social.jpg" alt "" class="card-img-top"/>
+             <img width="100" height="300" src="../imagens/Social(1).jpg" alt "" class="card-img-top"/>
              <div class="card-body">
                  <p class"card-text">De R$ 00.00</p>
                  <p>Por apenas R$00.00</p>
@@ -62,7 +62,7 @@
         <div class="row">
     <div class="col">
           <div class="card">
-             <img width="100" height="300" src="../imagens/Flamengo.jpg" alt "" class="card-img-top"/>
+             <img width="100" height="300" src="../imagens/Flamengo(1).jpg" alt "" class="card-img-top"/>
              <div class="card-body">
                  <p class"card-text">De R$ 00.00</p>
                  <p>Por apenas R$00.00</p>
@@ -73,7 +73,7 @@
      <div class="col">
               <div class="col">
           <div class="card">
-             <img width="100" height="300" src="../imagens/Maiô.jpg" alt "" class="card-img-top"/>
+             <img width="100" height="300" src="../imagens/Maiô(1).jpg" alt "" class="card-img-top"/>
              <div class="card-body">
                  <p class"card-text">De R$ 00.00</p>
                  <p>Por apenas R$00.00</p>
@@ -86,7 +86,7 @@
         <div class="row">
            <div class="col">
           <div class="card">
-             <img width="100" height="300" src="../imagens/lança.jpg" alt "" class="card-img-top"/>
+             <img width="100" height="300" src="../imagens/lança(1).jpg" alt "" class="card-img-top"/>
              <div class="card-body">
                  <p class"card-text">De R$ 00.00</p>
                  <p>Por apenas R$00.00</p>
@@ -96,7 +96,7 @@
                  </div>
      <div class="col">
           <div class="card">
-             <img width="100" height="300" src="../imagens/canavial.jpg" alt "" class="card-img-top"/>
+             <img width="100" height="300" src="../imagens/canavial(1).jpg" alt "" class="card-img-top"/>
              <div class="card-body">
                  <p class"card-text">De R$ 00.00</p>
                  <p>Por apenas R$00.00</p>
