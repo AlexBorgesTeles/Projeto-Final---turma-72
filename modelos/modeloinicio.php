@@ -1,7 +1,14 @@
 <?php
 	include "conexao.php";
 	$titlePage = "Página exemplo";
-	include "header.php";
+	include "cabecalho.php";
+
+    $sql="SELECT `id_camisa`,`imagem`,`marca`,`descricao`,`avaliacao`,`preco`,`estampa` FROM camisa;";
+   $query = mysqli_query($mysql,$sql);
+   $fetchvisual = mysqli_fetch_all($query);
+   echo "<pre>";
+   var_dump ($fetchvisual);
+   echo "</pre>";
 ?>
 <div class="container">
         <div class="row">
@@ -38,45 +45,33 @@
         <br style="p-3">
         <!---- Fim Linha-->
         <div class="row">
-            <div class="col-3 btn">
-                <div class="card" >
-                        <img src="../imagens/camisas2.jpg" class="card-img-top" alt="camisasC" style="height: 250px">
-                    <div class="card-body">
-                        <h5 class="card-title">Marca e Estampa</h5>
-                        <p class="card-text">R$00,00</p>
-                        <a href="#" class="btn btn-warning">Coloque no carrrinho</a>
+            <div class="col-3">
+            <?php foreach($fetchvisual as $colunaresposta)
+                echo "
+                    <div class='card'>
+                            <img src='../imagens/$colunaresposta[1]' class='card-img-top' alt='camisasC'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>$colunaresposta[2] - $colunaresposta[6]</h5>
+                            <p class='card-text'>R$$colunaresposta[5]</p>
+                            <p class='card-text'>";
+                            $contador=0;
+                            while($contador < 5){
+                                if($colunaresposta[4] > $contador){
+                                    echo "<i class='bi bi-star-fill'></i>";
+                                }
+                                if($colunaresposta[4] < $contador){
+                                    echo "<i class='bi bi-star'></i>";
+                                }
+                                $contador++;
+                            } 
+
+                            echo "</p>
+                            <a href='carrinho.php?id_camisa=$colunaresposta[0]' class='btn btn-warning'>Coloque no carrrinho</a>
+                            <a href='carrinho.php?id_camisa=$colunaresposta[0]' class='btn btn-primary'>Veja o seu carrinho</a>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-3 btn">
-                <div class="card" >
-                        <img src="../imagens/camisas3.jpg" class="card-img-top" alt="camisasC" style="height: 250px">
-                    <div class="card-body">
-                        <h5 class="card-title">Marca e Estampa</h5>
-                        <p class="card-text">R$00,00</p>
-                        <a href="#" class="btn btn-warning">Coloque no carrrinho</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 btn">
-                <div class="card" >
-                        <img src="../imagens/poloM01.jpg" class="card-img-top" alt="camisasC" style="height: 250px">
-                    <div class="card-body">
-                        <h5 class="card-title">Marca e Estampa</h5>
-                        <p class="card-text">R$00,00</p>
-                        <a href="#" class="btn btn-warning">Coloque no carrrinho</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 btn">
-                <div class="card" >
-                        <img src="../imagens/poloF02.jpg" class="card-img-top" alt="camisasC" style="height: 250px">
-                    <div class="card-body">
-                        <h5 class="card-title">Marca e Estampa</h5>
-                        <p class="card-text">R$00,00</p>
-                        <a href="#" class="btn btn-warning">Coloque no carrrinho</a>
-                    </div>
-                </div>
+                ";
+            ?>
             </div>
         </div>
         <!----Linha-->
