@@ -1,10 +1,11 @@
 <?php
 	include "conexao.php";
 	$titlePage = "Página exemplo";
-	include "header.php";
+	include "cabecalho.php";
 ?>
-<div class="container">
-            <div class="row mt-2">
+	<div class="container">
+		<div class="row mt-2">
+				
                 <div class="col-4" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
