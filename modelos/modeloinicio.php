@@ -6,9 +6,6 @@
     $sql="SELECT `id_camisa`,`imagem`,`marca`,`descricao`,`avaliacao`,`preco`,`estampa` FROM camisa;";
    $query = mysqli_query($mysql,$sql);
    $fetchvisual = mysqli_fetch_all($query);
-   echo "<pre>";
-   var_dump ($fetchvisual);
-   echo "</pre>";
 ?>
 <div class="container">
         <div class="row">
@@ -16,20 +13,20 @@
         <br style="p-3">
         <!---- Fim Linha-->
         <!----Slide Central-->
-        <div class="row">
+        <div class="row m-3">
             <div class="col-6 btn p-3">
                 <img src="../imagens/camisetas1.jpg" id="Slide1" alt="Slide1" style="height: 400px; width: 320"/>
             </div>
             <div class="col-4 btn p-3">
                 <div class="container">
-                    <div class="row">
-                        <div class="flex col-12">
-                            <img src="../imagens/slide01.jpg" id="Slide2" alt="Slide2" style="height: 200px; width: 120;"/>
+                    <div class="row center ">
+                        <div class="col-12 m-1">
+                            <img src="../imagens/slide01.jpg" id="Slide2" alt="Slide2" style="height: 195px; width: 120;"/>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 p-10">
-                            <img src="../imagens/slide1.png" id="Slide3" alt="Slide3" style="height: 200px; width: 120;"/>
+                    <div class="row center ">
+                        <div class="col-12 m-1">
+                            <img src="../imagens/slide1.png" id="Slide3" alt="Slide3" style="height: 195px; width: 120;"/>
                         </div>
                     </div>
                 </div>
@@ -38,7 +35,7 @@
         <!----Fim Slide Central-->
         <div class="row">
             <div class="col">
-                <h3 style="text-align: center;"><b>Em estoque - Marcas Famosas - Aproveite as promoções </b></h3>
+                <h3 style="font-family:New Century;"> Em estoque - Marcas Famosas - Aproveite as promoções </h3>
             </div>
         </div>
         <!----Linha-->
@@ -49,11 +46,11 @@
             <?php 
 			foreach($fetchvisual as $colunaresposta){
                 echo "
-				<div class='col-4'>
+				<div class='col-3 btn'>
                     <div class='card'>
-                            <img src='../imagens/$colunaresposta[1]' class='card-img-top' alt='camisasC'>
+                            <img src='../imagens/$colunaresposta[1]' class='card-img-top' alt='camisasC' style='height: 200px;'>
                         <div class='card-body'>
-                            <h5 class='card-title'>$colunaresposta[2] - $colunaresposta[6]</h5>
+                            <h6 class='card-title'><b>$colunaresposta[2]</b> - $colunaresposta[6]</h6>
                             <p class='card-text'>R$$colunaresposta[5]</p>
                             <p class='card-text'>";
                             $contador=0;
@@ -67,8 +64,8 @@
                                 $contador++;
                             }
                             echo "</p>
-                            <a href='carrinho.php?id_camisa=$colunaresposta[0]' class='btn btn-warning'>Coloque no carrrinho</a>
-                            <a href='carrinho.php?id_camisa=$colunaresposta[0]' class='btn btn-primary'>Veja o seu carrinho</a>
+                            <a href='carrinho.php?id_camisa=$colunaresposta[0]' class='btn btn-warning'>Comprar</a>
+                            <a href='carrinho.php?id_camisa=$colunaresposta[0]' class='btn btn-dark'>Carrinho</a>
                         </div>
                     </div>
 				</div>
