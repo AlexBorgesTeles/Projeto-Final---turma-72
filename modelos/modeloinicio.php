@@ -45,9 +45,11 @@
         <br style="p-3">
         <!---- Fim Linha-->
         <div class="row">
-            <div class="col-3">
-            <?php foreach($fetchvisual as $colunaresposta)
+            
+            <?php 
+			foreach($fetchvisual as $colunaresposta){
                 echo "
+				<div class='col-4'>
                     <div class='card'>
                             <img src='../imagens/$colunaresposta[1]' class='card-img-top' alt='camisasC'>
                         <div class='card-body'>
@@ -63,14 +65,15 @@
                                     echo "<i class='bi bi-star'></i>";
                                 }
                                 $contador++;
-                            } 
-
+                            }
                             echo "</p>
                             <a href='carrinho.php?id_camisa=$colunaresposta[0]' class='btn btn-warning'>Coloque no carrrinho</a>
                             <a href='carrinho.php?id_camisa=$colunaresposta[0]' class='btn btn-primary'>Veja o seu carrinho</a>
                         </div>
                     </div>
+				</div>
                 ";
+			}
             ?>
             </div>
         </div>
