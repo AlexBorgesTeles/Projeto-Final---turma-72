@@ -22,10 +22,10 @@
             <a class="py-2 d-none d-md-inline-block" href="#">Carrinho</a>
                 <div id="divBusca">
                 <input type="text" id="txtBusca" placeholder="Buscar..."/>
-                <a href="https://www.google.com"><img src="galeria/Lupa.png" id="btnBusca" alt="Buscar" width="24" height="24"/></a>
+                <a href="https://www.google.com"><img src="../imagens/Lupa.png" id="btnBusca" alt="Buscar" width="24" height="24"/></a>
                 </div>
                 <a href="login.php" class="py-2 d-none d-md-inline-block">
-                    Login <img src="galeria/Login.jpg" id="Login" alt="Login" width="24" height="24"/>
+                    Login <img src="../imagens/Login.jpg" id="Login" alt="Login" width="24" height="24"/>
                 </a>
                 <a class="py-2 d-none d-md-inline-block" href="registro.php">Cadastra-se</a>
         </nav>
