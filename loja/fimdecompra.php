@@ -101,6 +101,7 @@
                 <div class="col-5">
                     <h4>Compra a ser realizada</h4>
                     <card></card>
+                    <a class="btn btn-success" href="pagamento.php" role="button">Fazer pedido</a>
                 </div>
             </div>
         </div>
