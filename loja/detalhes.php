@@ -1,6 +1,6 @@
 <?php
 	include "../modelos/conexao.php";
-	
+	$titlePage = "CAMISA DE TIME PARA CASAL";
 	include "../modelos/cabecalho.php";
 ?>
 <div class="container">
