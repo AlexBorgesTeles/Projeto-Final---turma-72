@@ -1,7 +1,7 @@
 <?php
-	include "conexao.php";
-	$titlePage = "CAMISA DE TIDE PARA CASAL";
-	include "header.php";
+	include "../modelos/conexao.php";
+	$titlePage = "CAMISA DE TIME PARA CASAL";
+	include "../modelos/cabecalho.php";
 ?>
 <div class="container">
     <div class="row mt-2">
@@ -42,7 +42,7 @@
         </div>
 
         <div class="col-8">
-            <h5>CONJUNTO CASAL CAMISA FEMININA + CAMISA MASCULINA SELEÇÃO BRASIL MODELO 2019</h5> 
+            <h5>CONJUNTO CASAL CAMISA FEMININA + CAMISA MASCULINA - SELEÇÃO BRASILEIRA MODELO 2019</h5> 
             <p>5 estrelas | 8 avaliações | 500 vendidas</p>
             <h2 style="padding-left: 20px; color: orange;">R$239,99</h2>
             <div class="row">
@@ -108,6 +108,6 @@
 
 </div>
 <?php 
-	include "footer.php";
+	include "../modelos/footer.php";
 ?>
 
