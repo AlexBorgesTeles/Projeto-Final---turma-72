@@ -28,8 +28,8 @@
         </form>
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+          <a class="btn btn-outline-light me-2" href="login.php" role="button">Link</a>
+          <a class="btn btn-warning" href="registro.php" role="button">Sign-up</a>
         </div>
       </div>
     </div>
