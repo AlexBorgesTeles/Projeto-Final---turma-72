@@ -1,5 +1,5 @@
 <?php
-	include "../modelos/conexao.php";
+	include "conexao.php";
 ?>
 <!DOCTYPE HTML>
     <html lang="pt-BR">
@@ -18,5 +18,5 @@
 
         </div>
 <?php 
-	include "../modelos/footer.php";
+	include "footer.php";
 ?>
