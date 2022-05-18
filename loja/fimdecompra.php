@@ -14,13 +14,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-7">
-                    <h2 class="mt-2">Dados de entrega</h2>
+                    <h2 class="mt-2 mb-3">Dados de entrega</h2>
                     <div class="row">
-                        <div class="col mb-3 mt-2">
+                        <div class="col mb-3">
                             <label for="nome" class="form-label">Nome Completo</label>
                             <input type="text" class="form-control" name="nome">
                         </div>
-                        <div class="col mb-3 mt-2">
+                        <div class="col mb-3">
                             <label for="telefone" class="form-label">Número de Telefone</label>
                             <input type="text" class="form-control" name="telefone">
                         </div>
@@ -88,25 +88,60 @@
                         <input type="text" class="form-control" name="complemento">
                     </div>
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-3 mb-2">
                             <label for="entrega" class="form-label">Salvar como:</label>
                         </div>
-                        <div class="col-9" class="form-check">
+                        <div class="col-9 mb-2" class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">Casa</label>
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">Trabalho</label>
                         </div>
-                        <!-- Vertically centered modal -->
-                        <div class="modal-dialog modal-dialog-centered">
-                            ...
-                        </div>
-                    </div>
+	                </div>
+                    <div class="col mb-2 d-grid gap-2 d-md-flex justify-content-md">
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#pagar">Adicionar cartão</button>
+                            </div>
                 </div>
-                <div class="col-5">
-                    <h4>Compra a ser realizada</h4>
+                <div class="col-5 mt-2 mb-3">
+                    <h2>Compra a ser realizada</h2>
                     <card></card>
                     <a class="btn btn-success" href="pagamento.php" role="button">Fazer pedido</a>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="pagar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel" style="color: gray;">Cartão de crédito/débito</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <p>Informações do cartão</p>
+                            <div class="form-floating mt-2 mb-3">
+                                <input type="text" class="form-control" id="ncartao" placeholder="number">
+                                <label for="ncartao">Número do cartão</label>
+                            </div>
+                            <div class="form-floating mt-2 mb-3">
+                                <input type="text" class="form-control" id="vencimento" placeholder="number">
+                                <label for="vencimento">Data de expiração</label>
+                            </div>
+                            <div class="form-floating mt-2 mb-3">
+                                <input type="text" class="form-control" id="cvv" placeholder="number">
+                                <label for="cvv">CVV</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="nomecartao" placeholder="number">
+                                <label for="nomecartao">Nome no cartão</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                        <button type="button" class="btn btn-primary">Salvar</button>
+                    </div>
                 </div>
             </div>
         </div>
