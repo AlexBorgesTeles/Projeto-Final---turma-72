@@ -118,27 +118,26 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-					<div class="row">
-                        <p>Informações do cartão</p>
-                        <div class="col-8 form-floating mt-2 mb-3">
-                            <input type="text" class="form-control" id="ncartao" placeholder="number">
-                            <label for="ncartao">Número do cartão</label>
-                        </div>
-                        <div class="col-8 form-floating mb-3">
+                        <div class="row">
+                            <p>Informações do cartão</p>
+                            <div class="form-floating mt-2 mb-3">
+                                <input type="text" class="form-control" id="ncartao" placeholder="number">
+                                <label for="ncartao">Número do cartão</label>
+                            </div>
+                            <div class="form-floating mt-2 mb-3">
                                 <input type="text" class="form-control" id="vencimento" placeholder="number">
                                 <label for="vencimento">Data de expiração</label>
                             </div>
-						<div class="col-4 form-floating mb-3">
-							<input type="text" class="form-control" id="cvv" placeholder="number">
-							<label for="cvv">CVV</label>
-						</div>
-                       
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="nomecartao" placeholder="number">
-                            <label for="nomecartao">Nome no cartão</label>
+                            <div class="form-floating mt-2 mb-3">
+                                <input type="text" class="form-control" id="cvv" placeholder="number">
+                                <label for="cvv">CVV</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="nomecartao" placeholder="number">
+                                <label for="nomecartao">Nome no cartão</label>
+                            </div>
                         </div>
                     </div>
-					</div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
                         <button type="button" class="btn btn-primary">Salvar</button>

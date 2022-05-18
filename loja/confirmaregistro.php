@@ -1,18 +1,12 @@
 <?php
-  
-    $servidor = 'localhost';
-    $usuario = 'root';
-    $senha = '';
-    $banco = 'yasminbd';
-
-    $connection = mysqli_connect($servidor,$usuario,$senha,$banco);
-    $sql="insert into registro(nome, email, senha) VALUES ('{$_POST['nome']}','{$_POST['email']}','{$_POST['senha']}')";
+include "../modelos/conexao.php";
+    $sql="insert into pessoa(nome, cpf, rg, endereco, idade, telefone) VALUES ('{$_POST['nome']}','{$_POST['cpf']}','{$_POST['rg']}','{$_POST['endereco']}','{$_POST['idade']}','{$_POST['telefone']}')";
  
 
-    $insert = mysqli_query($connection , $sql);
+    $insert = mysqli_query($mysql , $sql);
 
     if($insert){
-        echo "<h2>Login Realizado</h2>";
+        header("Location: home.php");
     }
 
     
