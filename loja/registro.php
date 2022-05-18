@@ -2,6 +2,7 @@
 	include "conexao.php";
 	$titlePage = "Login";
 	include "cabecalho.php";
+	//adicionar usuario no cadastro
 ?>
     <body>
         <div class="container">
