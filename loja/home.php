@@ -1,11 +1,20 @@
 <?php
+	session_start();
 	include "conexao.php";
 	$titlePage = "Página exemplo";
+	if(isset($_SESSION['user_id']) and $_SESSION['user_id'] != ''){
+		$sql2 = 'select * from pessoa where id_pessoa = '.$_SESSION['user_id'];
+		$query = mysqli_query($mysql,$sql2);
+		$pessoa = mysqli_fetch_assoc($query);
+		$nome = $pessoa['nome'];
+	}
 	include "cabecalho.php";
 
     $sql="SELECT `id_camisa`,`imagem`,`marca`,`descricao`,`avaliacao`,`preco`,`estampa` FROM camisa;";
-   $query = mysqli_query($mysql,$sql);
-   $fetchvisual = mysqli_fetch_all($query);
+	$query = mysqli_query($mysql,$sql);
+	$fetchvisual = mysqli_fetch_all($query);
+	
+	
 ?>
 <div class="container">
         <div class="row">

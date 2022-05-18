@@ -24,9 +24,15 @@
                 <input type="text" id="txtBusca" placeholder="Buscar..."/>
                 <a href="https://www.google.com"><img src="../imagens/Lupa.png" id="btnBusca" alt="Buscar" width="24" height="24"/></a>
                 </div>
+				<?php
+					if(isset($nome)){
+						echo ' <a href="logout.php" class="py-2 d-none d-md-inline-block">'.$nome.'</a>';
+					}else{
+				?>
                 <a href="login.php" class="py-2 d-none d-md-inline-block">
                     Login <img src="../imagens/Login.jpg" id="Login" alt="Login" width="24" height="24"/>
                 </a>
+					<?php } ?>
                 <a class="py-2 d-none d-md-inline-block" href="registro.php">Cadastra-se</a>
         </nav>
     </header>
