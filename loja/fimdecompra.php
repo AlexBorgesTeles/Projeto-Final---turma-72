@@ -14,6 +14,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-7">
+                    <h2 class="mt-2">Dados de entrega</h2>
                     <div class="row">
                         <div class="col mb-3 mt-2">
                             <label for="nome" class="form-label">Nome Completo</label>
@@ -95,6 +96,10 @@
                             <label class="form-check-label" for="flexCheckDefault">Casa</label>
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">Trabalho</label>
+                        </div>
+                        <!-- Vertically centered modal -->
+                        <div class="modal-dialog modal-dialog-centered">
+                            ...
                         </div>
                     </div>
                 </div>
