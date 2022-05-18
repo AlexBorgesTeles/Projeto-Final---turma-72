@@ -4,7 +4,7 @@
 -- Estrutura para tabela `camisa`
 --
 
-CREATE  TABLE IF NOT EXISTS `camisa` (
+CREATE TABLE IF NOT EXISTS `camisa` (
   `id_camisa` int(50) NOT NULL,
   `estampa` varchar(200) NOT NULL,
   `marca` varchar(100) NOT NULL,
