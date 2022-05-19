@@ -30,9 +30,9 @@
                     <div class="col-12 btn">
                         <img src="../imagens/slide01.jpg" id="Slide2" alt="Slide2" class="img-fluid"/>
                     </div>
-                    <div class="col-12 btn">
+                    <!--<div class="col-12 btn">
                         <img src="../imagens/slide1.png" id="Slide3" alt="Slide3" classs="img-fluid"/>
-                    </div>
+                    </div>-->
             </div>
         </div>
         <!----Fim Slide Central-->
@@ -67,7 +67,7 @@
                                 $contador++;
                             }
                             echo "</p>
-                            <a href='carrinho.php?id_camisa=$colunaresposta[0]' class='btn btn-warning'>Comprar</a>
+                            <a href='fimdecompra.php?id_camisa=$colunaresposta[0]' class='btn btn-warning'>Comprar</a>
                             <a href='carrinho.php?id_camisa=$colunaresposta[0]' class='btn btn-dark'>Carrinho</a>
                         </div>
                     </div>
