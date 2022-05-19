@@ -34,7 +34,7 @@ echo "</p><p><a href='' class='btn btn-danger'>Remover produto</a></p>
      	    <div class='row'>
 	     <a href='detalhes.php' class='btn btn-warning'> Continuar compra</a>
 	     <br>
-	     <a href='home.php' class='btn btn-primary'> Finalizar compra</a>
+	     <a href='fimdecompra.php' class='btn btn-primary'> Finalizar compra</a>
         </div>
         </div>
 
