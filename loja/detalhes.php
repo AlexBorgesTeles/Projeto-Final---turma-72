@@ -49,10 +49,17 @@ Colocar subtotal na página dos dados da entrega-->
 
         <div class="col-8">
             <h5>CONJUNTO CASAL CAMISA FEMININA + CAMISA MASCULINA - SELEÇÃO BRASILEIRA MODELO 2019</h5> 
-            <p>5 estrelas | 8 avaliações | 500 vendidas</p>
-            <h2 style="padding-left: 20px; color: orange;">R$239,99</h2>
             <div class="row">
-                <div class="col-4 mt-4" style="color: gray; padding-left: 33px;">
+                <div class="col-3">
+                    <h2 style="color: orange;">R$239,99</h2>
+                </div>
+                <div class="col">
+                    <p style="padding-top: 0.5rem;">5 estrelas | 8 avaliações | 500 vendidas<p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-4 mt-4" style="color: gray;">
                     <span>Frete</span>
                 </div>
                 <div class="col-8 mt-4">
@@ -64,7 +71,7 @@ Colocar subtotal na página dos dados da entrega-->
             </div>
 
             <div class="row mt-3">
-                <div class="col-4" style="padding-left: 33px; color: gray;">
+                <div class="col-4" style="color: gray;">
                     <p>TAMANHO MASCULINA</p>
                 </div>
                 <div class="col-8 flex items-center TvGNLb">
@@ -76,7 +83,7 @@ Colocar subtotal na página dos dados da entrega-->
             </div>
                    
             <div class="row mt-2">
-                <div class="col-4" style="padding-left: 33px; color: gray;">
+                <div class="col-4" style="color: gray;">
                     <p>TAMANHO FEMININA</p>
                 </div>
                 <div class="col-8 flex items-center TvGNLb">
@@ -88,7 +95,7 @@ Colocar subtotal na página dos dados da entrega-->
             </div>
 
             <div class="row mt-2">
-                <div class="col-4" style="padding-left: 33px; color: gray;">
+                <div class="col-4" style="color: gray;">
                     <label for="quant" class="form-label">Quantidade</label>
                 </div>
                 <div class="col-2">
@@ -107,11 +114,9 @@ Colocar subtotal na página dos dados da entrega-->
                     <a class="btn btn-danger btn-lg" href="fimdecompra.php" role="button">Comprar agora</a>
                 </div>
             </div>
-
         </div>
-        
-    </div>
 
+    </div>
 </div>
 <?php 
 	include "footer.php";
