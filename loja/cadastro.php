@@ -6,10 +6,12 @@
 ?>
     <body>
         <div class="container">
+         <div class="row justify-content-center">
+           <div class="col-6">
             <h3 class="mt-5 text-center">Cadastro</h3>
-            <form action="confirmaregistro.php" method="post" class="row">
+            <form action="confirmacadastro.php" method="post" class="row">
                 <div class="mb-3">
-                    <label for="nome" class="form-label">Nome:</label>
+                    <label for="nome" class="form-label">Nome Completo:</label>
                     <input type="text" class="form-control" name="nome">
                     <label for="cpf" class="form-label">Cpf:</label>
                     <input type="varchar" class="form-control" name="cpf">

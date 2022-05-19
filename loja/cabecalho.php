@@ -33,6 +33,6 @@
                     Login <img src="../imagens/Login.jpg" id="Login" alt="Login" width="24" height="24"/>
                 </a>
 					<?php } ?>
-                <a class="py-2 d-none d-md-inline-block" href="registro.php">Cadastra-se</a>
+                <a class="py-2 d-none d-md-inline-block" href="cadastro.php">Cadastra-se</a>
         </nav>
     </header>
