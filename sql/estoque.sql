@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `estoque`
 --
 
-CREATE TABLE `estoque` (
+CREATE TABLE if not exists `estoque` (
   `id_estoque` int(11) NOT NULL,
   `fk_id_camisa` int(11) NOT NULL,
   `quantidade_e` int(11) NOT NULL,
@@ -41,10 +41,6 @@ CREATE TABLE `estoque` (
 --
 
 INSERT INTO `estoque` (`id_estoque`, `fk_id_camisa`, `quantidade_e`, `tamanho`, `cor`) VALUES
-(1, 2, 10, 'P', 'Vermelho'),
-(2, 2, 5, 'M', 'Preto'),
-(3, 2, 3, 'P', 'Preto'),
-(4, 1, 2, 'G', 'Preto'),
 (5, 4, 7, 'M', 'Verde'),
 (6, 4, 8, 'P', 'Amarelo'),
 (7, 5, 2, 'G', 'Vermelho'),
@@ -54,13 +50,7 @@ INSERT INTO `estoque` (`id_estoque`, `fk_id_camisa`, `quantidade_e`, `tamanho`, 
 -- Índices para tabelas despejadas
 --
 
---
--- Índices para tabela `estoque`
---
-ALTER TABLE `estoque`
-  ADD PRIMARY KEY (`id_estoque`);
-
---
+----
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
