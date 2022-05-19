@@ -1,5 +1,3 @@
-
-
 CREATE TABLE `carrinho` (
   `id_carrinho` int(11) NOT NULL,
   `fk_id_pessoa` int(11) NOT NULL,
@@ -7,17 +5,11 @@ CREATE TABLE `carrinho` (
   `quantidade` int(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
+
 ALTER TABLE `carrinho`
   ADD PRIMARY KEY (`id_carrinho`);
 
---
--- AUTO_INCREMENT de tabelas despejadas
---
 
---
--- AUTO_INCREMENT de tabela `carrinho`
---
 ALTER TABLE `carrinho`
   MODIFY `id_carrinho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
@@ -30,10 +22,3 @@ INSERT INTO `carrinho` (`id_carrinho`, `fk_id_pessoa`, `fk_id_estoque`, `quantid
 (2, 10, 2, 5),
 (3, 11, 1, 10),
 (4, 12, 3, 3);
-
---
--- Índices para tabelas despejadas
---
-
---
--- Índices para tabela `carrinho`
