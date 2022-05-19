@@ -40,11 +40,11 @@ CREATE TABLE if not exists `estoque` (
 -- Extraindo dados da tabela `estoque`
 --
 
-INSERT INTO `estoque` (`id_estoque`, `fk_id_camisa`, `quantidade_e`, `tamanho`, `cor`) VALUES
-(5, 4, 7, 'M', 'Verde'),
-(6, 4, 8, 'P', 'Amarelo'),
-(7, 5, 2, 'G', 'Vermelho'),
-(8, 5, 3, 'P', 'Preto');
+INSERT INTO `estoque` (`fk_id_camisa`, `quantidade_e`, `tamanho`, `cor`) VALUES
+(4, 7, 'M', 'Verde'),
+(4, 8, 'P', 'Amarelo'),
+(5, 2, 'G', 'Vermelho'),
+(5, 3, 'P', 'Preto');
 
 --
 -- Índices para tabelas despejadas
