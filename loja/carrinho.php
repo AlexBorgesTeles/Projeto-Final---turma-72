@@ -6,8 +6,10 @@
 	$query = mysqli_query($mysql,$sql);
 	$dados = mysqli_fetch_all($query,MYSQLI_ASSOC);
 	var_dump($dados);
-	foreach($dados as $q){for($m =1.00; $m<=$q['avaliacao']; $m++){$q['avaliacao']+="<i class='text-warning bi bi-star-fill'></i>";
-   }};
+	foreach($dados as $q){
+		for($m =1.00; $m<=$q['avaliacao']; $m++){$q['avaliacao']+="<i class='text-warning bi bi-star-fill'></i>";
+   		}
+	};
 ?>
 <div class="container">
 	<div class="row">

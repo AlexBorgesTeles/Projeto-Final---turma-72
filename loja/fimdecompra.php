@@ -110,7 +110,7 @@
             </div>
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="pagar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="pagar" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -120,27 +120,31 @@
                     <div class="modal-body">
                         <div class="row">
                             <p>Informações do cartão</p>
-                            <div class="form-floating mt-2 mb-3">
+                            <div class="form-floating mt-2 mb-3 ps-1" style="color: gray;">
                                 <input type="text" class="form-control" id="ncartao" placeholder="number">
                                 <label for="ncartao">Número do cartão</label>
                             </div>
-                            <div class="form-floating mt-2 mb-3">
+                            <div class="form-floating mt-2 mb-3 ps-1" style="color: gray;">
                                 <input type="text" class="form-control" id="vencimento" placeholder="number">
                                 <label for="vencimento">Data de expiração</label>
                             </div>
-                            <div class="form-floating mt-2 mb-3">
+                            <div class="form-floating mt-2 mb-3 ps-1" style="color: gray;">
                                 <input type="text" class="form-control" id="cvv" placeholder="number">
                                 <label for="cvv">CVV</label>
                             </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="nomecartao" placeholder="number">
+                            <div class="form-floating mb-3 ps-1" style="color: gray;">
+                                <input type="text" class="form-control" id="nomecartao" placeholder="text">
                                 <label for="nomecartao">Nome no cartão</label>
+                            </div>
+                            <p>Dados da cobrança</p>
+                            <div class="form-floating mt-2 mb-2 ps-1" style="color: gray;">
+                                <input type="email" class="form-control" id="email" placeholder="text">
+                                <label for="email">E-mail</label>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
-                        <button type="button" class="btn btn-primary">Salvar</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Salvar</button>
                     </div>
                 </div>
             </div>

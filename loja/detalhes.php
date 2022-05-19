@@ -30,10 +30,10 @@
             </div>
             <div>
                 <span>Compartilhe:</span>
-                    <a class="bi bi-messenger" href="#" role="button" style="color:deepskyblue;"></a>
-                    <a class="bi bi-facebook" href="#" role="button" style="color:blue;"></a>
-                    <a class="bi bi-pinterest" href="#" role="button" style="color:red;"></a>
-                    <a class="bi bi-twitter" href="#" role="button" style="color:dodgerblue;"></a>
+                    <a class="bi bi-messenger" href="https://www.messenger.com/" role="button" style="color:deepskyblue;"></a>
+                    <a class="bi bi-facebook" href="https://www.facebook.com/" role="button" style="color:blue;"></a>
+                    <a class="bi bi-pinterest" href="https://br.pinterest.com/" role="button" style="color:red;"></a>
+                    <a class="bi bi-twitter" href="https://twitter.com/" role="button" style="color:dodgerblue;"></a>
                     <a class="bi bi-whatsapp" href="#" role="button" style="color:rgb(23, 185, 23);"></a>
                     <a class="bi bi-telegram" href="#" role="button" style="color:rgb(45, 45, 221);"></a><br>
                     <a class="bi bi-heart" href="#" role="button" style="color:rgb(255, 32, 32);"></a>
@@ -61,11 +61,11 @@
                 <div class="col-4" style="padding-left: 33px; color: gray;">
                     <p>TAMANHO MASCULINA</p>
                 </div>
-                <div class="col-8 flex items-center TvGNLb" style="padding-left: 33px;">
-                    <button class="product-variation" aria-label="P" aria-disabled="false">P</button>
-                    <button class="product-variation" aria-label="M" aria-disabled="false">M</button>
-                    <button class="product-variation" aria-label="G" aria-disabled="false">G</button>
-                    <button class="product-variation" aria-label="GG" aria-disabled="false">GG</button>
+                <div class="col-8 flex items-center TvGNLb">
+                    <button class="btn third">P</button>
+                    <button class="btn third">M</button>
+                    <button class="btn third">G</button>
+                    <button class="btn third">GG</button>
                 </div>
             </div>
                    
@@ -73,11 +73,11 @@
                 <div class="col-4" style="padding-left: 33px; color: gray;">
                     <p>TAMANHO FEMININA</p>
                 </div>
-                <div class="col-8 flex items-center TvGNLb" style="padding-left: 33px;">
-                    <button class="product-variation" aria-label="P" aria-disabled="false">P</button>
-                    <button class="product-variation" aria-label="M" aria-disabled="false">M</button>
-                    <button class="product-variation" aria-label="G" aria-disabled="false">G</button>
-                    <button class="product-variation" aria-label="GG" aria-disabled="false">GG</button>
+                <div class="col-8 flex items-center TvGNLb">
+                <button class="btn third">P</button>
+                <button class="btn third">M</button>
+                <button class="btn third">G</button>
+                <button class="btn third">GG</button>
                 </div>
             </div>
 
@@ -95,10 +95,10 @@
 
             <div class="row mt-2">
                 <div class="col" style="padding-left: 33px;">
-                    <a class="btn btn-outline-danger btn-lg" href="#" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
+                    <a class="btn btn-outline-danger btn-lg" href="carrinho.php" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
                 </div>
                 <div class="col">
-                    <a class="btn btn-danger btn-lg" href="#" role="button">Comprar agora</a>
+                    <a class="btn btn-danger btn-lg" href="fimdecompra.php" role="button">Comprar agora</a>
                 </div>
             </div>
 
