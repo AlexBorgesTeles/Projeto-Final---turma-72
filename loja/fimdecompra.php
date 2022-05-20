@@ -8,6 +8,13 @@
     <div class="container">
         <div class="row">
             <div class="col-7">
+                <!--
+                    Dados de entrega tem que estar no Banco de dados
+                    Colocar header
+                    Colocar a compra embaixo e o botão maior
+                    Colocar subtotal na página dos dados da entrega
+                -->
+
                 <h2 class="mt-2 mb-3">Dados de entrega</h2>
                 <div class="row">
                     <div class="col mb-3">
@@ -96,6 +103,7 @@
                             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#pagar">Adicionar cartão</button>
                         </div>
             </div>
+
             <div class="col-5 mt-2 mb-3">
                 <h2>Compra a ser realizada</h2>
                 <card></card>
