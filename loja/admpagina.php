@@ -3,74 +3,90 @@
 	$titlePage = "Página Interna ADM";
 	include "cabecalho.php";
 
-    $sql_seleciona= "SELECT `id_pessoa`,`nome`,`cpf`,`rg`,`endereco`,`idade`,`telefone` FROM pessoa;";
+    $sql_seleciona= "SELECT * FROM `usuario` JOIN `pessoa` ON `id_pessoa` = `fk_id_pessoa`;";
+    #select * from usuario join pessoa on id_pessoa = fk_id_pessoa
+    #$sql_seleciona= "SELECT `id_pessoa`,`nome`,`cpf`,`rg`,`endereco`,`idade`,`telefone` FROM pessoa;";
     #$sql_seleciona= "SELECT `id_pessoa`,`nome`,`cpf`,`rg`,`endereco` FROM pessoa;";
     #$sql_seleciona="SELECT `id_usuario`,`email`,`senha`,`nivel`,`fk_id_pessoa` FROM usuario;";
-   $query_ler = mysqli_query($mysql,$sql_seleciona);
+   $query_ler = mysqli_query($mysql, $sql_seleciona);
    $fetch_organiza = mysqli_fetch_all($query_ler);
-   #echo "<pre>";
-   #var_dump($fetch_organiza);
-   #echo "</pre>";
+   // echo "<pre>";
+   // var_dump($fetch_organiza);
+   // echo "</pre>";
 ?>
+<style>
+    .color-linha{
+        background-color: black;
+        padding: -2px;
+    }
+</style>
 <body>
+
     <div class="container">
         <div class="row">
-        <h4 class="mb-3">Informações Usuário Administrador:</h4>
-            <div class="col-6">
-                <form>
+            <div class="d-flex flex-column col-2 flex-shrink-0 p-3 text-white bg-dark" style="width: 280;">
+                <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <i class="bi bi-boxes"></i>
+                    <svg class="bime-2" width="40" height="32">
+                        <use xlink:href="home.php"></use>
+                    </svg>
+                    <span class="fs-4">Menu Maneiro</span>
+                </a>
+            </div>
+            <div class="col-5">
+                <h4 class="mb-3 color-linha text-white">Informações do Administrador:</h4>
                     <div class="row g-3">
                         <div class="col-sm-6">
-                            <label for="nome_de_usuario" class="form-label">Usuario:</label>
-                            <input type="text" class="form-control" id="usuario" placeholder="Usuario Logado">
+                            <h6><b>Usuario:</b></h6>
+                            <p><?php echo $fetch_organiza[0][6]; ?></p>
                         </div>
                         <div class="col-sm-6">
-                            <label for="senha" class="form-label">Senha Registrada:</label>
-                            <input type="text" class="form-control" id="senha_usuario" placeholder="Senha Registrada">
+                            <h5>Senha Registrada:</h6>
+                            <p><?php echo $fetch_organiza[0][2]; ?></p>
                         </div>
                         <div class="col-12">
-                            <label for="email_usuario" class="form-label">Email registrado:</label>
-                            <input type="email" class="form-control" id="email_usuario" placeholder="Email do Usuario">
+                            <h6>Email registrado:</h6>
+                            <p><?php echo $fetch_organiza[0][1]; ?></p>
                         </div>
                         <div class="col-6">
-                            <fieldset>
-                                <legend>
-                                    <label for="Nível" class="form-label">Nível de Controle: </label>
-                                </legend>
-                                <div>
-                                    <input type="checkbox" id="Adm" name="Administrador" checked>
-                                    <label for="ADM">Administrador</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" id="cliente" name="Cliente">
-                                    <label for="cliente">Cliente</label>
-                                </div>
-                            </fieldset>
+                            <legend>
+                                <span>Nível de controle:</span>
+                            </legend>
+                                <?php if($fetch_organiza[0][3] == 1){
+                                    echo "<span> Administrador </span>";
+                                }else{
+                                    echo "<span> Cliente </span>";
+                                }
+                                ?>
                         </div>
                     </div>
-                </form>
             </div>
-            <div class="col-6" >
+            <div class="col-4" >
                 <form>
                     <div class="row g-3">
                         <div class = "col-sm-8">
-                            <label for="nome_pessoa" class="form-label">Nome Completo:</label>
-                            <input type="text" class="form-control" id="nome_pessoa" placeholder='<?php echo $fetch_organiza[0][1];?>'>
+                            <h6 >Nome Completo:</h6>
+                            <span><?php echo $fetch_organiza[0][6]; ?></span>
                         </div>
-                        <div class="col-sm-4">
-                            <label for="idade_pessoa" class="form-label">Idade:</label>
-                            <input type="number" class="form-control" id="idade_pessoa" placeholder='<?php echo $fetch_organiza[0][5];?>'>
+                        <div class = "col-sm-4">
+                            <h6>Idade:</h6>
+                            <span><?php echo $fetch_organiza[0][10]." anos"; ?></span>
                         </div>
                         <div class = "col-sm-6">
-                            <label for="CPF" class="form-label">RG:</label>
-                            <input type="text" class="form-control" id="rg_pessoa" placeholder='<?php echo $fetch_organiza[0][2];?>'>
+                            <h6>CPF:</h6>
+                            <span><?php echo $fetch_organiza[0][7]; ?></span>
                         </div>
                         <div class="col-sm-6">
-                            <label for="rg_pessoa" class="form-label">Idade:</label>
-                            <input type="number" class="form-control" id="rg_pessoa" placeholder='<?php echo $fetch_organiza[0][5];?>'>
+                            <h6>RG:</h6>
+                            <span><?php echo $fetch_organiza[0][8]; ?></span>
                         </div>
-                        <div class="col-sm-12">
-                            <label for="endereco_pessoa" class="form-label">Endereço:</label>
-                            <input type="text" class="form-control" id="endereco_pessoa" placeholder='<?php echo $fetch_organiza[0][4];?>'>
+                        <div class="col-sm-6">
+                        <h6>Telefone:</h6>
+                            <span><?php echo $fetch_organiza[0][11]; ?></span>
+                        </div>
+                        <div class="col-sm-6">
+                        <h6>Endereço:</h6>
+                            <span><?php echo $fetch_organiza[0][9]; ?></span>
                         </div>
                     </div> 
                 </form>
