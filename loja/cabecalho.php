@@ -19,10 +19,11 @@
             <a class="py-2 d-none d-md-inline-block text-black" href="#">Feminino</a>
             <a class="py-2 d-none d-md-inline-block text-black" href="#">Infantil</a>
             <a class="py-2 d-none d-md-inline-block text-black" href="#">Estoque</a>
-            <a class="py-2 d-none d-md-inline-block text-black" href="#">Carrinho</a>
+            <a class="py-2 d-none d-md-inline-block text-black" href="carrinho.php">Carrinho</a>
                 <a href="login.php" class="d-inline p-2  text-black">
                     Login <i class="bi bi-door-open-fill"></i>
                 </a>
-                <a class="d-inline p-2 text-black" href="registro.php">Cadastra-se</a>
+                <a class="d-inline p-2 text-black" href="cadastro.php">Cadastra-se</a>
         </nav>
     </header>
+    

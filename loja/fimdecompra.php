@@ -11,8 +11,8 @@
                 <!--
                     Dados de entrega tem que estar no Banco de dados
                     Colocar header
-                    Colocar a compra embaixo e o botão maior
-                    Colocar subtotal na página dos dados da entrega
+                    Colocar a compra embaixo e o botao maior
+                    Colocar subtotal na pagina dos dados da entrega
                 -->
 
                 <h2 class="mt-2 mb-3">Dados de entrega</h2>

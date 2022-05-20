@@ -4,10 +4,10 @@
 	include "cabecalho.php";
 ?>
 <!--
-    Preço e avaliações na mesma linha
+    Preco e avaliacoes na mesma linha
     Todos na mesma linha
-    Muda a ordem do preço
-    Separa o meno da compra
+    Muda a ordem do preco
+    Separa o menu da compra
 -->
 <div class="container">
     <div class="row">
