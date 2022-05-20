@@ -8,10 +8,6 @@
     Todos na mesma linha
     Muda a ordem do preço
     Separa o meno da compra
-    Dados de entrega tem que estar no Banco de dados
-    Colocar header
-    Colocar a compra embaixo e o botão maior
-    Colocar subtotal na página dos dados da entrega
 -->
 <div class="container">
     <div class="row">
