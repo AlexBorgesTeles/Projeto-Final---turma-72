@@ -3,16 +3,20 @@
 	$titlePage = "CAMISA DE TIME PARA CASAL";
 	include "cabecalho.php";
 ?>
-<!--Preço e avaliações na mesma linha
-Todos na mesma linha
-Dados de entrega tem que estar no Banco de dados
-Colocar header
-Colocar a compra embaixo e o botão maior
-Colocar subtotal na página dos dados da entrega-->
+<!--
+    Preço e avaliações na mesma linha
+    Todos na mesma linha
+    Muda a ordem do preço
+    Separa o meno da compra
+    Dados de entrega tem que estar no Banco de dados
+    Colocar header
+    Colocar a compra embaixo e o botão maior
+    Colocar subtotal na página dos dados da entrega
+-->
 <div class="container">
     <div class="row">
         <div class="col-4">
-            <div id="carouselExampleIndicators" class="carousel slide mt-1" data-bs-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide mt-2" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -48,13 +52,13 @@ Colocar subtotal na página dos dados da entrega-->
         </div>
 
         <div class="col-8">
-            <h5>CONJUNTO CASAL CAMISA FEMININA + CAMISA MASCULINA - SELEÇÃO BRASILEIRA MODELO 2019</h5> 
+            <h5 class="mt-1">CONJUNTO CASAL CAMISA FEMININA + CAMISA MASCULINA - SELEÇÃO BRASILEIRA MODELO 2019</h5> 
             <div class="row">
-                <div class="col-3">
-                    <h2 style="color: orange;">R$239,99</h2>
+                <div class="col-5">
+                    <p style="padding-top: 0.5rem;">5 estrelas | 8 avaliações | 500 vendidas<p>
                 </div>
                 <div class="col">
-                    <p style="padding-top: 0.5rem;">5 estrelas | 8 avaliações | 500 vendidas<p>
+                    <h2 style="color: orange;">R$239,99</h2>
                 </div>
             </div>
             
@@ -70,7 +74,7 @@ Colocar subtotal na página dos dados da entrega-->
                 </div>
             </div>
 
-            <div class="row mt-3">
+            <div class="row mb-3">
                 <div class="col-4" style="color: gray;">
                     <p>TAMANHO MASCULINA</p>
                 </div>
@@ -82,7 +86,7 @@ Colocar subtotal na página dos dados da entrega-->
                 </div>
             </div>
                    
-            <div class="row mt-2">
+            <div class="row mb-3">
                 <div class="col-4" style="color: gray;">
                     <p>TAMANHO FEMININA</p>
                 </div>
@@ -94,7 +98,7 @@ Colocar subtotal na página dos dados da entrega-->
                 </div>
             </div>
 
-            <div class="row mt-2">
+            <div class="row mb-3">
                 <div class="col-4" style="color: gray;">
                     <label for="quant" class="form-label">Quantidade</label>
                 </div>
