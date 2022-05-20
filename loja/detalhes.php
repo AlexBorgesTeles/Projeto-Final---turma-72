@@ -2,6 +2,32 @@
 	include "conexao.php";
 	$titlePage = "CAMISA DE TIME PARA CASAL";
 	include "cabecalho.php";
+    $select = "SELECT from 'camisa' where 'id_camisa'";
+    $info = mysqli_query($connection, $select);
+    $dados = mysqli_fetch_all($info);
+
+    foreach($dados as $linha){
+        #var_dump($linha);
+        echo "
+          <div class='col-4'>
+            <div class='card'>
+              <img src='imagem/{$linha[3]}' style='height: 18rem; margin-top: 20px;' class='card-img-top'>
+              <div class='card-body'>
+                <h5 class='card-title'>{$linha[1]}<br>{$linha[6]}</h5>
+                <p class='card-text'><b>{$linha[4]}</b></p>
+                <p clas='card-text'>";
+                for($i=1;$i<=$linha[5]; $i++){
+                  echo "<i class=' text-warning bi bi-star-fill'></i>";
+                }
+                echo "</p>
+                <a href='#' class='btn btn-danger'>Compre</a>
+                <a class='btn btn-dark' href='mudanca.php?id=$linha[0]' role='button'>Editar</a>
+                <a class='btn btn-warning' href='apagar.php?id=$linha[0]' role='button'>Deletar</a>
+              </div> 
+            </div>
+          </div>
+        ";
+      }
 ?>
 <!--
     Preco e avaliacoes na mesma linha
@@ -19,11 +45,11 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../imagens/vestidos.png" class="d-block w-100 mb-3" alt="casal vestidos na camisa" height: 60px;>
+                        <img src="../imagens/+data[0].omagem" class="d-block w-100 mb-3" alt="casal vestidos na camisa" height: 60px;>
                     </div>
-                    <div class="carousel-item">
+                    <!--<div class="carousel-item">
                         <img src="../imagens/mostra.jpeg" class="d-block w-100 mb-3" alt="camisa dobrada" height: 60px;>
-                    </div>
+                    </div>-->
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

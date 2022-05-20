@@ -4,7 +4,7 @@
 	$senha = '';
 	$banco = 'bancoloja';
 
-	$mysql = mysqli_connect($servidor, $usuario, $senha, $banco);
+	$connection = mysqli_connect($servidor, $usuario, $senha, $banco);
 
 	//já conectou, se tudo estiver certo.
 
