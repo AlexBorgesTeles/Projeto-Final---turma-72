@@ -13,7 +13,7 @@
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome Completo:</label>
                     <input type="text" class="form-control" name="nome">
-                    <label for="cpf" class="form-label">Cpf:</label>
+                    <label for="cpf" class="form-label">CPF:</label>
                     <input type="varchar" class="form-control" name="cpf">
                     <label for="rg" class="form-label">RG:</label>
                     <input type="text" class="form-control" name="rg">
@@ -23,6 +23,10 @@
                     <input type="text" class="form-control" name="idade">
                     <label for="telefone" class="form-label">Telefone:</label>
                     <input type="text" class="form-control" name="telefone">
+                    <label for="email" class="form-label">Email:</label>
+		    <input type="text" class="form-control" name="email">
+                    <label for="senha" class="form-label">Senha:</label>
+		    <input type="text" class="form-control" name="senha">
                 </div>
                 <div class="d-grid gap-2">
                     <button type="submit" class="btn btn-primary">Enviar</button>
