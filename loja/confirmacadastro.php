@@ -7,18 +7,17 @@ $dados=mysqli_fecth_assoc($query);
 
 #var_dump($dados);  
  
-    if(base64_encode($_POST['senha'])== $dados['senha']){
-            session_start();
-            $_SESSION['user_id']= $daddos['fk_id_pessoa'];
+   
             
     $insert = mysqli_query($mysql , $sql);
 
     if($insert){
-    if(base64_encode($_POST['senha'])== $dados['senha']){
-            session_start();
-            $_SESSION['user_id']= $daddos['fk_id_pessoa'];
+    
         header("Location: home.php");
     }
-
+    
  
 ?>
+insere a pessoa 
+insere o id da pessoa
+insere o uduario
