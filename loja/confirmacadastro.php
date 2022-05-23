@@ -5,18 +5,16 @@ $sqlusuario="insert into usuario(email,senha,nivel) VALUES ('{$_POST['email']}',
 $query=mysqli_query($mysql,$sqlpessoa,$sqlusuario);
 $dados=mysqli_fecth_assoc($query);
 #var_dump($dados);
-if(isset($_POST['nome']) and ($_POST['cpf']) and ($_POST['rg']) and ($_POST['endereco']) and ($_POST['idade']) and ($_POST['telefone']) and ($_POST['email']) and ($_POST['senha']){
+if(isset($_POST['nome']) and ($_POST['cpf']) and ($_POST['rg']) and ($_POST['endereco']) and ($_POST['idade']) and ($_POST['telefone']) and ($_POST['email']) and ($_POST['senha'])
   
-echo "Incompleto!";
 
- }
   
     if($insert){
     
         header("Location: home.php");
     }
     
- 
+
 ?>
 insere a pessoa 
 insere o id da pessoa
