@@ -165,7 +165,7 @@
 
             <div class="row mt-2">
                 <div class="col" style="padding-left: 33px;">
-                    <a class="btn btn-outline-danger btn-lg" href="carrinho.php" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
+                    <a class="btn btn-outline-danger btn-lg" href="insertcarrinho.php?camisa= <?php echo $dados[0][0];?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
                 </div>
                 <div class="col">
                     <a class="btn btn-danger btn-lg" href="fimdecompra.php" role="button">Comprar agora</a>
