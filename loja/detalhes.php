@@ -12,16 +12,16 @@
         echo "
             <div class='col-4'>
                 <div class='card'>
-                    <img src='imagem/{$linha[imagem]}' style='height: 18rem; margin-top: 20px;' class='card-img-top'>
+                    <img src='../imagens/{$linha['imagem']}' style='height: 18rem; margin-top: 20px;' class='card-img-top'>
                     <div class='card-body'>
-                    <h5 class='card-title'>{$linha[estampa]}<br>{$linha[preco]}</h5>
-                    <p class='card-text'><b>{$linha[descricao]}</b></p>
+                    <h5 class='card-title'>{$linha['estampa']}<br>{$linha['preco']}</h5>
+                    <p class='card-text'><b>{$linha['descricao']}</b></p>
                     <p clas='card-text'>";
-                    for($i=1;$i<=$linha[avaliacao]; $i++){
+                    for($i=1;$i<=$linha['avaliacao']; $i++){
                         echo "<i class=' text-warning bi bi-star-fill'></i>";
                     }
                     echo "</p>
-                    <a href='#' class='btn btn-danger'>Compre</a>
+                    <a href='insertcarrinho.php?id_camisa=$id' class='btn btn-danger'>Compre</a>
                     </div> 
                 </div>
             </div>
