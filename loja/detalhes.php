@@ -1,11 +1,12 @@
 <?php
 	include "conexao.php";
-	$titlePage = "CAMISA DE TIME PARA CASAL";
-	include "cabecalho.php";
     $id = $_GET['id_camisa'];
     $select = "SELECT * FROM `camisa` WHERE `id_camisa` = {$id}";
     $info = mysqli_query($mysql, $select);
-    $dados = mysqli_fetch_all($info, MYSQLI_ASSOC);
+    $camisa = mysqli_fetch_assoc($info);
+	var_dump($camisa);
+	$titlePage = $camisa['estampa'];
+	include "cabecalho.php";
 ?>
 <!--
     Preco e avaliacoes na mesma linha
