@@ -2,22 +2,36 @@
 	include "conexao.php";
 	$titlePage = "CAMISA DE TIME PARA CASAL";
 	include "cabecalho.php";
+
+    // ID RECEBIDO DE OUTRA PÁGINA:
     $id = $_GET['id_camisa'];
+
+    // SELECIONAR INFORMAÇÕES DO ESTOQUE COM A CAMISA, COM JOIN:
+    $sql_seleciona= "SELECT * FROM `estoque` JOIN `camisa` ON `fk_id_camisa` = `id_camisa`;";
+    $query_ler = mysqli_query($mysql, $sql_seleciona);
+    $fetch_organiza = mysqli_fetch_all($query_ler);
+    echo "<pre>";
+    var_dump($fetch_organiza);
+    echo "</pre>";
+
+
+    //SELECIONAR UMA CAMISA AESPECÍFICA:
     $select = "SELECT * FROM `camisa` WHERE `id_camisa` = {$id}";
     $info = mysqli_query($mysql, $select);
     $dados = mysqli_fetch_all($info, MYSQLI_ASSOC);
 
+    //CARD DE TESTE PARA SABER COMO COLOCAR AS INFORMAÇÕES;
     foreach($dados as $linha){
         #var_dump($linha);
         echo "
             <div class='col-4'>
                 <div class='card'>
-                    <img src='imagem/{$linha[imagem]}' style='height: 18rem; margin-top: 20px;' class='card-img-top'>
+                    <img src='../imagens/{$linha['imagem']}' style='height: 18rem; margin-top: 20px;' class='card-img-top'>
                     <div class='card-body'>
-                    <h5 class='card-title'>{$linha[estampa]}<br>{$linha[preco]}</h5>
-                    <p class='card-text'><b>{$linha[descricao]}</b></p>
+                    <h5 class='card-title'>{$linha['estampa']}<br>{$linha['preco']}</h5>
+                    <p class='card-text'><b>{$linha['descricao']}</b></p>
                     <p clas='card-text'>";
-                    for($i=1;$i<=$linha[avaliacao]; $i++){
+                    for($i=1;$i<=$linha['avaliacao']; $i++){
                         echo "<i class=' text-warning bi bi-star-fill'></i>";
                     }
                     echo "</p>
@@ -28,7 +42,7 @@
         ";
     }
 ?>
-<p id="camisa"></p>
+<!--<p id="camisa"></p>
 <p id="escrita"></p>
 <script type="text/javascript">
     let select = document.getElementById('camisa')
@@ -59,12 +73,13 @@
         //envio "desconhecido" meio que nao tem funcao, porque e automatico
     }
             
-</script>
+</script>---->
 <!--
     Preco e avaliacoes na mesma linha
     Todos na mesma linha
     Muda a ordem do preco
     Separa o menu da compra
+-->
 
 <div class="container">
     <div class="row">
@@ -76,12 +91,13 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../imagens/+data[0].imagem" class="d-block w-100 mb-3" alt="casal vestidos na camisa" height: 60px;>
+                        <!--- Aqui tem um explo como o echo array está funcionando--->
+                        <img src="../imagens/<?php echo $fetch_organiza[$id][8];?>" class="d-block w-100 mb-3" alt="casal vestidos na camisa" height: 60px;>
                     </div>
-                    <!--<div class="carousel-item">
+                    <div class="carousel-item">
                         <img src="../imagens/mostra.jpeg" class="d-block w-100 mb-3" alt="camisa dobrada" height: 60px;>
-                    </div>-->
-                <!--</div>
+                    </div>
+                </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -174,7 +190,7 @@
         </div>
 
     </div>
-</div>-->
+</div>
 <?php 
 	include "footer.php";
 ?>
