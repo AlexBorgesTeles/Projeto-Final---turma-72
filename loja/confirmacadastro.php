@@ -7,7 +7,7 @@ $dados=mysqli_fecth_assoc($query);
 #var_dump($dados);
 if(isset($_POST['nome'] and $_POST['cpf'] and $_POST['rg'] and $_POST['endereco'] and $_POST['idade'] and $_POST['telefone'] and $_POST['email'] and $_POST['senha']){
   echo "Incompleto";
-}
+
  
   
     if($insert){
@@ -15,7 +15,7 @@ if(isset($_POST['nome'] and $_POST['cpf'] and $_POST['rg'] and $_POST['endereco'
         header("Location: home.php");
     }
     
- 
+ }
 ?>
 insere a pessoa 
 insere o id da pessoa
