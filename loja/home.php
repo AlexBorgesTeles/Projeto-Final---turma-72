@@ -1,48 +1,54 @@
 <?php
-	session_start();
-	include "conexao.php";
-	$titlePage = "Página exemplo";
-	if(isset($_SESSION['user_id']) and $_SESSION['user_id'] != ''){
-		$sql2 = 'select * from pessoa where id_pessoa = '.$_SESSION['user_id'];
-		$query = mysqli_query($mysql,$sql2);
-		$pessoa = mysqli_fetch_assoc($query);
-		$nome = $pessoa['nome'];
-	}
+    session_start(); //https://www.w3schools.com/php/php_sessions.asp
+    include 'conexao.php'; // Incluir o cabeçalho
+    $titlePage= 'Página Inicial'; //Título da página
+    if (isset($_SESSION['user_id']) and $_SESSION['user_id'] !=''){
+        $sql2 = 'SELECT * FROM pessoa WHERE id_pessoa = '.$_SESSION['user_id'];
+        $query = mysqli_query($mysql, $sql2); //Ler o array
+        $pessoa = mysqli_fetch_assoc($query); //Organiza o array
+        $nome = $pessoa['nome']; 
+    }
+    //Se tiver $_SESSION e se ela for vazia, selecione a pessoa pelo id, dado pelo usuário. 
+
 	include "cabecalho.php";
 
-    $sql="SELECT `id_camisa`,`imagem`,`marca`,`descricao`,`avaliacao`,`preco`,`estampa` FROM camisa;";
+    $sql="SELECT `id_camisa`,`imagem`,`marca`,`descricao`,`avaliacao`,`preco`,`estampa` FROM camisa LIMIT 0,8";
 	$query = mysqli_query($mysql,$sql);
 	$fetchvisual = mysqli_fetch_all($query);
-	
-	
+
 ?>
 <div class="container">
-        <div class="row">
-        <!----Linha-->
-        <br style="p-3">
-        <!---- Fim Linha-->
         <!----Slide Central-->
         <div class="row">
-            <div class="col-6 btn p-3">
-                <img src="../imagens/camisetas1.jpg" id="Slide1" alt="Slide1" class="img-fluid"/>
+            <div class="col-6 mt-1">
+                <div class="row">
+                        <img src="../imagens/camisetas1.jpg" width="520" height="420" id="Slide1" alt="Slide1"/>
+                </div>
             </div>
-            <div class="col-6 btn p-3">
-                    <div class="col-12 btn">
-                        <img src="../imagens/slide01.jpg" id="Slide2" alt="Slide2" class="img-fluid"/>
+            <div class="col-6">
+                <div class="row text-center">
+                    <div class="col-12 mb-3 mt-1">
+                        <img src="../imagens/slide01.jpg" width="400" height="205" id="Slide2" alt="Slide2"/>
                     </div>
-                    <!--<div class="col-12 btn">
-                        <img src="../imagens/slide1.png" id="Slide3" alt="Slide3" classs="img-fluid"/>
-                    </div>-->
+                    <div class="col-12">
+                        <img src="../imagens/slide02.png" width="400" height="201" id="Slide3" alt="Slide3"/>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div>
+            <hr style='color: black'>
         </div>
         <!----Fim Slide Central-->
         <div class="row">
             <div class="col">
-                <h3 style="font-family:New Century;"> Em estoque - Marcas Famosas - Aproveite as promoções </h3>
+                <h3 style="font-family:New Century; color:black;"> Em estoque - Marcas Famosas - Aproveite as promoções </h3>
             </div>
         </div>
         <!----Linha-->
-        <br style="p-3">
+        <div>
+        <hr style='color: black'>
+        </div>
         <!---- Fim Linha-->
         <div class="row">
             
@@ -50,9 +56,9 @@
 			foreach($fetchvisual as $colunaresposta){
                 echo "
 				<div class='col-3 btn'>
-                    <div class='card'>
-                            <img src='../imagens/$colunaresposta[1]' class='card-img-top' alt='camisasC' style='height: 200px;'>
-                        <div class='card-body'>
+                    <div class='card' style='background-color: #65785C'>
+                            <a href='detalhes.php'><img src='../imagens/$colunaresposta[1]' class='card-img-top' alt='camisasC' style='height: 200px;'></a>
+                        <div class='card-body' style='color: white'>
                             <h6 class='card-title'><b>$colunaresposta[2]</b> - $colunaresposta[6]</h6>
                             <p class='card-text'>R$$colunaresposta[5]</p>
                             <p class='card-text'>";
@@ -67,8 +73,8 @@
                                 $contador++;
                             }
                             echo "</p>
-                            <a href='fimdecompra.php?id_camisa=$colunaresposta[0]' class='btn btn-warning'>Comprar</a>
-                            <a href='carrinho.php?id_camisa=$colunaresposta[0]' class='btn btn-dark'>Carrinho</a>
+                            <a href='carrinho.php?id_camisa=$colunaresposta[0]' class='btn btn-dark'>Comprar</a>
+                            <a href='dealhes.php?id_camisa=$colunaresposta[0]' class='btn btn-dark'>Detalhes</a>
                         </div>
                     </div>
 				</div>
