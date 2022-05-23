@@ -2,7 +2,7 @@
     include "conexao.php";
     include "cabecalho.php";
     $titlePage = "Finalizando sua compra!";
-
+    
 ?>
 <body>
     <div class="container">
@@ -106,7 +106,7 @@
 
             <div class="col-5 mt-2 mb-3">
                 <h2>Compra a ser realizada</h2>
-                <card></card>
+                
                 <a class="btn btn-success" href="checkout.php" role="button">Fazer pedido</a>
             </div>
         </div>
