@@ -1,79 +1,13 @@
 <?php
 	include "conexao.php";
-	$titlePage = "CAMISA DE TIME PARA CASAL";
-	include "cabecalho.php";
-
-    // ID RECEBIDO DE OUTRA PÁGINA:
     $id = $_GET['id_camisa'];
-
-    // SELECIONAR INFORMAÇÕES DO ESTOQUE COM A CAMISA, COM JOIN:
-    $sql_seleciona= "SELECT * FROM `estoque` JOIN `camisa` ON `fk_id_camisa` = `id_camisa`;";
-    $query_ler = mysqli_query($mysql, $sql_seleciona);
-    $fetch_organiza = mysqli_fetch_all($query_ler);
-    echo "<pre>";
-    var_dump($fetch_organiza);
-    echo "</pre>";
-
-
-    //SELECIONAR UMA CAMISA AESPECÍFICA:
     $select = "SELECT * FROM `camisa` WHERE `id_camisa` = {$id}";
     $info = mysqli_query($mysql, $select);
-    $dados = mysqli_fetch_all($info, MYSQLI_ASSOC);
-
-    //CARD DE TESTE PARA SABER COMO COLOCAR AS INFORMAÇÕES;
-    foreach($dados as $linha){
-        #var_dump($linha);
-        echo "
-            <div class='col-4'>
-                <div class='card'>
-                    <img src='../imagens/{$linha['imagem']}' style='height: 18rem; margin-top: 20px;' class='card-img-top'>
-                    <div class='card-body'>
-                    <h5 class='card-title'>{$linha['estampa']}<br>{$linha['preco']}</h5>
-                    <p class='card-text'><b>{$linha['descricao']}</b></p>
-                    <p clas='card-text'>";
-                    for($i=1;$i<=$linha['avaliacao']; $i++){
-                        echo "<i class=' text-warning bi bi-star-fill'></i>";
-                    }
-                    echo "</p>
-                    <a href='#' class='btn btn-danger'>Compre</a>
-                    </div> 
-                </div>
-            </div>
-        ";
-    }
+    $camisa = mysqli_fetch_assoc($info);
+	var_dump($camisa);
+	$titlePage = $camisa['estampa'];
+	include "cabecalho.php";
 ?>
-<!--<p id="camisa"></p>
-<p id="escrita"></p>
-<script type="text/javascript">
-    let select = document.getElementById('camisa')
-    let escrita = document.getElementById('escrita')
-        select.onchange = function(){
-            console.log(select.value) //o numero do select (ou valor)
-            escrita.innerHTML = this.options[this.selectedIndex].text
-            ajax(this.value)                   
-        }
-    function ajax(idcamisa){
-        const xmlhttp = new XMLHttpRequest();
-        //criacao da requisicao
-        xmlhttp.onload = function() {
-            // o que faz executar o codigo depois do AJAX
-            //this.responseText = a resposta que o servidor da
-            let data = JSON.parse(this.responseText);
-            console.log(data);
-            let luz = ''
-            for(var i=1; i<=data[0].avaliacao; i++) {
-                luz+="<i class=' text-warning bi bi-star-fill'></i>";
-            }
-            escrita.innerHTML = "<div class='col-4'> <div class='card'> <img src='icons/"+ data[0].imagem +"' class='card-img-top'> <div class='card-body'> <h5 class='card-title'>Por apenas "+ data[0].preco +"</h5> <p class='card-text'><strong>"+ data[0].estampa +"</strong></p> <p class='card-text text-truncate'><h6>"+ data[0].descricao +"</h6></p>"+luz+" <a href='#' class='btn btn-primary'>Boas compras</a></div></div></div>";
-        }
-
-        xmlhttp.open("GET", "load.php?formiga=" + idcamisa); // para onde vai o AJAX
-        //a "?" divide a url da variavel
-        xmlhttp.send();
-        //envio "desconhecido" meio que nao tem funcao, porque e automatico
-    }
-            
-</script>---->
 <!--
     Preco e avaliacoes na mesma linha
     Todos na mesma linha
@@ -91,8 +25,7 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <!--- Aqui tem um explo como o echo array está funcionando--->
-                        <img src="../imagens/<?php echo $fetch_organiza[$id][8];?>" class="d-block w-100 mb-3" alt="casal vestidos na camisa" height: 60px;>
+                        <img src="../imagens/vestidos.png" class="d-block w-100 mb-3" alt="casal vestidos na camisa" height: 60px;>
                     </div>
                     <div class="carousel-item">
                         <img src="../imagens/mostra.jpeg" class="d-block w-100 mb-3" alt="camisa dobrada" height: 60px;>

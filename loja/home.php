@@ -1,7 +1,6 @@
 <?php
     session_start(); //https://www.w3schools.com/php/php_sessions.asp
-    include 'conexao.php';
-    include "cabecalho.php"; // Incluir o cabeçalho
+    include 'conexao.php'; // Incluir o cabeçalho
     $titlePage= 'Página Inicial'; //Título da página
     if (isset($_SESSION['user_id']) and $_SESSION['user_id'] !=''){
         $sql2 = 'SELECT * FROM pessoa WHERE id_pessoa = '.$_SESSION['user_id'];
@@ -11,13 +10,12 @@
     }
     //Se tiver $_SESSION e se ela for vazia, selecione a pessoa pelo id, dado pelo usuário. 
 
+	include "cabecalho.php";
+
     $sql="SELECT `id_camisa`,`imagem`,`marca`,`descricao`,`avaliacao`,`preco`,`estampa` FROM camisa LIMIT 0,8";
 	$query = mysqli_query($mysql,$sql);
 	$fetchvisual = mysqli_fetch_all($query);
 
-    //echo "<pre>";
-    //var_dump($fetchvisual);
-    //echo "</pre>";
 ?>
 <div class="container">
         <!----Slide Central-->
@@ -59,7 +57,7 @@
                 echo "
 				<div class='col-3 btn'>
                     <div class='card' style='background-color: #65785C'>
-                            <a href='detalhes.php?id_camisa=$colunaresposta[0]'><img src='../imagens/$colunaresposta[1]' class='card-img-top' alt='camisasC' style='height: 200px;'></a>
+                            <a href='detalhes.php?id_camisa={$colunaresposta[0]}'><img src='../imagens/$colunaresposta[1]' class='card-img-top' alt='camisasC' style='height: 200px;'></a>
                         <div class='card-body' style='color: white'>
                             <h6 class='card-title'><b>$colunaresposta[2]</b> - $colunaresposta[6]</h6>
                             <p class='card-text'>R$$colunaresposta[5]</p>
