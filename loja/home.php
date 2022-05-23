@@ -1,6 +1,7 @@
 <?php
     session_start(); //https://www.w3schools.com/php/php_sessions.asp
-    include 'conexao.php'; // Incluir o cabeçalho
+    include 'conexao.php';
+    include "cabecalho.php"; // Incluir o cabeçalho
     $titlePage= 'Página Inicial'; //Título da página
     if (isset($_SESSION['user_id']) and $_SESSION['user_id'] !=''){
         $sql2 = 'SELECT * FROM pessoa WHERE id_pessoa = '.$_SESSION['user_id'];
@@ -9,8 +10,6 @@
         $nome = $pessoa['nome']; 
     }
     //Se tiver $_SESSION e se ela for vazia, selecione a pessoa pelo id, dado pelo usuário. 
-
-	include "cabecalho.php";
 
     $sql="SELECT `id_camisa`,`imagem`,`marca`,`descricao`,`avaliacao`,`preco`,`estampa` FROM camisa LIMIT 0,8";
 	$query = mysqli_query($mysql,$sql);
