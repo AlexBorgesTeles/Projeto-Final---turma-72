@@ -1,5 +1,6 @@
 <?php
 	include "conexao.php";
+    session_start();
     $id = $_GET['id_camisa'];
     $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
     $info = mysqli_query($mysql, $select);
@@ -36,7 +37,9 @@
             <h4 class="mt-1"><?php echo $camisa['estampa']; ?></h4> 
             <div class="row">
                 <div class="col-5">
-                    <p style="padding-top: 0.5rem;">5 estrelas | 8 avaliações | 500 vendidas<p>
+                    <p style="padding-top: 0.5rem;"><?php for($i=1;$i<=$camisa['avaliacao']; $i++){
+                        echo "<i class=' text-warning bi bi-star-fill'></i>";
+                    }?> | 8 avaliações | 500 vendidas<p>
                 </div>
                 <div class="col">
                     <h2 style="color: orange;">R$<?php echo $camisa['preco']; ?></h2>

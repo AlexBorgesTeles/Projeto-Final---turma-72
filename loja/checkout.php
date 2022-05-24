@@ -1,5 +1,7 @@
 <?php
 	include "conexao.php";
+    session_start();
+    include "cabecalho.php";
 ?>
 <!DOCTYPE HTML>
     <html lang="pt-BR">
