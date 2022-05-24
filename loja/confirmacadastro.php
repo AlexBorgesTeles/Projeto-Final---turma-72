@@ -28,7 +28,11 @@ $dados=mysqli_fecth_assoc($query);
 #var_dump($dados);
 if ($_POST['nome'] and $_POST['cpf'] and $_POST['rg'] and $_POST['endereco'] and $_POST['idade'] and $_POST['telefone'] and $_POST['email'] and $_POST['senha']){
 echo "Cadastro realizado com sucesso";
+header('Location:home.php');
+}else{
+header('Location:cadastro.php');
 }
+
 >>>>>>> Stashed changes
   
   
