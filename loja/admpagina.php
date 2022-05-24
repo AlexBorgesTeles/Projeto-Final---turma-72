@@ -8,10 +8,10 @@
     #$sql_seleciona= "SELECT `id_pessoa`,`nome`,`cpf`,`rg`,`endereco`,`idade`,`telefone` FROM pessoa;";
     #$sql_seleciona= "SELECT `id_pessoa`,`nome`,`cpf`,`rg`,`endereco` FROM pessoa;";
     #$sql_seleciona="SELECT `id_usuario`,`email`,`senha`,`nivel`,`fk_id_pessoa` FROM usuario;";
-   $query_ler = mysqli_query($mysql, $sql_seleciona);
-   $fetch_organiza = mysqli_fetch_all($query_ler);
-   // echo "<pre>";
-   // var_dump($fetch_organiza);
+	$query_ler = mysqli_query($mysql, $sql_seleciona);
+	$fetch_organiza = mysqli_fetch_assoc($query_ler);
+    echo $fetch_organiza['id_usuario'];
+    var_dump($fetch_organiza);
    // echo "</pre>";
 ?>
 <style>
@@ -38,21 +38,17 @@
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <h6><b>Usuario:</b></h6>
-                            <p><?php echo $fetch_organiza[0][6]; ?></p>
+                            <p><?php echo $fetch_organiza['email']; ?></p>
                         </div>
-                        <div class="col-sm-6">
-                            <h5>Senha Registrada:</h6>
-                            <p><?php echo $fetch_organiza[0][2]; ?></p>
-                        </div>
-                        <div class="col-12">
+						<div class="col-12">
                             <h6>Email registrado:</h6>
-                            <p><?php echo $fetch_organiza[0][1]; ?></p>
+                            <p><?php echo $fetch_organiza['email']; ?></p>
                         </div>
                         <div class="col-6">
                             <legend>
                                 <span>Nível de controle:</span>
                             </legend>
-                                <?php if($fetch_organiza[0][3] == 1){
+                                <?php if($fetch_organiza['nivel'] == 1){
                                     echo "<span> Administrador </span>";
                                 }else{
                                     echo "<span> Cliente </span>";
@@ -66,27 +62,27 @@
                     <div class="row g-3">
                         <div class = "col-sm-8">
                             <h6 >Nome Completo:</h6>
-                            <span><?php echo $fetch_organiza[0][6]; ?></span>
+                            <span><?php echo $fetch_organiza['nome']; ?></span>
                         </div>
                         <div class = "col-sm-4">
                             <h6>Idade:</h6>
-                            <span><?php echo $fetch_organiza[0][10]." anos"; ?></span>
+                            <span><?php echo $fetch_organiza['idade']." anos"; ?></span>
                         </div>
                         <div class = "col-sm-6">
                             <h6>CPF:</h6>
-                            <span><?php echo $fetch_organiza[0][7]; ?></span>
+                            <span><?php echo $fetch_organiza['cpf']; ?></span>
                         </div>
                         <div class="col-sm-6">
                             <h6>RG:</h6>
-                            <span><?php echo $fetch_organiza[0][8]; ?></span>
+                            <span><?php echo $fetch_organiza['rg']; ?></span>
                         </div>
                         <div class="col-sm-6">
                         <h6>Telefone:</h6>
-                            <span><?php echo $fetch_organiza[0][11]; ?></span>
+                            <span><?php echo $fetch_organiza['telefone']; ?></span>
                         </div>
                         <div class="col-sm-6">
                         <h6>Endereço:</h6>
-                            <span><?php echo $fetch_organiza[0][9]; ?></span>
+                            <span><?php echo $fetch_organiza['endereco']; ?></span>
                         </div>
                     </div> 
                 </form>
