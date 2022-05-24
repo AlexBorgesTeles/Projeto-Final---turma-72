@@ -1,7 +1,8 @@
 <?php
 	include "conexao.php";
+    session_start();
     $id = $_GET['id_camisa'];
-    $select = "SELECT * FROM `camisa` WHERE `id_camisa` = {$id}";
+    $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
     $info = mysqli_query($mysql, $select);
     $camisa = mysqli_fetch_assoc($info);
 	var_dump($camisa);
@@ -18,28 +19,7 @@
 <div class="container">
     <div class="row">
         <div class="col-4">
-            <div id="carouselExampleIndicators" class="carousel slide mt-2" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../imagens/vestidos.png" class="d-block w-100 mb-3" alt="casal vestidos na camisa" height: 60px;>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../imagens/mostra.jpeg" class="d-block w-100 mb-3" alt="camisa dobrada" height: 60px;>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+            <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block w-100 mb-3 mt-2" alt="casal vestidos na camisa" height: 60px;>
             <div>
                 <span>Compartilhe:</span>
                     <a class="bi bi-messenger" href="https://www.messenger.com/" role="button" style="color:deepskyblue;"></a>
@@ -54,13 +34,15 @@
         </div>
 
         <div class="col-8">
-            <h5 class="mt-1">CONJUNTO CASAL CAMISA FEMININA + CAMISA MASCULINA - SELEÇÃO BRASILEIRA MODELO 2019</h5> 
+            <h4 class="mt-1"><?php echo $camisa['estampa']; ?></h4> 
             <div class="row">
                 <div class="col-5">
-                    <p style="padding-top: 0.5rem;">5 estrelas | 8 avaliações | 500 vendidas<p>
+                    <p style="padding-top: 0.5rem;"><?php for($i=1;$i<=$camisa['avaliacao']; $i++){
+                        echo "<i class=' text-warning bi bi-star-fill'></i>";
+                    }?> | 8 avaliações | 500 vendidas<p>
                 </div>
                 <div class="col">
-                    <h2 style="color: orange;">R$239,99</h2>
+                    <h2 style="color: orange;">R$<?php echo $camisa['preco']; ?></h2>
                 </div>
             </div>
             
@@ -108,13 +90,13 @@
                     <input type="number" class="form-control" name="quant">
                 </div>
                 <div class="col-4">
-                    <span>3000 unidades disponíveis</span>
+                    <span><?php echo $camisa['quantidade_e']; ?> unidades disponíveis</span>
                 </div>
             </div>
 
             <div class="row mt-2">
                 <div class="col" style="padding-left: 33px;">
-                    <a class="btn btn-outline-danger btn-lg" href="insertcarrinho.php?camisa= <?php echo $dados[0][0];?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
+                    <a class="btn btn-outline-danger btn-lg" href="insertcarrinho.php?id_camisa= <?php $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
                 </div>
                 <div class="col">
                     <a class="btn btn-danger btn-lg" href="fimdecompra.php" role="button">Comprar agora</a>
