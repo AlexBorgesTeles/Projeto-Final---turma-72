@@ -1,8 +1,13 @@
 <?php
     include "conexao.php";
-    include "cabecalho.php";
-    $titlePage = "Finalizando sua compra!";
-    
+    session_start();
+    $id = 'id_camisa';
+    $select = "SELECT * FROM camisa WHERE id_camisa = {$id}";
+    $info = mysqli_query($mysql, $select);
+    $camisa = mysqli_fetch_assoc($info);
+	#var_dump($camisa);
+	$titlePage = "Finalizando sua compra!";
+	include "cabecalho.php";
 ?>
 <body>
     <div class="container">
@@ -104,10 +109,25 @@
                         </div>
             </div>
 
-            <div class="col-5 mt-2 mb-3">
+            <div class="col-5 mt-2">
                 <h2>Compra a ser realizada</h2>
-                
-                <a class="btn btn-success" href="checkout.php" role="button">Fazer pedido</a>
+                <?php 
+                    echo "
+                        <div class='col-6'>
+                            <div class='card'>
+                                <img src='../imagens/{$camisa['imagem']}' style='height: 18rem; margin-top: 20px;' class='card-img-top'>
+                                <div class='card-body'>
+                                    <h5 class='card-title'>{$camisa['estampa']} por {$camisa['preco']}</h5>
+                                    <p class='card-text'><b>{$camisa['descricao']}</b></p>
+                                    <p clas='card-text'>";
+                                    echo "</p>
+                                </div> 
+                            </div>
+                        </div>
+                    ";
+                    
+                ?>
+                <a class="btn btn-success mt-3" href="checkout.php" role="button">Fazer pedido</a>
             </div>
         </div>
     </div>
