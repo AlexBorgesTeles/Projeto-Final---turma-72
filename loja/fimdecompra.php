@@ -1,8 +1,8 @@
 <?php
     include "conexao.php";
     session_start();
-    $id = 'id_camisa';
-    $select = "SELECT * FROM camisa WHERE id_camisa = {$id}";
+    $id = $_GET['id_camisa'];
+    $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
     $info = mysqli_query($mysql, $select);
     $camisa = mysqli_fetch_assoc($info);
 	#var_dump($camisa);
@@ -119,28 +119,16 @@
                         <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block w-100 mb-3 mt-2" alt="roupa" height: 2px;>
                     </div>
                     <div class="col">
-                        <h4 class="mt-1"><?php echo $camisa['estampa']; ?></h4>
+                        <span class="mt-1"><?php echo $camisa['estampa']; ?></span>
+                    </div>
+                    <div class="col">
+                        <span>R$<?php echo $camisa['preco']; ?></span>
                     </div>
                 </div>
 
                 <div class="_1BehlF">
                     <div class="_-0yJ2-">
                         <div class="_1Z2fe1">
-                            <div class="_3mceb9">
-                                <a title="CONJUNTO CASAL CAMISA FEMININA + CAMISA MASCULINA SELEÇÃO BRASIL MODELO 2019" href="/CONJUNTO-CASAL-CAMISA-FEMININA-CAMISA-MASCULINA-SELEÇÃO-BRASIL-MODELO-2019-i.433707183.10860012280?xptdk=f0cc0455-2e1c-4897-a1aa-dfa81ec98cec">
-                                    <div class="_25vezo" style="background-image: url(&quot;https://cf.shopee.com.br/file/bc141a9f1a94794e55ebaa5d307ae571_tn&quot;);"></div>
-                                </a>
-                                <div class="_1WfuBi">
-                                    <a class="_3t5Sij" title="CONJUNTO CASAL CAMISA FEMININA + CAMISA MASCULINA SELEÇÃO BRASIL MODELO 2019" href="/CONJUNTO-CASAL-CAMISA-FEMININA-CAMISA-MASCULINA-SELEÇÃO-BRASIL-MODELO-2019-i.433707183.10860012280?xptdk=f0cc0455-2e1c-4897-a1aa-dfa81ec98cec">CONJUNTO CASAL CAMISA FEMININA + CAMISA MASCULINA SELEÇÃO BRASIL MODELO 2019</a>
-                                    <div class="_2032rh">
-                                        <span class="_1iZFYg i1lOZb">Encomenda</span>
-                                    </div>
-                                    <div class="_21GC7u" style="background-image: url(&quot;https://cf.shopee.com.br/file/d455451ecad00fd75d3fbc09cd2bce83&quot;);">
-                                </div>
-                                <div class="fRkQR_">
-                                    <span></span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="_34KJXV">
@@ -179,6 +167,7 @@
                 </div></div>
                 
                 <a class="btn btn-success mt-3" href="checkout.php" role="button">Fazer pedido</a>
+
             </div>
         </div>
     </div>
