@@ -116,7 +116,7 @@
                         <label class="form-check-label" for="flexCheckDefault"></label>
                     </div>
                     <div class="col">
-                        <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block w-100 mb-3 mt-2" alt="roupa" height: 2px;>
+                        <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block mb-3 mt-2" alt="roupa" style="height: 100px";>
                     </div>
                     <div class="col">
                         <span class="mt-1"><?php echo $camisa['estampa']; ?></span>
