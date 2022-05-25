@@ -1,6 +1,6 @@
 <?php
 	include "conexao.php";
-	$titlePage = "Página Adcionar Produto";
+	$titlePage = "Página Adicionar Produto";
 	include "cabecalho.php";
 
     //ENVIAR NA TABELA CAMISA
@@ -58,12 +58,12 @@
                             <div class="col-6">
                                 <!----Estampa--->
                                 <label for="estampa">Estampa:</label>
-                                <input type="text" class="form-control" placeholder="Estampa..." id="1" name="estampa">
+                                <input type="text" class="form-control" placeholder="Estampa..." id="estampa" name="estampa" required>
                             </div>
                             <div class="col-6">
                                 <!----Marca--->
                                 <label for="marca">Marca:</label>
-                                <input type="text" class="form-control" placeholder="Marca..." id="2" name="marca">
+                                <input type="text" class="form-control" placeholder="Marca..." id="marca" name="marca">
                             </div>
                         </div>
                         <div class="row">
@@ -92,9 +92,7 @@
                             <div class="col-12">
                                 <!----Descrição--->
                                 <label for="descricao">Descrição:</label><br>
-                                <textarea id="descricao" class="form-control" name="descricao-texto" rows="10" cols="30" wrap="hard">
-
-                                </textarea>
+                                <textarea id="descricao" class="form-control" name="descricao-texto" rows="10" cols="30" wrap="hard"></textarea>
                             </div>
                         <div class="row">
                             <div class="col-4 offset-4">   
@@ -112,10 +110,9 @@
                                             <span>Suas informações estão corretas e foram enviadas com sucesso!</span>
                                         </div>
                                         <div class='modal-footer'>
-                                            <?php 
-                                            if($_POST['estampa'] and $_POST['marca'] and $_POST['imagem'] and $_POST['descricao-texto'] and $_POST['estampa'] and $_POST['avaliacao'] and $_POST['preco']
-                                            != ""){
-                                            echo "<button type='submit' class='btn btn-secondary'>Enviar</button>";}
+                                            <?php
+											// ou vc monta um GET paginadestino.php?estammpa=XXXX&marca=YYYY...
+											//ou vc monta um ajax
                                             ?>
                                         </div>
                                     </div>
@@ -127,7 +124,7 @@
                     <div class="row">
                         <div class="col-4 offset-4">
                             
-                        <button type="button" class="w-100 btn-dark mt-3" data-bs-toggle="modal" data-bs-target="#laranja">
+                        <button type="button" id="butao" class="w-100 btn-dark mt-3" >
                             Enviar
                         </button>
                     </div>
@@ -140,6 +137,15 @@
 	include "footer.php";
 ?>
 <script>
-        var Resposta = new bootstrap.Modal(document.getElementById('laranja'),)
-            Resposta.show()
+		let butao = document.getElementById('butao')
+		butao.onclick = function(){
+			var Resposta = new bootstrap.Modal(document.getElementById('laranja'))
+            Resposta.toggle()
+			let estampa = document.getElementById('estampa')
+			let marca = document.getElementById('marca')
+			//testa se os inputs foram preenchidos
+			if(){
+				
+			}
+		}
 </script>
