@@ -126,46 +126,8 @@
                     </div>
                 </div>
 
-                <div class="_1BehlF">
-                    <div class="_-0yJ2-">
-                        <div class="_1Z2fe1">
-                        </div>
-                    </div>
-                    <div class="_34KJXV">
-                        <div class="aUj6f2">
-                            <div class="_1XT_GF" role="button" tabindex="0">
-                                <div class="Qtk_DO">Variações:<button class="vZLqsj"></button>
-                            </div>
-                            <div class="_3dqm1i">P,G</div>
-                        </div>
-                        <div>
-                    </div>
-                </div></div>
-                <div class="_1C6zuo">
-                    <div>
-                        <span class="_1E5-FE">R$239,99</span>
-                    </div>
-                </div>
-                <div class="_2vZsK0">
-                    <div class="_1knJ1D shopee-input-quantity">
-                        <button class="_2rGMck">
-                            <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon">
-                                <polygon points="4.5 4.5 3.5 4.5 0 4.5 0 5.5 3.5 5.5 4.5 5.5 10 5.5 10 4.5"></polygon>
-                            </svg>
-                        </button>
-                        <input class="_2rGMck _8rdz59" type="text" role="spinbutton" aria-valuenow="1" value="1">
-                        <button class="_2rGMck">
-                            <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon icon-plus-sign">
-                                <polygon points="10 4.5 5.5 4.5 5.5 0 4.5 0 4.5 4.5 0 4.5 0 5.5 4.5 5.5 4.5 10 5.5 10 5.5 5.5 10 5.5"></polygon>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="_2S6DJl">
-                    <span>R$239,99</span>
-                </div>
-                </div></div>
                 
+
                 <a class="btn btn-success mt-3" href="checkout.php" role="button">Fazer pedido</a>
 
             </div>
