@@ -9,8 +9,6 @@ if(isset($_SESSION['user_id']) and $_SESSION['user_id'] != ''){
 		$pessoa = mysqli_fetch_assoc($query);
 		$nome = $pessoa['nome'];
 	}
-
-$id = $_GET['camisa'];
 $sql = "SELECT * FROM carrinho JOIN estoque ON carrinho.fk_id_pessoa = {$_SESSION['user_id']} join camisa on estoque.id_estoque = carrinho.fk_id_estoque WHERE id_camisa = estoque.fk_id_camisa;";
 $query = mysqli_query($mysql,$sql);
 $dados = mysqli_fetch_all($query,MYSQLI_ASSOC);
