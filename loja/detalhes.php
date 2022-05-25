@@ -5,13 +5,6 @@
     $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
     $info = mysqli_query($mysql, $select);
     $camisa = mysqli_fetch_assoc($info);
-	var_dum<?php
-	include "conexao.php";
-    session_start();
-    $id = $_GET['id_camisa'];
-    $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
-    $info = mysqli_query($mysql, $select);
-    $camisa = mysqli_fetch_assoc($info);
 	var_dump($camisa['id_camisa']);
 	$titlePage = $camisa['estampa'];
 	include "cabecalho.php";
