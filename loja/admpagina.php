@@ -39,12 +39,12 @@
                     </li>
                     <hr>
                     <li>
-                        <a href="adcionarcamisa.php" class="nav-link text-white">
+                        <a href="adicionarcamisa.php" class="nav-link text-white">
                             <i class="bi bi-plus-circle"></i> Adcionar Produtos</i>
                         </a>
                     </li>
                     <li>
-                    <a href="#" class="nav-link text-white">
+                    <a href="tabelacamisa.php" class="nav-link text-white">
                             <i class="bi bi-scissors"></i> Alterar Produtos</i>
                         </a>
                     </li>

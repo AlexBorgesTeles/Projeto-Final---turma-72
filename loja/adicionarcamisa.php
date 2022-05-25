@@ -5,10 +5,18 @@
 
     //ENVIAR NA TABELA CAMISA
     $sql="INSERT INTO `camisa`( `estampa`, `marca`, `imagem`, `descricao`, `avaliacao`, `preco`) VALUES ('{$_POST['estampa']}','{$_POST['marca']}','{$_POST['imagem']}','{$_POST['descricao-texto']}','{$_POST['avaliacao']}','{$_POST['preco']}')";
-    $enviar= mysqli_query($mysql,$sql);
-    echo "<pre>";
-    var_dump($_POST);
-    echo "</pre>";
+    //$enviar= mysqli_query($mysql,$sql);
+    //echo "<pre>";
+    //var_dump($_POST);
+    //echo "</pre>";
+
+    //Deixar aberto
+    $_POST['estampa'] = " ";
+    $_POST['marca' ]= " ";
+    $_POST['imagem'] = " ";
+    $_POST['descricao-texto'] = " ";
+    $_POST['avaliacao'] = " ";
+    $_POST['preco'] = " ";
 ?>
 <body>
     <div class="container">
@@ -37,7 +45,7 @@
                         </a>
                     </li>
                     <li>
-                    <a href="#" class="nav-link text-white">
+                    <a href="tabelacamisa.php" class="nav-link text-white">
                             <i class="bi bi-scissors"></i> Alterar Produtos</i>
                         </a>
                     </li>
@@ -88,47 +96,50 @@
 
                                 </textarea>
                             </div>
-                            <!----Modal no Botão--->
-                            <div class="offset-4 col-4">
-                                <button type="submit" class="w-100 btn-dark mt-3" data-toggle="modal" data-target="botao-enviar">
-                                    Enviar produto
-                                </button>
-                            </div>
+                        <div class="row">
+                            <div class="col-4 offset-4">   
+                            <button type='submit' class='btn btn-secondary'>Enviar</button>
                         </div>
-                    </form>
-                    <!---Modal e Button--->
-                    <?php 
-                    if($_POST['estampa'] and $_POST['marca'] and $_POST['imagem'] and $_POST['descricao-texto'] and $_POST['estampa'] and $_POST['avaliacao'] and $_POST['preco']
-                    != ""){
-                        echo "<div class='modal fade' id='botao-enviar' tabindex='-1' role='dialog' aria-labellebdy='ModalLabel'>
-                                <div class='modal-dialog' role='document'>
-                                    <div class='modal-content'>
-                                        <div class='modal-header'>
-                                            <h5 class='modal-title' id='ModalLabel'>Avaliação do envio:</h5>
-                                            <button type='button' class='close' data-dismiss='modal' arial-label='Close'>
-                                                <span aria-hidden='true'>Seu envio foi realizado com sucesso</span>
-                                            </button>
-                                        </div>
+                            <!----Modal no Botão--->
+                        </div>
+                            <div class="modal fade" id="laranja" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	                            <div class="modal-dialog">
+		                            <div class="modal-content">
+		                                <div class="modal-header">
+			                                <h5 class="modal-title" id="exampleModalLabel">AVALIAÇÃO DAS INFORMAÇÕES:</h5>
+		                                </div>
                                         <div class='modal-body'>
-                                            ...
+                                            <span>Suas informações estão corretas e foram enviadas com sucesso!</span>
                                         </div>
                                         <div class='modal-footer'>
-                                            <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                                            <?php 
+                                            if($_POST['estampa'] and $_POST['marca'] and $_POST['imagem'] and $_POST['descricao-texto'] and $_POST['estampa'] and $_POST['avaliacao'] and $_POST['preco']
+                                            != ""){
+                                            echo "<button type='submit' class='btn btn-secondary'>Enviar</button>";}
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
-                            </div>";
-                    }
-                    ?>
+                            </div>
+                    </form>
+                    
+                    <!---Modal e Button--->
+                    <div class="row">
+                        <div class="col-4 offset-4">
+                            
+                        <button type="button" class="w-100 btn-dark mt-3" data-bs-toggle="modal" data-bs-target="#laranja">
+                            Enviar
+                        </button>
+                    </div>
+
                 </div>
         </div>
     </div>
 </body>
-    <script>
-        $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-        })
-    </script>
 <?php 
 	include "footer.php";
 ?>
+<script>
+        var Resposta = new bootstrap.Modal(document.getElementById('laranja'),)
+            Resposta.show()
+</script>
