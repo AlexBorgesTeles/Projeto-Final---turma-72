@@ -14,10 +14,8 @@ $query = mysqli_query($mysql,$sql);
 $dados = mysqli_fetch_all($query,MYSQLI_ASSOC);
 var_dump($dados);
 foreach($dados as $q)
-?>
-<div class="container">
-       <?php
-              echo "
+     echo " <div class='container'>
+         
                      <div class='card' style='background-color: blue'>
 	                     <img src='../imagens/{$q['imagem']}' class='card-img-top'alt='#' style='height: 110px; width:160px;'>
                             <div class='card-body'>
@@ -34,14 +32,13 @@ foreach($dados as $q)
                             $contador++;}
                             echo "</p></div><p><a href='deleteproduto.php?del=$dados[0]['id_carrinho']' class='btn btn-danger'>Remover produto</a></p>
                      </div>
-              ";
+             
        ?>
      	<div class='row'>
 	     <a href='detalhes.php' class='btn btn-dark'> Continuar compra</a>
 	     <br>
 	     <a href='fimdecompra.php' class='btn btn-primary'> Finalizar compra</a>
        </div>
-</div>
-<?php
+</div> ";
        include "footer.php";
 ?>
