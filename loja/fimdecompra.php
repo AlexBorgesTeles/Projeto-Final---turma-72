@@ -12,33 +12,32 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-7">
+            <div class="col">
                 <!--
                     Dados de entrega tem que estar no Banco de dados
-                    Colocar header
+                    Colocar cabecalho
                     Colocar a compra embaixo e o botao maior
                     Colocar subtotal na pagina dos dados da entrega
                 -->
-
                 <h2 class="mt-2 mb-3">Dados de entrega</h2>
                 <div class="row">
-                    <div class="col mb-3">
+                    <div class="col-8 mb-3">
                         <label for="nome" class="form-label">Nome Completo</label>
                         <input type="text" class="form-control" name="nome">
                     </div>
-                    <div class="col mb-3">
+                    <div class="col-4 mb-3">
                         <label for="telefone" class="form-label">Número de Telefone</label>
                         <input type="text" class="form-control" name="telefone">
                     </div>
                 </div>
-                <div class="col mb-3">
-                    <label for="cep" class="form-label">CEP</label>
-                    <input type="text" class="form-control" name="cep">
-                </div>
                 <div class="row">
-                    <div class="col mb-3">
+                    <div class="col-4 mb-3">
+                        <label for="cep" class="form-label">CEP</label>
+                        <input type="text" class="form-control" name="cep">
+                    </div>
+                    <div class="col-3 mb-3">
                         <label for="estado" class="form-label">Estado</label>
-                        <select id="estado" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <select id="estado" class="form-select mb-2" aria-label=".form-select-lg example">
                             <option value="" disabled selected></option>
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
@@ -70,47 +69,47 @@
                             <option value="EX">Estrangeiro</option>
                         </select>
                     </div>
-                    <div class="col mb-3">
+                    <div class="col-5 mb-3">
                         <label for="capital" class="form-label">Capital</label>
                         <input type="text" class="form-control" name="capital">
                     </div>
                 </div>
-                <div class="col mb-3">
-                    <label for="bairro" class="form-label">Bairro</label>
-                    <input type="text" class="form-control" name="bairro">
-                </div>
                 <div class="row">
-                    <div class="col-9 mb-3">
+                    <div class="col mb-3">
+                        <label for="bairro" class="form-label">Bairro</label>
+                        <input type="text" class="form-control" name="bairro">
+                    </div>
+                    <div class="col-8 mb-3">
                         <label for="endereco" class="form-label">Endereço</label>
                         <input type="text" class="form-control" name="endereco">
                     </div>
-                    <div class="col-3 mb-3">
+                </div>
+                <div class="row">
+                    <div class="col-2 mb-3">
                         <label for="numcasa" class="form-label">Número</label>
                         <input type="text" class="form-control" name="numcasa">
                     </div>
-                </div>
-                <div class="col mb-3">
-                    <label for="complemento" class="form-label">Complemento</label>
-                    <input type="text" class="form-control" name="complemento">
+                    <div class="col mb-3">
+                        <label for="complemento" class="form-label">Complemento</label>
+                        <input type="text" class="form-control" name="complemento">
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-3 mb-2">
+                    <div class="col-2 mb-2">
                         <label for="entrega" class="form-label">Salvar como:</label>
                     </div>
-                    <div class="col-9 mb-2" class="form-check">
+                    <div class="col-8 mb-2" class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">Casa</label>
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">Trabalho</label>
                     </div>
+                    <div class="col mb-2 d-grid gap-2 d-md-flex justify-content-md">
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#pagar">Adicionar cartão</button>
+                    </div>
                 </div>
-                <div class="col mb-2 d-grid gap-2 d-md-flex justify-content-md">
-                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#pagar">Adicionar cartão</button>
-                        </div>
-            </div>
 
-            <div class="col-5 mt-2">
-                <h2>Compra a ser realizada</h2>
+                <h2 class="mt-3">Compra a ser realizada</h2>
                 <?php 
                     echo "
                         <div class='col-6'>
