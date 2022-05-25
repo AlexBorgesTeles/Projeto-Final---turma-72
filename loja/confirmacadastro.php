@@ -14,7 +14,7 @@ header('Location:home.php');
 header('Location:cadastro.php');
 }
 
->>>>>>> Stashed changes
+
   
   
 ?>
