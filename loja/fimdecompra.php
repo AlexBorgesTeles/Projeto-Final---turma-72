@@ -110,22 +110,74 @@
                 </div>
 
                 <h2 class="mt-3">Compra a ser realizada</h2>
-                <?php 
-                    echo "
-                        <div class='col-6'>
-                            <div class='card'>
-                                <img src='../imagens/{$camisa['imagem']}' style='height: 18rem; margin-top: 20px;' class='card-img-top'>
-                                <div class='card-body'>
-                                    <h5 class='card-title'>{$camisa['estampa']} por {$camisa['preco']}</h5>
-                                    <p class='card-text'><b>{$camisa['descricao']}</b></p>
-                                    <p clas='card-text'>";
-                                    echo "</p>
-                                </div> 
+                <div class="row">
+                    <div class="col mb-2" class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault"></label>
+                    </div>
+                    <div class="col">
+                        <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block w-100 mb-3 mt-2" alt="roupa" height: 2px;>
+                    </div>
+                    <div class="col">
+                        <h4 class="mt-1"><?php echo $camisa['estampa']; ?></h4>
+                    </div>
+                </div>
+
+                <div class="_1BehlF">
+                    <div class="_-0yJ2-">
+                        <div class="_1Z2fe1">
+                            <div class="_3mceb9">
+                                <a title="CONJUNTO CASAL CAMISA FEMININA + CAMISA MASCULINA SELEÇÃO BRASIL MODELO 2019" href="/CONJUNTO-CASAL-CAMISA-FEMININA-CAMISA-MASCULINA-SELEÇÃO-BRASIL-MODELO-2019-i.433707183.10860012280?xptdk=f0cc0455-2e1c-4897-a1aa-dfa81ec98cec">
+                                    <div class="_25vezo" style="background-image: url(&quot;https://cf.shopee.com.br/file/bc141a9f1a94794e55ebaa5d307ae571_tn&quot;);"></div>
+                                </a>
+                                <div class="_1WfuBi">
+                                    <a class="_3t5Sij" title="CONJUNTO CASAL CAMISA FEMININA + CAMISA MASCULINA SELEÇÃO BRASIL MODELO 2019" href="/CONJUNTO-CASAL-CAMISA-FEMININA-CAMISA-MASCULINA-SELEÇÃO-BRASIL-MODELO-2019-i.433707183.10860012280?xptdk=f0cc0455-2e1c-4897-a1aa-dfa81ec98cec">CONJUNTO CASAL CAMISA FEMININA + CAMISA MASCULINA SELEÇÃO BRASIL MODELO 2019</a>
+                                    <div class="_2032rh">
+                                        <span class="_1iZFYg i1lOZb">Encomenda</span>
+                                    </div>
+                                    <div class="_21GC7u" style="background-image: url(&quot;https://cf.shopee.com.br/file/d455451ecad00fd75d3fbc09cd2bce83&quot;);">
+                                </div>
+                                <div class="fRkQR_">
+                                    <span></span>
+                                </div>
                             </div>
                         </div>
-                    ";
-                    
-                ?>
+                    </div>
+                    <div class="_34KJXV">
+                        <div class="aUj6f2">
+                            <div class="_1XT_GF" role="button" tabindex="0">
+                                <div class="Qtk_DO">Variações:<button class="vZLqsj"></button>
+                            </div>
+                            <div class="_3dqm1i">P,G</div>
+                        </div>
+                        <div>
+                    </div>
+                </div></div>
+                <div class="_1C6zuo">
+                    <div>
+                        <span class="_1E5-FE">R$239,99</span>
+                    </div>
+                </div>
+                <div class="_2vZsK0">
+                    <div class="_1knJ1D shopee-input-quantity">
+                        <button class="_2rGMck">
+                            <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon">
+                                <polygon points="4.5 4.5 3.5 4.5 0 4.5 0 5.5 3.5 5.5 4.5 5.5 10 5.5 10 4.5"></polygon>
+                            </svg>
+                        </button>
+                        <input class="_2rGMck _8rdz59" type="text" role="spinbutton" aria-valuenow="1" value="1">
+                        <button class="_2rGMck">
+                            <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon icon-plus-sign">
+                                <polygon points="10 4.5 5.5 4.5 5.5 0 4.5 0 4.5 4.5 0 4.5 0 5.5 4.5 5.5 4.5 10 5.5 10 5.5 5.5 10 5.5"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="_2S6DJl">
+                    <span>R$239,99</span>
+                </div>
+                </div></div>
+                
                 <a class="btn btn-success mt-3" href="checkout.php" role="button">Fazer pedido</a>
             </div>
         </div>

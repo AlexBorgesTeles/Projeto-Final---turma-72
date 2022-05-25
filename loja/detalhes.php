@@ -99,6 +99,7 @@
                     <a class="btn btn-outline-danger btn-lg" href="insertcarrinho.php?id_camisa= <?php $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
                 </div>
                 <div class="col">
+                    <?php echo" <a href='fimdecompra.php?id_camisa=$camisa[id_camisa]' class='btn btn-dark'>Finalizar compra</a>"; ?>
                     <a class="btn btn-danger btn-lg" href="fimdecompra.php" role="button">Comprar agora</a>
                 </div>
             </div>
