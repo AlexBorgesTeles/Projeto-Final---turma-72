@@ -5,44 +5,43 @@
     $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
     $info = mysqli_query($mysql, $select);
     $camisa = mysqli_fetch_assoc($info);
-	var_dump($camisa);
+	var_dump($camisa['id_camisa']);
 	$titlePage = $camisa['estampa'];
 	include "cabecalho.php";
 ?>
 <!--
     Preco e avaliacoes na mesma linha
-    Todos na mesma linha
+    Todos alinhados
     Muda a ordem do preco
     Separa o menu da compra
 -->
-
 <div class="container">
     <div class="row">
         <div class="col-4">
             <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block w-100 mb-3 mt-2" alt="casal vestidos na camisa" height: 60px;>
             <div>
                 <span>Compartilhe:</span>
-                    <a class="bi bi-messenger" href="https://www.messenger.com/" role="button" style="color:deepskyblue;"></a>
-                    <a class="bi bi-facebook" href="https://www.facebook.com/" role="button" style="color:blue;"></a>
-                    <a class="bi bi-pinterest" href="https://br.pinterest.com/" role="button" style="color:red;"></a>
-                    <a class="bi bi-twitter" href="https://twitter.com/" role="button" style="color:dodgerblue;"></a>
-                    <a class="bi bi-whatsapp" href="#" role="button" style="color:rgb(23, 185, 23);"></a>
-                    <a class="bi bi-telegram" href="#" role="button" style="color:rgb(45, 45, 221);"></a><br>
-                    <a class="bi bi-heart" href="#" role="button" style="color:rgb(255, 32, 32);"></a>
-                    <a href="#" role="button" style="color:black;">Favoritar (587)</a>
+                <a class="bi bi-messenger" href="https://www.messenger.com/" role="button" style="color:deepskyblue;"></a>
+                <a class="bi bi-facebook" href="https://www.facebook.com/" role="button" style="color:blue;"></a>
+                <a class="bi bi-pinterest" href="https://br.pinterest.com/" role="button" style="color:red;"></a>
+                <a class="bi bi-twitter" href="https://twitter.com/" role="button" style="color:dodgerblue;"></a>
+                <a class="bi bi-whatsapp" href="#" role="button" style="color:rgb(23, 185, 23);"></a>
+                <a class="bi bi-telegram" href="#" role="button" style="color:rgb(45, 45, 221);"></a><br>
+                <a class="bi bi-heart" href="#" role="button" style="color:rgb(255, 32, 32);"></a>
+                <a href="#" role="button" style="color:black;">Favoritar (587)</a>
             </div>
         </div>
-
         <div class="col-8">
             <h4 class="mt-1"><?php echo $camisa['estampa']; ?></h4> 
             <div class="row">
                 <div class="col-5">
-                    <p style="padding-top: 0.5rem;"><?php for($i=1;$i<=$camisa['avaliacao']; $i++){
-                        echo "<i class=' text-warning bi bi-star-fill'></i>";
-                    }?> | 8 avaliações | 500 vendidas<p>
+                    <p style="padding-top: 0.5rem;">
+                    <?php for($i=1;$i<=$camisa['avaliacao']; $i++){
+                        echo "<i class=' text-warning bi bi-star-fill'></i>";}
+                    ?> | 27 avaliações | 504 vendidas<p>
                 </div>
                 <div class="col">
-                    <h2 style="color: orange;">R$<?php echo $camisa['preco']; ?></h2>
+                    <h2 style="color: orange;">R$<?php echo $camisa['preco'];?> </h2>
                 </div>
             </div>
             
@@ -96,14 +95,14 @@
 
             <div class="row mt-2">
                 <div class="col" style="padding-left: 33px;">
-                    <a class="btn btn-outline-danger btn-lg" href="insertcarrinho.php?id_camisa= <?php $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
+                    <a class="btn btn-outline-success btn-lg" href="insertcarrinho.php?id_camisa= <?php echo $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
                 </div>
                 <div class="col">
+                    <?php echo" <a href='fimdecompra.php?id_camisa=$camisa[id_camisa]' class='btn btn-dark'>Finalizar compra</a>"; ?>
                     <a class="btn btn-danger btn-lg" href="fimdecompra.php" role="button">Comprar agora</a>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 <?php 
