@@ -111,24 +111,30 @@
 
                 <h2 class="mt-3">Compra a ser realizada</h2>
                 <div class="row">
-                    <div class="col mb-2" class="form-check">
+                    <div class="col-1 mb-2" class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault"></label>
                     </div>
-                    <div class="col">
+                    <div class="col-2">
                         <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block mb-3 mt-2" alt="roupa" style="height: 100px";>
                     </div>
-                    <div class="col">
+                    <div class="col-2">
                         <span class="mt-1"><?php echo $camisa['estampa']; ?></span>
+                    </div>
+                    <div class="col-1">
+                        <span class="mt-1">mostar o tamanho escolhido</span>
                     </div>
                     <div class="col">
                         <span>R$<?php echo $camisa['preco']; ?></span>
+                    </div>
+                    <div class="col">
+                        <span class="mt-1">mostrar quantidade escolhida</span>
                     </div>
                 </div>
 
                 
 
-                <a class="btn btn-success mt-3" href="checkout.php" role="button">Fazer pedido</a>
+                <a class="btn btn-success btn-lg mt-3" href="checkout.php" role="button">Fazer pedido</a>
 
             </div>
         </div>
