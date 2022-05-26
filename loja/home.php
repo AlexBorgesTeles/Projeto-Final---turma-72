@@ -11,7 +11,9 @@
     //Se tiver $_SESSION e se ela for vazia, selecione a pessoa pelo id, dado pelo usuário. 
 
 	include "cabecalho.php";
-
+    if(isset($_GET['sucess']) and $_GET['sucess'] != ''){
+		echo "<button type='checkbox' class='btn btn-success'>Produto adicionado ao carrinho com sucesso!</button>";
+	}
     $sql="SELECT `id_camisa`,`imagem`,`marca`,`descricao`,`avaliacao`,`preco`,`estampa` FROM camisa LIMIT 0,8";
 	$query = mysqli_query($mysql,$sql);
 	$fetchvisual = mysqli_fetch_all($query);

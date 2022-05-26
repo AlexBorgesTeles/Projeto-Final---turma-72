@@ -1,11 +1,18 @@
 <?php
 	include "conexao.php";
     session_start();
+    if (isset($_SESSION['user_id']) and $_SESSION['user_id'] !=''){
+        $sql2 = 'SELECT * FROM pessoa WHERE id_pessoa = '.$_SESSION['user_id'];
+        $query = mysqli_query($mysql, $sql2); //Ler o array
+        $pessoa = mysqli_fetch_assoc($query); //Organiza o array
+        $nome = $pessoa['nome']; 
+    }
     $id = $_GET['id_camisa'];
     $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
     $info = mysqli_query($mysql, $select);
     $camisa = mysqli_fetch_assoc($info);
-	var_dump($camisa['id_camisa']);
+    var_dump($camisa);
+    var_dump($camisa['id_camisa']);
 	$titlePage = $camisa['estampa'];
 	include "cabecalho.php";
 ?>
