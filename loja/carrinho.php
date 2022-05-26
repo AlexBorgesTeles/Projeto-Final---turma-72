@@ -44,10 +44,11 @@ var_dump($dados);
 	}
        ?>
      	<div class='row'>
-	     <a href='detalhes.php' class='btn btn-dark'> Continuar compra</a>
+	     <a href='home.php' class='btn btn-dark'> Continuar comprando</a>
 	     <br>
 	     <a href='fimdecompra.php' class='btn btn-primary'> Finalizar compra</a>
        </div>
-</div> ";
+</div> 
+<?php
        include "footer.php";
 ?>
