@@ -143,22 +143,13 @@
             let preco = document.getElementById('preco')
             let descricao = document.getElementById('descricao')
 			//testa se os inputs foram preenchidos
-			if(estampa == ""){
-				console.log('Estampa completa')
+			if(estampa.value == "" || marca.value == "" || imagem.value == ""  || avaliacao.value == ""  preco.value == "" || descricao.value  == ""){
+				console.log('Está algo errado!')
 			}else{
-                console.log('Estampa vazia.')
-            }
-            if(marca == ""){
-				console.log('Marca completa')
-			}else{
-                console.log('Marca vazia.')
-            }
-            if(imagem == ""){
-				console.log('Imagem completa')
-			}else{
-                console.log('Imagem vazia.')
+                console.log('Ta tudo limpo meu patrão! Segue o movimento, vai vai!.')
             }
 		}
         //div.innerHTML
         //input.value
+        //&&
 </script>
