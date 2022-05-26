@@ -8,7 +8,7 @@ if ($_POST['nome'] != '' and $_POST['cpf'] != '' and $_POST['rg'] != '' and $_PO
 	//teste o sqlpessoa no BD
 	//pegue o id 
 	//idpessoa
-	$sqlusuario="INSERT INTO `usuario`(`fk_id_pessoa`, `email`, `senha`, `nivel`) VALUES ('{$_POST['fk_id_pessoa']}','{$_POST['email']}','{$_POST['senha']}','2";	
+	$sqlusuario="INSERT INTO `usuario`(`fk_id_pessoa`, `email`, `senha`, `nivel`) VALUES ('{$sqlpessoa['id_pessoa']}','{$_POST['email']}','{$_POST['senha']}','2";	
 	$query=mysqli_query($mysql,$sqlpessoa,$sqlusuario);
 	$dados=mysqli_fecth_assoc($query);
 	echo "Cadastro realizado com sucesso";
