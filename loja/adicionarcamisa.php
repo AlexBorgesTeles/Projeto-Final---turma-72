@@ -11,12 +11,12 @@
     //echo "</pre>";
 
     //Deixar aberto
-    $_POST['estampa'] = " ";
-    $_POST['marca' ]= " ";
-    $_POST['imagem'] = " ";
-    $_POST['descricao-texto'] = " ";
-    $_POST['avaliacao'] = " ";
-    $_POST['preco'] = " ";
+    //$_POST['estampa'] = " ";
+    //$_POST['marca' ]= " ";
+    //$_POST['imagem'] = " ";
+    //$_POST['descricao-texto'] = " ";
+    //$_POST['avaliacao'] = " ";
+    //$_POST['preco'] = " ";
 ?>
 <body>
     <div class="container">
@@ -70,12 +70,12 @@
                             <div class="col-2 mb-3">
                                 <!----Avaliação--->
                                 <label for="avaliação">Avaliação:</label>
-                                <input type="number" class="form-control" placeholder="0" id="3" name="avaliacao" step="1" min="0" max="5">
+                                <input type="number" class="form-control" placeholder="0" id="avaliacao" name="avaliacao" step="1" min="0" max="5">
                             </div>
                             <div class="col-7 mb-3">
                                 <!----Imagem--->
                                 <label for="imagem">Imagem:</label>
-                                <input type="text" class="form-control" placeholder="camisa.png..." id="4" name="imagem">
+                                <input type="text" class="form-control" placeholder="camisa.png..." id="imagem" name="imagem">
                             </div>
                             <div class="col-3 mb-3">
                                 <!----Preço--->
@@ -84,7 +84,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">R$</span>
                                     </div>
-                                    <input type="number" class="form-control" aral-label="Amount" placeholder="10.00" id="5" name="preco" step="0,00" min="0,00" max="1.000,00">
+                                    <input type="number" class="form-control" aral-label="Amount" placeholder="10.00" id="preco" name="preco" step="0,00" min="0,00" max="1.000,00">
                                 </div>
                             </div>
                         </div>
@@ -92,12 +92,8 @@
                             <div class="col-12">
                                 <!----Descrição--->
                                 <label for="descricao">Descrição:</label><br>
-                                <textarea id="descricao" class="form-control" name="descricao-texto" rows="10" cols="30" wrap="hard"></textarea>
+                                <textarea id="descricao" class="form-control" id="descricao" name="descricao-texto" rows="10" cols="30" wrap="hard"></textarea>
                             </div>
-                        <div class="row">
-                            <div class="col-4 offset-4">   
-                            <button type='submit' class='btn btn-secondary'>Enviar</button>
-                        </div>
                             <!----Modal no Botão--->
                         </div>
                             <div class="modal fade" id="laranja" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -123,9 +119,8 @@
                     <!---Modal e Button--->
                     <div class="row">
                         <div class="col-4 offset-4">
-                            
                         <button type="button" id="butao" class="w-100 btn-dark mt-3" >
-                            Enviar
+                            Enviar02
                         </button>
                     </div>
 
@@ -143,9 +138,27 @@
             Resposta.toggle()
 			let estampa = document.getElementById('estampa')
 			let marca = document.getElementById('marca')
+            let imagem = document.getElementById('imagem')
+            let avaliacao = document.getElementById('avaliacao')
+            let preco = document.getElementById('preco')
+            let descricao = document.getElementById('descricao')
 			//testa se os inputs foram preenchidos
-			if(){
-				
-			}
+			if(estampa == ""){
+				console.log('Estampa completa')
+			}else{
+                console.log('Estampa vazia.')
+            }
+            if(marca == ""){
+				console.log('Marca completa')
+			}else{
+                console.log('Marca vazia.')
+            }
+            if(imagem == ""){
+				console.log('Imagem completa')
+			}else{
+                console.log('Imagem vazia.')
+            }
 		}
+        //div.innerHTML
+        //input.value
 </script>
