@@ -12,7 +12,6 @@ if(isset($_SESSION['user_id']) and $_SESSION['user_id'] != ''){
 $sql = "SELECT * FROM carrinho JOIN estoque ON carrinho.fk_id_pessoa = {$_SESSION['user_id']} join camisa on estoque.id_estoque = carrinho.fk_id_estoque WHERE id_camisa = estoque.fk_id_camisa;";
 $query = mysqli_query($mysql,$sql);
 $dados = mysqli_fetch_all($query,MYSQLI_ASSOC);
-var_dump($dados);
 	foreach($dados as $q){
      echo " 	<div class='card' style='background-color: blue'>
 	                     <img src='../imagens/{$q['imagem']}' class='card-img-top'alt='#' style='height: 110px; width:160px;'>
@@ -44,7 +43,9 @@ var_dump($dados);
 	}
        ?>
      	<div class='row'>
+
 	     <a href='home.php' class='btn btn-dark'> Continuar comprando</a>
+
 	     <br>
 	     <a href='fimdecompra.php' class='btn btn-primary'> Finalizar compra</a>
        </div>

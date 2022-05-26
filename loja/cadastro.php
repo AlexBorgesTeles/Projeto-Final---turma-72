@@ -27,11 +27,7 @@
                             <input type="email" class="form-control" name="email">
                             <label for="senha" class="form-label">Senha:</label>
                             <input type="password" class="form-control" name="senha">
-                            <p id='result'>Nivel</p>
-                            <select name="camisa" id="camisa">
-                                <option></option>
-                                <option value='1'>Cliente</option>
-                            </select>
+                            
                         </div>
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-primary">Enviar</button>
