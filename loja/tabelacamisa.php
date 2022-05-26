@@ -3,7 +3,9 @@
 	$titlePage = "Página Adcionar Produto";
 	include "cabecalho.php";
 
-	$sql="SELECT `id_camisa`,`estampa`,`marca`,`imagem`,`descricao`,`avaliacao`,`preco` FROM camisa;";
+	$sql="SELECT `id_camisa`,`estampa`,`marca`,`imagem`, 
+	left(`descricao` , 100) as descricao,
+	`avaliacao`,`preco` FROM camisa;";
 	$query_01= mysqli_query($mysql,$sql);
 	$fecth_01= mysqli_fetch_all($query_01, MYSQLI_ASSOC);
 	//echo "<pre>";
@@ -65,7 +67,7 @@
 								echo "<td>".$coluna_valor['estampa']."</td>";
 								echo "<td>".$coluna_valor['marca']."</td>";
 								echo "<td>".$coluna_valor['imagem']."</td>";
-								echo "<td style='text-overflow: ellipsis;'>".$coluna_valor['descricao']."</td>";
+								echo "<td ><span style='text-overflow: ellipsis;'>{$coluna_valor['descricao']}</span>"."</td>";
 								echo "<td>".$coluna_valor['avaliacao']."</td>";
 								echo "<td>".$coluna_valor['preco']."</td>";
 								echo "<td><a class='btn btn-light' href='editarcamisa.php?indice={$coluna_valor['id_camisa']}' role='button'>Editar</a></td>";
