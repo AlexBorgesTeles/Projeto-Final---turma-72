@@ -12,7 +12,7 @@
 
 	include "cabecalho.php";
     if(isset($_GET['sucess']) and $_GET['sucess'] != ''){
-		echo "<button type='checkbox' class='btn btn-success'>Produto adicionado ao carrinho com sucesso!</button>";
+		echo "<div class='alert alert-success alert-dimissible fade show' role='success'>Produto adicionado ao carrinho com sucesso!<button type='button' class='btn-close' data-bs-dismiss='success' aria-label='Close'></button></div>";
 	}
     $sql="SELECT `id_camisa`,`imagem`,`marca`,`descricao`,`avaliacao`,`preco`,`estampa` FROM camisa LIMIT 0,8";
 	$query = mysqli_query($mysql,$sql);
