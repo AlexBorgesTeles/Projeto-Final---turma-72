@@ -11,7 +11,7 @@
 	//teste o sqlpessoa no BD
 	//pegue o id 
 	//idpessoa
-	$sqlusuario="INSERT INTO `usuario`(`fk_id_pessoa`, `email`, `senha`, `nivel`) VALUES ('{$last_id}','{$_POST['email']}','{$_POST['senha']}','2";	
+	$sqlusuario="INSERT INTO `usuario`(`fk_id_pessoa`, `email`, `senha`) VALUES ('{$last_id}','{$_POST['email']}','{$_POST['senha']}'";	
 	#header('Location:home.php');
 }else{
 #header('Location:cadastro.php');
