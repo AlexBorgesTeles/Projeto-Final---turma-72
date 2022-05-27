@@ -5,7 +5,7 @@
 
     //ENVIAR NA TABELA CAMISA
     $sql="INSERT INTO `camisa`( `estampa`, `marca`, `imagem`, `descricao`, `avaliacao`, `preco`) VALUES ('{$_POST['estampa']}','{$_POST['marca']}','{$_POST['imagem']}','{$_POST['descricao-texto']}','{$_POST['avaliacao']}','{$_POST['preco']}')";
-    //$enviar= mysqli_query($mysql,$sql);
+    $enviar= mysqli_query($mysql,$sql);
     //echo "<pre>";
     //var_dump($_POST);
     //echo "</pre>";
@@ -114,6 +114,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <button type="submit"  class="w-100 btn-dark mt-3" >
+                            Enviar02
+                        </button>
                     </form>
                     
                     <!---Modal e Button--->
