@@ -1,9 +1,6 @@
 <?php
 include "conexao.php";
 session_start();
-$titlePage = "Página exemp<?php
-include "conexao.php";
-session_start();
 $titlePage = "Página exemplo";
 include "cabecalho.php";
 if (isset($_SESSION["user_id"]) and $_SESSION["user_id"] != "") {
