@@ -3,6 +3,7 @@
     session_start();
     $id = $_GET['id_camisa'];
     $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
+    include "dadosentrega.php";
     $info = mysqli_query($mysql, $select);
     $camisa = mysqli_fetch_assoc($info);
 	#var_dump($camisa);
@@ -14,7 +15,8 @@
         <div class="row">
             <div class="col">
                 <!--
-                    Dados de entrega tem que estar no Banco de dados ligar com a tabela PESSOA pra ter o nome e telefone
+                    Dados de entrega tem que estar no Banco de dados
+                    Ligar com a tabela PESSOA pra ter o nome e telefone
                     Colocar cabecalho
                     Colocar a compra embaixo e o botao maior
                     Colocar subtotal na pagina dos dados da entrega
