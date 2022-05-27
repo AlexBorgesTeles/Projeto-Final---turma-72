@@ -2,9 +2,13 @@
 	include "conexao.php";
 	$titlePage = "Página Adicionar Produto";
 	include "cabecalho.php";
-
+	//if, verificar se os valores existem e são dif de zero, ou criar uma flag
     //ENVIAR NA TABELA CAMISA
-    $sql="INSERT INTO `camisa`( `estampa`, `marca`, `imagem`, `descricao`, `avaliacao`, `preco`) VALUES ('{$_POST['estampa']}','{$_POST['marca']}','{$_POST['imagem']}','{$_POST['descricao-texto']}','{$_POST['avaliacao']}','{$_POST['preco']}')";
+	$_POST['conf'] =0;
+	
+	if($_POST['conf'] == 1){
+		$sql="INSERT INTO `camisa`( `estampa`, `marca`, `imagem`, `descricao`, `avaliacao`, `preco`) VALUES ('{$_POST['estampa']}','{$_POST['marca']}','{$_POST['imagem']}','{$_POST['descricao-texto']}','{$_POST['avaliacao']}','{$_POST['preco']}')";
+	}
     //$enviar= mysqli_query($mysql,$sql);
     //echo "<pre>";
     //var_dump($_POST);
@@ -106,7 +110,8 @@
                                             <span>Suas informações estão corretas e foram enviadas com sucesso!</span>
                                         </div>
                                         <div class='modal-footer'>
-                                            <?php
+                                            <p id="coisa"></p>
+											<?php
 											// ou vc monta um GET paginadestino.php?estammpa=XXXX&marca=YYYY...
 											//ou vc monta um ajax
                                             ?>
@@ -143,10 +148,13 @@
             let preco = document.getElementById('preco')
             let descricao = document.getElementById('descricao')
 			//testa se os inputs foram preenchidos
-			if(estampa.value == "" || marca.value == "" || imagem.value == ""  || avaliacao.value == ""  preco.value == "" || descricao.value  == ""){
+			if(estampa.value == "" || marca.value == "" || imagem.value == ""  || avaliacao.value == "" || preco.value == "" || descricao.value  == ""){
 				console.log('Está algo errado!')
 			}else{
                 console.log('Ta tudo limpo meu patrão! Segue o movimento, vai vai!.')
+				let coisa = document.getElementById('coisa')
+				coisa.innerHTML = "estampa="+estampa.value
+				coisa.innerHTML += "&marca="+marca.value
             }
 		}
         //div.innerHTML
