@@ -81,7 +81,7 @@
 
             <div class="row mt-2">
                 <div class="col" style="padding-left: 33px;">
-                    <a class="btn btn-outline-success btn-lg" href="insertcarrinho.php?id_camisa= <?php echo $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
+                    <a class="btn btn-outline-success btn-lg" href="insertcarrinho.php?id_camisa= <?php echo $camisa['id_camisa']; ?>&quantidade={$_POST['quantity']}" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
                 </div>
                 <div class="col">
                     <a class="btn btn-dark btn-lg" href="fimdecompra.php?id_camisa= <?php echo $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Comprar agora</a>
