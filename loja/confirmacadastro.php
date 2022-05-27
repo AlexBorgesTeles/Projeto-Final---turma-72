@@ -11,7 +11,7 @@
 	//teste o sqlpessoa no BD
 	//pegue o id 
 	//idpessoa
-	$sqlusuario="INSERT INTO `usuario`(`fk_id_pessoa`, `email`, `senha`) VALUES ('{$last_id}','{$_POST['email']}','{$_POST['senha']}'";
+	$sqlusuario="INSERT INTO `usuario`(`fk_id_pessoa`, `email`, `senha`) VALUES ('{$last_id}','{$_POST['email']}','{$_POST['senha']}')";
      	echo $sqlusuario;
 	$last_id = mysqli_insert_id($mysql);
         echo $last_id;
