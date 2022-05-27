@@ -17,9 +17,11 @@
 #header('Location:home.php');
 if ($_POST['nome'] and $_POST['cpf'] and $_POST['rg'] and $_POST['endereco'] and $_POST['idade'] and $_POST['telefone'] and $_POST['email'] and $_POST['senha']){
 echo "Cadastro realizado com sucesso";
-   <button type="button" class="btn btn-dark">
+   <div class="2">
+<button type="button" class="btn btn-dark">
 <a class="d-inline p-2 text-white" href="home.php"><i class="bi bi-door-open-fill"> Retornar ao Início</i></a>
 </button>
+</div>
 }else{
 #header('Location:cadastro.php');
 }
