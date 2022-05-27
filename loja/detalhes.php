@@ -1,18 +1,12 @@
 <?php
 	include "conexao.php";
     session_start();
-    if (isset($_SESSION['user_id']) and $_SESSION['user_id'] !=''){
-        $sql2 = 'SELECT * FROM pessoa WHERE id_pessoa = '.$_SESSION['user_id'];
-        $query = mysqli_query($mysql, $sql2); //Ler o array
-        $pessoa = mysqli_fetch_assoc($query); //Organiza o array
-        $nome = $pessoa['nome']; 
-    }
     $id = $_GET['id_camisa'];
     $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
     $info = mysqli_query($mysql, $select);
     $camisa = mysqli_fetch_assoc($info);
-    var_dump($camisa);
-    var_dump($camisa['id_camisa']);
+    #var_dump($camisa);
+    #var_dump($camisa['id_camisa']);
 	$titlePage = $camisa['estampa'];
 	include "cabecalho.php";
 ?>
@@ -33,9 +27,6 @@
                 <a class="bi bi-pinterest" href="https://br.pinterest.com/" role="button" style="color:red;"></a>
                 <a class="bi bi-twitter" href="https://twitter.com/" role="button" style="color:dodgerblue;"></a>
                 <a class="bi bi-whatsapp" href="#" role="button" style="color:rgb(23, 185, 23);"></a>
-                <a class="bi bi-telegram" href="#" role="button" style="color:rgb(45, 45, 221);"></a><br>
-                <a class="bi bi-heart" href="#" role="button" style="color:rgb(255, 32, 32);"></a>
-                <a href="#" role="button" style="color:black;">Favoritar (587)</a>
             </div>
         </div>
         <div class="col-8">
@@ -64,9 +55,9 @@
                 </div>
             </div>
 
-            <div class="row mb-3">
+            <div class="row mt-2 mb-3">
                 <div class="col-4" style="color: gray;">
-                    <p>TAMANHO MASCULINA</p>
+                    <p>TAMANHO</p>
                 </div>
                 <div class="col-8 flex items-center TvGNLb">
                     <button class="btn third">P</button>
@@ -75,25 +66,13 @@
                     <button class="btn third">GG</button>
                 </div>
             </div>
-                   
-            <div class="row mb-3">
-                <div class="col-4" style="color: gray;">
-                    <p>TAMANHO FEMININA</p>
-                </div>
-                <div class="col-8 flex items-center TvGNLb">
-                <button class="btn third">P</button>
-                <button class="btn third">M</button>
-                <button class="btn third">G</button>
-                <button class="btn third">GG</button>
-                </div>
-            </div>
 
             <div class="row mb-3">
                 <div class="col-4" style="color: gray;">
                     <label for="quant" class="form-label">Quantidade</label>
                 </div>
                 <div class="col-2">
-                    <input type="number" class="form-control" name="quant">
+                    <input type="number" id="quantity" class="form-control" name="quant" min="1" max="<?php echo $camisa['quantidade_e']; ?>">
                 </div>
                 <div class="col-4">
                     <span><?php echo $camisa['quantidade_e']; ?> unidades disponíveis</span>
