@@ -38,7 +38,7 @@ $dados = mysqli_fetch_all($query,MYSQLI_ASSOC);
                             echo "</p>
 						</div>
 							
-							<p><a href='deleteproduto.php?del={$q['id_carrinho']}' class='btn btn-danger'>Remover produto</a></p>
+							<p><a href='deleteproduto.php?delete={$q['id_carrinho']}' class='btn btn-danger'>Remover produto</a></p>
 				</div>";
 	}
        ?>
