@@ -70,8 +70,8 @@
 								echo "<td ><span style='text-overflow: ellipsis;'>{$coluna_valor['descricao']}</span>"."</td>";
 								echo "<td>".$coluna_valor['avaliacao']."</td>";
 								echo "<td>".$coluna_valor['preco']."</td>";
-								echo "<td><a class='btn btn-light' href='editarcamisa.php?indice={$coluna_valor['id_camisa']}' role='button'>Editar</a></td>";
-								echo "<td><a class='btn btn-danger' href='removercamisa.php?indice={$coluna_valor['id_camisa']}' role='button'>Remover</a></td>";
+								echo "<td><a class='btn btn-light' href='editarcamisa.php?tabela_editar={$coluna_valor['id_camisa']}' role='button'>Editar</a></td>";
+								echo "<td><a class='btn btn-danger' href='removercamisa.php?tabela_deleta={$coluna_valor['id_camisa']}' role='button'>Remover</a></td>";
 								echo "</tr>";
 							}
 							?>
