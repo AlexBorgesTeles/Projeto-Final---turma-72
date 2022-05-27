@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col">
                 <!--
-                    Dados de entrega tem que estar no Banco de dados
+                    Dados de entrega tem que estar no Banco de dados ligar com a tabela PESSOA pra ter o nome e telefone
                     Colocar cabecalho
                     Colocar a compra embaixo e o botao maior
                     Colocar subtotal na pagina dos dados da entrega
@@ -70,7 +70,7 @@
                         </select>
                     </div>
                     <div class="col-5 mb-3">
-                        <label for="capital" class="form-label">Capital</label>
+                        <label for="capital" class="form-label">Cidade</label>
                         <input type="text" class="form-control" name="capital">
                     </div>
                 </div>
