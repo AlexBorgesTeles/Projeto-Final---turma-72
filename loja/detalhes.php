@@ -57,18 +57,6 @@
 
             <div class="row mt-2 mb-3">
                 <div class="col-4" style="color: gray;">
-                    <p>TAMANHO</p>
-                </div>
-                <div  class="col-8 flex items-center TvGNLb">
-                    <button id='P' class="btn third">P</button>
-                    <button id='M' class="btn third">M</button>
-                    <button id='G' class="btn third">G</button>
-                    <button id='GG' class="btn third">GG</button>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-4" style="color: gray;">
                     <label for="quant" class="form-label">Quantidade</label>
                 </div>
                 <div class="col-2">
@@ -76,6 +64,18 @@
                 </div>
                 <div class="col-4">
                     <span><?php echo $camisa['quantidade_e']; ?> unidades disponíveis</span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-4" style="color: gray;">
+                    <p>TAMANHO</p>
+                </div>
+                <div  class="col-8 flex items-center TvGNLb">
+                    <button id='P' class="btn third">P</button>
+                    <button id='M' class="btn third">M</button>
+                    <button id='G' class="btn third">G</button>
+                    <button id='GG' class="btn third">GG</button>
                 </div>
             </div>
 

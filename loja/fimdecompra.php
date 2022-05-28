@@ -113,10 +113,6 @@
 
                 <h2 class="mt-3">Compra a ser realizada</h2>
                 <div class="row">
-                    <div class="col-1 mb-2" class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault"></label>
-                    </div>
                     <div class="col-2">
                         <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block mb-3 mt-2" alt="roupa" style="height: 100px";>
                     </div>
