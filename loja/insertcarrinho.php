@@ -34,7 +34,7 @@ $pedido = mysqli_fetch_assoc($query);
 	
 	//pegar info de estoque
 	
-$select = "select * from estoque where fk_id_camisa = {$id}";
+$select = "select * from estoque where fk_id_camisa = {$id} and tamanho = {$_GET['tam']}";
 $query4 = mysqli_query($mysql,$select);
 $estoque = mysqli_fetch_assoc($query4);
 	
