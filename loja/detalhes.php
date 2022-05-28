@@ -68,10 +68,10 @@
                 </div>
             <div class="row mt-2 mb-3">
                 <div class="col-4" style="color: gray;">
-                    <label for="quant" class="form-label">Quantidade</label>
+                    <label for="quantidade" class="form-label">Quantidade</label>
                 </div>
                 <div class="col-2">
-                    <input id="quant" type="number" id="quantity" class="form-control" name="quant" min="1" max="<?php echo $camisa['quantidade_e']; ?>">
+                    <input id="quantidade" type="number" class="form-control" name="quantidade" min="1" max="<?php echo $camisa['quantidade_e']; ?>">
                 </div>
                 <div class="col-4">
                     <span><?php echo $camisa['quantidade_e']; ?> unidades disponíveis</span>
