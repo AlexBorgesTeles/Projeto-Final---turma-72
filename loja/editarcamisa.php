@@ -3,7 +3,9 @@
     $titlePage = "Página de Edição";
     include "cabecalho.php";
 
-    if(isset($_POST['id_camisa']) and ($_POST['estampa']) and ($_POST['marca']) and ($_POST['avaliacao']) and ($_POST['imagem']) and ($_POST['preco']) != ""){
+    if(isset($_GET['id_camisa']) and ($_GET['estampa']) and ($_GET['marca']) and ($_GET['avaliacao']) and ($_GET['imagem']) and ($_GET['preco']) and ($_GET['descricao-texto']) != ""){
+        $sql= "UPDATE `camisa` SET `estampa`='{$_GET['estampa']}',`marca`='{$_GET['marca']}',`imagem`='{$_GET['imagem']}',`descricao`='{$_GET['descricao-texto']}',`avaliacao`='{$_GET['avaliacao']}',`preco`='{$_GET['preco']}' WHERE = {$_GET['id_camisa']} ";
+        echo $sql;
         mysqli_query($mysql,$sql_uptade);
         header('Location: tabelacamisa.php');
         die();
@@ -49,7 +51,7 @@
             </div>
             <div class="col-10">
                 <span class="text center-align "><h4><b>Coloque as modificações:</b></h4></span>
-                <form method="post" action="adicionarcamisa.php">
+                <form method="post" action="editarcamisa.php">
                     <div class="row flex">
                         <div class="col-6">
                             <!----Estampa--->
@@ -71,7 +73,7 @@
                         <div class="col-7 mb-3">
                             <!----Imagem--->
                             <label for="imagem">Imagem:</label>
-                            <input type="hidden" value="<?php echo $fetch_02['id_camisa']?>"  >
+                            <input type="hidden" id='tabela-editar' value="<?php echo $fetch_02['id_camisa']?>"  >
                             <input type="text" class="form-control" name="imagem" id="imagem" value="<?php echo $fetch_02['imagem']?>" required>
                         </div>
                         <div class="col-3 mb-3">
@@ -92,7 +94,7 @@
                             <textarea id="descricao" class="form-control" id="descricao" name="descricao-texto" rows="10" cols="30" wrap="hard"><?php echo $fetch_02['descricao']?> </textarea>
                         </div>
                         <div class="col-4">
-                            <button type="submit" href="" class="btn btn-dark" > Atualizar</button>
+                            <button type="submit" class="btn btn-dark" > Atualizar</button>
                         </div>
                     </div>
                 </form>

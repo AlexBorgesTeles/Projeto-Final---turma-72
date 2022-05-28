@@ -4,19 +4,14 @@
 	include "cabecalho.php";
 
     //ENVIAR NA TABELA CAMISA
-    $sql="INSERT INTO `camisa`( `estampa`, `marca`, `imagem`, `descricao`, `avaliacao`, `preco`) VALUES ('{$_POST['estampa']}','{$_POST['marca']}','{$_POST['imagem']}','{$_POST['descricao-texto']}','{$_POST['avaliacao']}','{$_POST['preco']}')";
-    $enviar= mysqli_query($mysql,$sql);
+
+    if (isset($_GET['confir']) and $_GET['confir'] == 1){
+        $sql="INSERT INTO `camisa`( `estampa`, `marca`, `imagem`, `descricao`, `avaliacao`, `preco`) VALUES ('{$_GET['estampa']}','{$_GET['marca']}','{$_GET['imagem']}','{$_GET['descricao-texto']}','{$_GET['avaliacao']}','{$_GET['preco']}')";
+        $enviar= mysqli_query($mysql,$sql);
+    }
     //echo "<pre>";
     //var_dump($_POST);
     //echo "</pre>";
-
-    //Deixar aberto
-    //$_POST['estampa'] = " ";
-    //$_POST['marca' ]= " ";
-    //$_POST['imagem'] = " ";
-    //$_POST['descricao-texto'] = " ";
-    //$_POST['avaliacao'] = " ";
-    //$_POST['preco'] = " ";
 ?>
 <body>
     <div class="container">
@@ -40,7 +35,7 @@
                     </li>
                     <hr>
                     <li>
-                        <a href="adcionarcamisa.php" class="nav-link text-white">
+                        <a href="adicionarcamisa.php" class="nav-link text-white">
                             <i class="bi bi-plus-circle"></i> Adcionar Produtos</i>
                         </a>
                     </li>
@@ -100,12 +95,13 @@
 	                            <div class="modal-dialog">
 		                            <div class="modal-content">
 		                                <div class="modal-header">
-			                                <h5 class="modal-title" id="exampleModalLabel">AVALIAÇÃO DAS INFORMAÇÕES:</h5>
+			                                <h5 class="modal-title" id="exampleModalLabel">CONFIRMAÇÃO DE ENVIO:</h5>
 		                                </div>
                                         <div class='modal-body'>
-                                            <span>Suas informações estão corretas e foram enviadas com sucesso!</span>
+                                            <span id='error'>Suas informações estão corretas e foram enviadas com sucesso!</span>
                                         </div>
                                         <div class='modal-footer'>
+                                            <a name="btn btn-dark" id='coisa' href="adicionarcamisa.php?">Confirmar</a>
                                             <?php
 											// ou vc monta um GET paginadestino.php?estammpa=XXXX&marca=YYYY...
 											//ou vc monta um ajax
@@ -114,9 +110,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit"  class="w-100 btn-dark mt-3" >
-                            Enviar02
-                        </button>
                     </form>
                     
                     <!---Modal e Button--->
@@ -126,7 +119,6 @@
                             Enviar02
                         </button>
                     </div>
-
                 </div>
         </div>
     </div>
@@ -146,10 +138,41 @@
             let preco = document.getElementById('preco')
             let descricao = document.getElementById('descricao')
 			//testa se os inputs foram preenchidos
-			if(estampa.value == "" || marca.value == "" || imagem.value == ""  || avaliacao.value == ""  preco.value == "" || descricao.value  == ""){
+			if(estampa.value == "" || marca.value == "" || imagem.value == ""  || avaliacao.value == "" || preco.value == "" || descricao.value  == ""){
 				console.log('Está algo errado!')
+                let error = document.getElementById('error')
+                error.innerHTML = "<p><h3 style='color: red'>Aviso!</h3><b> Alguma informação está vazia, retorne e a complete. </b></p>"
+                if(estampa.value == ""){
+                    error.innerHTML += "<p>Estampa faltando!</p>"+estampa.value
+                }
+                if(marca.value == ""){
+                    error.innerHTML += " <p>Marca faltando!</p>"+marca.value
+                }
+                if(imagem.value == ""){
+                    error.innerHTML += " <p>Imagem faltando!</p>"+imagem.value
+                }
+                if(avaliacao.value == ""){
+                    error.innerHTML += " <p>Avaliação faltando!</p>"+avaliacao.value
+                }
+                if(preco.value == ""){
+                    error.innerHTML += " <p>Preço faltando!</p>"+preco.value
+                }
+                if(descricao.value  == ""){
+                    error.innerHTML += " <p>Descrição faltando!</p>"+descricao.value
+                }
+                let coisa = document.getElementById('coisa')
+                coisa.href += coisa.href += "confir=1"
+                die()
 			}else{
                 console.log('Ta tudo limpo meu patrão! Segue o movimento, vai vai!.')
+                let coisa = document.getElementById('coisa')
+                coisa.href += "confir=1"
+                coisa.href += "&estampa="+estampa.value
+                coisa.href += "&marca="+marca.value
+                coisa.href += "&imagem="+imagem.value
+                coisa.href += "&avaliacao="+avaliacao.value
+                coisa.href += "&preco="+preco.value
+                coisa.href += "&descricao-texto="+descricao.value
             }
 		}
         //div.innerHTML
