@@ -14,6 +14,7 @@ $sql = "SELECT * FROM carrinho JOIN estoque ON carrinho.fk_id_pessoa = {$_SESSIO
 $query = mysqli_query($mysql, $sql);
 $dados = mysqli_fetch_all($query, MYSQLI_ASSOC);
 #var_dump($dados);
+echo "<div class='container'><div class='row'>";
 foreach ($dados as $q) {
     echo "<div class='col-3 btn'><div class='card' style='background-color: #4F4F4F'>
 	                     <img src='../imagens/{$q["imagem"]}' class='card-img-top'alt='#' style='height: 170px; width:410px;'>
