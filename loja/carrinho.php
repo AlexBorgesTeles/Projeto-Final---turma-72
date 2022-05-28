@@ -1,7 +1,7 @@
 <?php
 include "conexao.php";
 session_start();
-$titlePage = "Página exemplo";
+$titlePage = "Carrinho";
 include "cabecalho.php";
 if (isset($_SESSION["user_id"]) and $_SESSION["user_id"] != "") {
     $sql2 = "select * from pessoa where id_pessoa = " . $_SESSION["user_id"];
