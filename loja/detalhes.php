@@ -96,7 +96,7 @@
         let g = document.getElementById('G')
         let gg = document.getElementById('GG')
 	let quantidade = document.getElementById('quantidade')
-	let link = document.getElementById('link'
+	let link = document.getElementById('link')
 	let hlink = link.href
 	p.onclick = function(){
 		console.log('clicou em P')
