@@ -72,10 +72,10 @@
                     <p>TAMANHO</p>
                 </div>
                 <div  class="col-8 flex items-center TvGNLb">
-                    <button id='P' class='btn third'>P</button>
-                    <button id='M' class='btn third'>M</button>
-                    <button id='G' class='btn third'>G</button>
-                    <button id='GG' class='btn third'>GG</button>
+                    <button id='P' class='btn third'>'P'</button>
+                    <button id='M' class='btn third'>'M'</button>
+                    <button id='G' class='btn third'>'G'</button>
+                    <button id='GG' class='btn third'>'GG'</button>
                 </div>
             </div>
 
