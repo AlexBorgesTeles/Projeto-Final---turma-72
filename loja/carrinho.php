@@ -49,5 +49,6 @@ foreach ($dados as $q) {
 	     <br>
 	     <a href='fimdecompra.php' class='btn btn-primary'> Finalizar compra</a>
        </div>
+</div>
 <?php include "footer.php";
 ?>
