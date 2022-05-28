@@ -35,9 +35,6 @@ CREATE TABLE `carrinho` (
 
 INSERT INTO `carrinho` (`id_carrinho`, `fk_id_pessoa`, `fk_id_estoque`, `quantidade`, `fk_id_pedido`) VALUES
 (24, 10, 4, 5, 2),
-(25, 8, 3, 1, 1),
-(26, 8, 4, 5, 1),
-(27, 8, 1, 5, 1),
 (28, 8, 1, 5, 1),
 (29, 8, 4, 5, 30),
 (30, 8, 16, 5, 30),
@@ -51,7 +48,13 @@ INSERT INTO `carrinho` (`id_carrinho`, `fk_id_pessoa`, `fk_id_estoque`, `quantid
 (38, 8, 14, 5, 30),
 (39, 8, 4, 5, 30),
 (40, 8, 13, 5, 30),
-(41, 8, 4, 7, 30);
+(42, 8, 4, 1, 30),
+(43, 8, 1, 8, 30),
+(44, 8, 9, 4, 30),
+(45, 10, 1, 2, 37),
+(46, 10, 4, 2, 37),
+(47, 10, 15, 4, 37),
+(48, 10, 4, 1, 37);
 
 --
 -- Índices para tabelas despejadas
