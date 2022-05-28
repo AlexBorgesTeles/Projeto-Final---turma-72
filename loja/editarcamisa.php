@@ -3,11 +3,10 @@
     $titlePage = "Página de Edição";
     include "cabecalho.php";
 
-    if(isset($_GET['id_camisa']) and ($_GET['estampa']) and ($_GET['marca']) and ($_GET['avaliacao']) and ($_GET['imagem']) and ($_GET['preco']) and ($_GET['descricao-texto']) != ""){
-        $sql= "UPDATE `camisa` SET `estampa`='{$_GET['estampa']}',`marca`='{$_GET['marca']}',`imagem`='{$_GET['imagem']}',`descricao`='{$_GET['descricao-texto']}',`avaliacao`='{$_GET['avaliacao']}',`preco`='{$_GET['preco']}' WHERE = {$_GET['id_camisa']} ";
-        echo $sql;
-        mysqli_query($mysql,$sql_uptade);
-        header('Location: tabelacamisa.php');
+    if(isset($_GET['id_camisa']) and $_GET['id_camisa'] != ""){
+        //$sql= "UPDATE `camisa` SET `estampa`='{$_GET['estampa']}',`marca`='{$_GET['marca']}',`imagem`='{$_GET['imagem']}',`descricao`='{$_GET['descricao-texto']}',`avaliacao`='{$_GET['avaliacao']}',`preco`='{$_GET['preco']}' WHERE = {$_GET['id_camisa']} ";
+        //mysqli_query($mysql,$sql_uptade);
+        //header('Location: tabelacamisa.php');
         die();
     }
 
