@@ -14,9 +14,10 @@ $sql = "SELECT * FROM carrinho JOIN estoque ON carrinho.fk_id_pessoa = {$_SESSIO
 $query = mysqli_query($mysql, $sql);
 $dados = mysqli_fetch_all($query, MYSQLI_ASSOC);
 #var_dump($dados);
+echo "<div class='container'>";
 foreach ($dados as $q) {
     echo "<div class='col-3 btn'><div class='card' style='background-color: #4F4F4F'>
-	                     <img src='../imagens/{$q["imagem"]}' class='card-img-top'alt='#' style='height: 170px; width:410px;'>
+	                     <img src='../imagens/{$q["imagem"]}' class='card-img-top'alt='#' >
 						<div class='card-body' style='color:white'>
                             <h4 class='card-title' >{$q["estampa"]}</h4>
                             <h6 class='card-body'>tamanho disponivel: 
@@ -37,11 +38,10 @@ foreach ($dados as $q) {
         $contador++;
     }
     echo "</p>
-						
-							
-							<a href='deleteproduto.php?delete={$q['id_carrinho']}' class='btn btn-danger'>Remover produto</a></div>
- </div>
-   </div>";
+	<a href='deleteproduto.php?delete={$q['id_carrinho']}' class='btn btn-danger'>Remover produto</a>
+	</div>
+	</div>
+	</div>";
 }
 ?>
      	<div class='row'>

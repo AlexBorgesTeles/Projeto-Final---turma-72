@@ -59,11 +59,11 @@
                 <div class="col-4" style="color: gray;">
                     <p>TAMANHO</p>
                 </div>
-                <div class="col-8 flex items-center TvGNLb">
-                    <button class="btn third">P</button>
-                    <button class="btn third">M</button>
-                    <button class="btn third">G</button>
-                    <button class="btn third">GG</button>
+                <div  class="col-8 flex items-center TvGNLb">
+                    <button id='P' class="btn third">P</button>
+                    <button id='M' class="btn third">M</button>
+                    <button id='G' class="btn third">G</button>
+                    <button id='GG' class="btn third">GG</button>
                 </div>
             </div>
 
@@ -72,7 +72,7 @@
                     <label for="quant" class="form-label">Quantidade</label>
                 </div>
                 <div class="col-2">
-                    <input type="number" id="quantity" class="form-control" name="quant" min="1" max="<?php echo $camisa['quantidade_e']; ?>">
+                    <input id="quant" type="number" id="quantity" class="form-control" name="quant" min="1" max="<?php echo $camisa['quantidade_e']; ?>">
                 </div>
                 <div class="col-4">
                     <span><?php echo $camisa['quantidade_e']; ?> unidades disponíveis</span>
@@ -81,7 +81,7 @@
 
             <div class="row mt-2">
                 <div class="col" style="padding-left: 33px;">
-                    <a class="btn btn-outline-success btn-lg" href="insertcarrinho.php?id_camisa= <?php echo $camisa['id_camisa']; ?>&quantidade={$_POST['quantity']}" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
+                    <a id='link' class="btn btn-outline-success btn-lg" href="insertcarrinho.php?id_camisa=<?php echo $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
                 </div>
                 <div class="col">
                     <a class="btn btn-dark btn-lg" href="fimdecompra.php?id_camisa= <?php echo $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Comprar agora</a>
@@ -90,6 +90,21 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+	let p = document.getElementById('P')
+	let quant = document.getElementById('quant')
+	let link = document.getElementById('link')
+	p.onclick = function(){
+		console.log('clicou em P')
+	}
+	let hlink = link.href
+	quant.onchange = function(){
+		console.log('mudou')
+		link.href = hlink+"&quant="+quant.value
+	}
+	
+	
+</script>
 <?php 
 	include "footer.php";
 ?>
