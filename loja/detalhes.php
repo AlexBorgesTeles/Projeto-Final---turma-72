@@ -92,15 +92,39 @@
 </div>
 <script type="text/javascript">
 	let p = document.getElementById('P')
-	let quant = document.getElementById('quant')
-	let link = document.getElementById('link')
+	let m = document.getElementById('M')
+        let g = document.getElementById('G')
+        let gg = document.getElementById('GG')
+	let quantidade = document.getElementById('quantidade')
+	let link = document.getElementById('link'
+	let hlink = link.href
 	p.onclick = function(){
 		console.log('clicou em P')
-	}
-	let hlink = link.href
-	quant.onchange = function(){
+                console.log(p.innerHTML)
+        quantidade.onchange = function(){
 		console.log('mudou')
-		link.href = hlink+"&quant="+quant.value
+		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+p.innerHTML   
+	}}
+        m.onclick = function(){
+		console.log('clicou em M')
+                console.log(m.innerHTML)
+        quantidade.onchange = function(){
+		console.log('mudou')
+		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+m.innerHTML
+	}}
+        g.onclick = function(){
+		console.log('clicou em G')
+                console.log(g.innerHTML)
+        quantidade.onchange = function(){
+		console.log('mudou')
+		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+g.innerHTML}
+	}
+        gg.onclick = function(){
+		console.log('clicou em GG')
+                console.log(gg.innerHTML)
+        quantidade.onchange = function(){
+		console.log('mudou')
+		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+gg.innerHTML}
 	}
 	
 	
