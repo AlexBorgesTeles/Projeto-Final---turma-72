@@ -14,18 +14,19 @@ $sql = "SELECT * FROM carrinho JOIN estoque ON carrinho.fk_id_pessoa = {$_SESSIO
 $query = mysqli_query($mysql, $sql);
 $dados = mysqli_fetch_all($query, MYSQLI_ASSOC);
 #var_dump($dados);
+echo "<div class='container'>";
 foreach ($dados as $q) {
-    echo " 	<div class= 'container'><div class='col-2 btn'><div class='card' style='background-color: #4F4F4F'>
-	                     <img src='../imagens/{$q["imagem"]}' class='card-img-top'alt='#' style='height: 110px; width:160px;'>
-						<div class='card-body'>
-                            <h4 style='color:white;' >{$q["estampa"]}</h4></div>
-                            <h6 class='card-title' style='color:white;'>tamanho disponivel: 
+    echo "<div class='col-3 btn'><div class='card' style='background-color: #4F4F4F'>
+	                     <img src='../imagens/{$q["imagem"]}' class='card-img-top'alt='#' >
+						<div class='card-body' style='color:white'>
+                            <h4 class='card-title' >{$q["estampa"]}</h4>
+                            <h6 class='card-body'>tamanho disponivel: 
                             {$q["tamanho"]}</h6>
-                            <p style='color:white;'>cor disponivel: {$q["cor"]}</p>
-                            <p style='color:white;'> quantidade requisitada: {$q["quantidade"]}</p>
-                            <p style='color:white;'>quantidade no estoque: {$q["quantidade_e"]}</p>
-                            <p style='color:white;'>R$ {$q["preco"]}</p><p>   
-                            <p style='color:white;'>{$q["avaliacao"]}</p><p style='color:white;'>";
+                            <p class='card-text'>cor disponivel: {$q["cor"]}</p>
+                            <p class='card-text'> quantidade requisitada: {$q["quantidade"]}</p>
+                            <p class='card-text'>quantidade no estoque: {$q["quantidade_e"]}</p>
+                            <p class='card-text'>R$ {$q["preco"]}</p>  
+                            <p class='card-text' style='color:white;'>";
     $contador = 0;
     while ($contador < 5) {
         if ($q["avaliacao"] > $contador) {
@@ -37,11 +38,10 @@ foreach ($dados as $q) {
         $contador++;
     }
     echo "</p>
-						</div>
-							
-							<p><a href='deleteproduto.php?delete={$q['id_carrinho']}' class='btn btn-danger'>Remover produto</a></p>			
-    </div>
-   </div>";
+	<a href='deleteproduto.php?delete={$q['id_carrinho']}' class='btn btn-danger'>Remover produto</a>
+	</div>
+	</div>
+	</div>";
 }
 ?>
      	<div class='row'>
@@ -49,7 +49,6 @@ foreach ($dados as $q) {
 	     <br>
 	     <a href='fimdecompra.php' class='btn btn-primary'> Finalizar compra</a>
        </div>
-   </div> 
 </div>
 <?php include "footer.php";
 ?>
