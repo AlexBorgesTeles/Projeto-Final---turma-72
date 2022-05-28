@@ -72,19 +72,19 @@
                     <p>TAMANHO</p>
                 </div>
                 <div  class="col-8 flex items-center TvGNLb">
-                    <button id='P' class="btn third">P</button>
-                    <button id='M' class="btn third">M</button>
-                    <button id='G' class="btn third">G</button>
-                    <button id='GG' class="btn third">GG</button>
+                    <button id='P' class='btn third'>P</button>
+                    <button id='M' class='btn third'>M</button>
+                    <button id='G' class='btn third'>G</button>
+                    <button id='GG' class='btn third'>GG</button>
                 </div>
             </div>
 
             <div class="row mt-2">
                 <div class="col" style="padding-left: 33px;">
-                    <a id='link' class="btn btn-outline-success btn-lg" href="insertcarrinho.php?id_camisa=<?php echo $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
+                    <a id="link" class="btn btn-outline-success btn-lg" href="insertcarrinho.php?id_camisa=<?php echo $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
                 </div>
                 <div class="col">
-                    <a class="btn btn-dark btn-lg" href="fimdecompra.php?id_camisa= <?php echo $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Comprar agora</a>
+                    <a class="btn btn-dark btn-lg" href="fimdecompra.php?id_camisa=<?php echo $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Comprar agora</a>
                 </div>
             </div>
         </div>
