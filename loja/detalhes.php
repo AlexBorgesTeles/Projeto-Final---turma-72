@@ -41,13 +41,7 @@
                 <div class="col">
                     <h2 style="color: orange;">R$<?php echo $camisa['preco'];?> </h2>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-4" style="color: gray;">
-                    <p>TAMANHO</p>
-                </div>
-                
-            </div>
+		</div>
 
             <div class="row">
                 <div class="col-4 mt-4" style="color: gray;">
@@ -60,18 +54,23 @@
                     <span style="margin-left: 20px; color: gray;">Para compras acima de R$29,00</span>
                 </div>
             </div>
-             <div  class="col-8 flex items-center TvGNLb">
+	<div class="row mb-2">
+             <div class="col-4" style="color: gray;">
+                    <p>TAMANHO</p>
+                </div>
+                <div  class="col-8 flex items-center TvGNLb">
                     <button id='P' class='btn third'>'P'</button>
                     <button id='M' class='btn third'>'M'</button>
                     <button id='G' class='btn third'>'G'</button>
                     <button id='GG' class='btn third'>'GG'</button>
                 </div>
+		    </div>
             <div class="row mt-2 mb-3">
                 <div class="col-4" style="color: gray;">
-                    <label for="quant" class="form-label">Quantidade</label>
+                    <label for="quantidade" class="form-label">Quantidade</label>
                 </div>
                 <div class="col-2">
-                    <input id="quant" type="number" id="quantity" class="form-control" name="quant" min="1" max="<?php echo $camisa['quantidade_e']; ?>">
+                    <input id="quantidade" type="number" class="form-control" name="quantidade" min="1" max="<?php echo $camisa['quantidade_e']; ?>">
                 </div>
                 <div class="col-4">
                     <span><?php echo $camisa['quantidade_e']; ?> unidades disponíveis</span>
