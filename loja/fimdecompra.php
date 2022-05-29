@@ -1,6 +1,5 @@
 <?php
     include "conexao.php";
-    session_start();
     $id = $_GET['id_camisa'];
     $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
     include "dadosentrega.php";
@@ -9,6 +8,7 @@
 	#var_dump($camisa);
 	$titlePage = "Finalizando sua compra!";
 	include "cabecalho.php";
+    session_start();
 ?>
 <body>
     <div class="container">
@@ -22,117 +22,134 @@
                     Colocar subtotal na pagina dos dados da entrega
                 -->
                 <h2 class="mt-2 mb-3">Dados de entrega</h2>
-                <div class="row">
-                    <div class="col-8 mb-3">
-                        <label for="nome" class="form-label">Nome Completo</label>
-                        <input type="text" class="form-control" name="nome">
+                <form action="confirmacadastro.php" method="post" class="row">
+                    <div class="row">
+                        <div class="col-8 mb-3">
+                            <label for="nome" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" name="nome">
+                        </div>
+                        <div class="col-4 mb-3">
+                            <label for="telefone" class="form-label">Número de Telefone</label>
+                            <input type="text" class="form-control" name="telefone">
+                        </div>
                     </div>
-                    <div class="col-4 mb-3">
-                        <label for="telefone" class="form-label">Número de Telefone</label>
-                        <input type="text" class="form-control" name="telefone">
+                    <div class="row">
+                        <div class="col-4 mb-3">
+                            <label for="cep" class="form-label">CEP</label>
+                            <input type="text" class="form-control" name="cep">
+                        </div>
+                        <div class="col-3 mb-3">
+                            <label for="estado" class="form-label">Estado</label>
+                            <select id="estado" class="form-select mb-2" aria-label=".form-select-lg example">
+                                <option value="" disabled selected></option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                                <option value="EX">Estrangeiro</option>
+                            </select>
+                        </div>
+                        <div class="col-5 mb-3">
+                            <label for="capital" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" name="capital">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-4 mb-3">
-                        <label for="cep" class="form-label">CEP</label>
-                        <input type="text" class="form-control" name="cep">
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label for="bairro" class="form-label">Bairro</label>
+                            <input type="text" class="form-control" name="bairro">
+                        </div>
+                        <div class="col-8 mb-3">
+                            <label for="endereco" class="form-label">Endereço</label>
+                            <input type="text" class="form-control" name="endereco">
+                        </div>
                     </div>
-                    <div class="col-3 mb-3">
-                        <label for="estado" class="form-label">Estado</label>
-                        <select id="estado" class="form-select mb-2" aria-label=".form-select-lg example">
-                            <option value="" disabled selected></option>
-                            <option value="AC">Acre</option>
-                            <option value="AL">Alagoas</option>
-                            <option value="AP">Amapá</option>
-                            <option value="AM">Amazonas</option>
-                            <option value="BA">Bahia</option>
-                            <option value="CE">Ceará</option>
-                            <option value="DF">Distrito Federal</option>
-                            <option value="ES">Espírito Santo</option>
-                            <option value="GO">Goiás</option>
-                            <option value="MA">Maranhão</option>
-                            <option value="MT">Mato Grosso</option>
-                            <option value="MS">Mato Grosso do Sul</option>
-                            <option value="MG">Minas Gerais</option>
-                            <option value="PA">Pará</option>
-                            <option value="PB">Paraíba</option>
-                            <option value="PR">Paraná</option>
-                            <option value="PE">Pernambuco</option>
-                            <option value="PI">Piauí</option>
-                            <option value="RJ">Rio de Janeiro</option>
-                            <option value="RN">Rio Grande do Norte</option>
-                            <option value="RS">Rio Grande do Sul</option>
-                            <option value="RO">Rondônia</option>
-                            <option value="RR">Roraima</option>
-                            <option value="SC">Santa Catarina</option>
-                            <option value="SP">São Paulo</option>
-                            <option value="SE">Sergipe</option>
-                            <option value="TO">Tocantins</option>
-                            <option value="EX">Estrangeiro</option>
-                        </select>
+                    <div class="row">
+                        <div class="col-2 mb-3">
+                            <label for="numcasa" class="form-label">Número</label>
+                            <input type="text" class="form-control" name="numcasa">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="complemento" class="form-label">Complemento</label>
+                            <input type="text" class="form-control" name="complemento">
+                        </div>
                     </div>
-                    <div class="col-5 mb-3">
-                        <label for="capital" class="form-label">Cidade</label>
-                        <input type="text" class="form-control" name="capital">
+                    <div class="row">
+                        <div class="col-2 mb-2">
+                            <label for="entrega" class="form-label">Salvar como:</label>
+                        </div>
+                        <div class="col-8 mb-2" class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">Casa</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">Trabalho</label>
+                        </div>
+                        <div class="col mb-2 d-grid gap-2 d-md-flex justify-content-md">
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#pagar">Adicionar cartão</button>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col mb-3">
-                        <label for="bairro" class="form-label">Bairro</label>
-                        <input type="text" class="form-control" name="bairro">
+                    <h2 class="mt-3">Compra a ser realizada</h2>
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block mb-3 mt-2" alt="roupa" style="height: 100px";>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <span class="mt-1"><?php echo $camisa['estampa']; ?></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <span class="mt-1">mostar o tamanho escolhido</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <span>R$<?php echo $camisa['preco']; ?></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <span class="mt-1">mostrar quantidade escolhida</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col-2">
+                                    <span>i love you</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-8 mb-3">
-                        <label for="endereco" class="form-label">Endereço</label>
-                        <input type="text" class="form-control" name="endereco">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-2 mb-3">
-                        <label for="numcasa" class="form-label">Número</label>
-                        <input type="text" class="form-control" name="numcasa">
-                    </div>
-                    <div class="col mb-3">
-                        <label for="complemento" class="form-label">Complemento</label>
-                        <input type="text" class="form-control" name="complemento">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-2 mb-2">
-                        <label for="entrega" class="form-label">Salvar como:</label>
-                    </div>
-                    <div class="col-8 mb-2" class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">Casa</label>
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">Trabalho</label>
-                    </div>
-                    <div class="col mb-2 d-grid gap-2 d-md-flex justify-content-md">
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#pagar">Adicionar cartão</button>
-                    </div>
-                </div>
-
-                <h2 class="mt-3">Compra a ser realizada</h2>
-                <div class="row">
-                    <div class="col-2">
-                        <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block mb-3 mt-2" alt="roupa" style="height: 100px";>
-                    </div>
-                    <div class="col-2">
-                        <span class="mt-1"><?php echo $camisa['estampa']; ?></span>
-                    </div>
-                    <div class="col-1">
-                        <span class="mt-1">mostar o tamanho escolhido</span>
-                    </div>
-                    <div class="col">
-                        <span>R$<?php echo $camisa['preco']; ?></span>
-                    </div>
-                    <div class="col">
-                        <span class="mt-1">mostrar quantidade escolhida</span>
-                    </div>
-                </div>
-
-                
-
-                <a class="btn btn-success btn-lg mt-3" href="checkout.php" role="button">Fazer pedido</a>
+                    <a class="btn btn-success btn-lg mt-3" href="checkout.php" role="button">Fazer pedido</a>
+                </form>
 
             </div>
         </div>
