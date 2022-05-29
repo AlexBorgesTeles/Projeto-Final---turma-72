@@ -54,10 +54,11 @@
                     <span style="margin-left: 20px; color: gray;">Para compras acima de R$29,00</span>
                 </div>
             </div>
-	<div class="row mb-3">
+	<div class="row mb-2">
              <div class="col-4" style="color: gray;">
                     <p>TAMANHO</p>
-                
+                </div>
+                <div  class="col-8 flex items-center TvGNLb">
                     <button id='P' class='btn third'>'P'</button>
                     <button id='M' class='btn third'>'M'</button>
                     <button id='G' class='btn third'>'G'</button>
