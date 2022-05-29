@@ -41,13 +41,7 @@
                 <div class="col">
                     <h2 style="color: orange;">R$<?php echo $camisa['preco'];?> </h2>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-4" style="color: gray;">
-                    <p>TAMANHO</p>
-                </div>
-                
-            </div>
+		</div>
 
             <div class="row">
                 <div class="col-4 mt-4" style="color: gray;">
@@ -60,12 +54,16 @@
                     <span style="margin-left: 20px; color: gray;">Para compras acima de R$29,00</span>
                 </div>
             </div>
-             <div  class="col-8 flex items-center TvGNLb">
+	<div class="row mb-3">
+             <div class="col-4" style="color: gray;">
+                    <p>TAMANHO</p>
+                
                     <button id='P' class='btn third'>'P'</button>
                     <button id='M' class='btn third'>'M'</button>
                     <button id='G' class='btn third'>'G'</button>
                     <button id='GG' class='btn third'>'GG'</button>
                 </div>
+		    </div>
             <div class="row mt-2 mb-3">
                 <div class="col-4" style="color: gray;">
                     <label for="quantidade" class="form-label">Quantidade</label>
