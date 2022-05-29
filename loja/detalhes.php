@@ -60,7 +60,7 @@
                     <span style="margin-left: 20px; color: gray;">Para compras acima de R$29,00</span>
                 </div>
             </div>
-                <div class="col-8 flex items-center TvGNLb" style="margin-left: 20px;">
+             <div  class="col-8 flex items-center TvGNLb">
                     <button id='P' class='btn third'>'P'</button>
                     <button id='M' class='btn third'>'M'</button>
                     <button id='G' class='btn third'>'G'</button>
@@ -71,7 +71,7 @@
                     <label for="quant" class="form-label">Quantidade</label>
                 </div>
                 <div class="col-2">
-                    <input type="number" id="quantity" class="form-control" name="quant" min="1" max="<?php echo $camisa['quantidade_e']; ?>">
+                    <input id="quant" type="number" id="quantity" class="form-control" name="quant" min="1" max="<?php echo $camisa['quantidade_e']; ?>">
                 </div>
                 <div class="col-4">
                     <span><?php echo $camisa['quantidade_e']; ?> unidades disponíveis</span>
