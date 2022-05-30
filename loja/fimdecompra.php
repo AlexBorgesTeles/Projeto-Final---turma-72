@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include "conexao.php";
     $id = $_GET['id_camisa'];
     $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
@@ -8,7 +9,6 @@
 	#var_dump($camisa);
 	$titlePage = "Finalizando sua compra!";
 	include "cabecalho.php";
-    session_start();
 ?>
 <body>
     <div class="container">
