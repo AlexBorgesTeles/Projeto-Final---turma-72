@@ -4,7 +4,7 @@ session_start();
 $titlePage = "Adicionar ao carrinho";
 include "cabecalho.php";
 $id = $_GET["id_camisa"];
-var_dump($id);
+#var_dump($id);
 #echo $id;
 if (isset($_SESSION["user_id"]) and $_SESSION["user_id"] != "") {
     $sql2 = "select * from pessoa where id_pessoa = " . $_SESSION["user_id"];
@@ -41,7 +41,7 @@ $pedido = mysqli_fetch_assoc($query);
 
 //pegar info de estoque
 
-$select = "select * from estoque where fk_id_camisa = {$id} and tamanho = {$_GET["tam"]}";
+$select = "select * from estoque where fk_id_camisa = {$id} and tamanho = '{$_GET["tam"]}'";
 $query4 = mysqli_query($mysql, $select);
 $estoque = mysqli_fetch_assoc($query4);
 
@@ -54,11 +54,13 @@ if ($estoque["quantidade_e"] == 0) {
 } else {
     echo "";
 }
-// se $_GET['quantidade'] ou $_GET["tam"] forem != ''
-if($_GET['quantidade'] != ''||$_GET["tam"] != ''){
+// se $_GET['quantidade'] and $_GET["tam"] forem != ''
+if($_GET['quantidade'] != '' and $_GET["tam"] != ''){
 $insertcarrinho = "insert into `carrinho` (`fk_id_pessoa`,`fk_id_estoque`, `quantidade`, `fk_id_pedido`) values ('{$pessoa["id_pessoa"]}','{$estoque["id_estoque"]}','{$_GET['quantidade']}','{$pedido["id_pedido"]}')";
 $query = mysqli_query($mysql, $insertcarrinho);
 header('Location: home.php?sucess=1');
-}else{header('Location: detalhes.php?error=1');}
+}else{
+	header('Location: detalhes.php?id_camisa='.$id.'&error=1');
+	}
 //else{header("Location: home.php?error=1");}
 ?>
