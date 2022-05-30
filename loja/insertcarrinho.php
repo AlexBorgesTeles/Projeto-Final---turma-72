@@ -46,15 +46,20 @@ $select = "select * from estoque where fk_id_camisa = {$id} and tamanho = {$_GET
 $query4 = mysqli_query($mysql, $select);
 $estoque = mysqli_fetch_assoc($query4);
 
+//verificar se existe $id no $pedido
+//caso sim: adiciona um na quantidade
+//se não adiciona um novo
+
 if ($estoque["quantidade_e"] == 0) {
     echo "Não há esse produto em nossos estoques!";
 } else {
     echo "";
 }
-
+// se $quantidade ou $_GET["tam"] forem != ''
 $insertcarrinho = "insert into `carrinho` (`fk_id_pessoa`,`fk_id_estoque`, `quantidade`, `fk_id_pedido`) values ('{$pessoa["id_pessoa"]}','{$estoque["id_estoque"]}','{$quantidade}','{$pedido["id_pedido"]}')";
 $query = mysqli_query($mysql, $insertcarrinho);
 if ($query != 0) {
     header("Location: home.php?sucess=1");
 }
+//else{header("Location: home.php?error=1");}
 ?>
