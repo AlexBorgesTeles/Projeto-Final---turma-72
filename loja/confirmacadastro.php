@@ -6,7 +6,7 @@
 		$sqlpessoa="INSERT INTO `pessoa`(`nome`, `cpf`, `rg`, `endereco`, `idade`, `telefone`) VALUES ('{$_POST['nome']}','{$_POST['cpf']}','{$_POST['rg']}','{$_POST['endereco']}','{$_POST['idade']}','{$_POST['telefone']}')";
 		$query=mysqli_query($mysql,$sqlpessoa);
 		$last_id = mysqli_insert_id($mysql);
-		
+		$dados=mysqli_fetch_assoc($query);
 		//teste o sqlpessoa no BD
 		//pegue o id 
 		//idpessoa
@@ -19,9 +19,10 @@ if ($_POST['nome'] and $_POST['cpf'] and $_POST['rg'] and $_POST['endereco'] and
 
 header('Location:login.php');
 }else{
-if (isset($_POST['nome']) and $_POST['cpf'] ){
- echo "incorreto ou Incompleto";
-}
+$laranja="Incorreto ou Incompleto";
+if (isset($_POST['nome']) and $_POST['cpf'] != )
+ echo "$laranja";
+
 header('Location:cadastro.php');
 }
 
