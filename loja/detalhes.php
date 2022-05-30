@@ -12,9 +12,21 @@
 ?>
 <style>
     .mudanca {
-    background-color: coral;
+    background-color: green;
     color: black;
     }
+    
+    .btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 18px;
+    }
+    .active, .btn:hover {
+    background-color: #666;
+    color: white;}
 </style>
 <!--
     Preco e avaliacoes na mesma linha
@@ -65,15 +77,15 @@
                     <span style="margin-left: 20px; color: gray;">Para compras acima de R$29,00</span>
                 </div>
             </div>
-	        <div class="row mb-2">
+	        <div class="row mt-1 mb-2">
                 <div class="col-4" style="color: gray;">
                     <p>TAMANHO</p>
                 </div>
-                <div id="mudanca" class="col-8 flex items-center TvGNLb">
-                    <button id='P' class='btn third' onclick="cor()">P</button>
-                    <button id='M' class='btn third' onclick="cor()">M</button>
-                    <button id='G' class='btn third' onclick="cor()">G</button>
-                    <button id='GG' class='btn third' onclick="cor()">GG</button>
+                <div id="botao" class="col-8 flex items-center TvGNLb">
+                    <button id='P' class='btn' onclick="estilo()">P</button>
+                    <button id='M' class='btn' onclick="estilo()">M</button>
+                    <button id='G' class='btn' onclick="estilo()">G</button>
+                    <button id='GG' class='btn' onclick="estilo()">GG</button>
                 </div>
 		    </div>
             <div class="row mt-2 mb-3">
@@ -134,10 +146,16 @@
 		console.log('mudou')
 		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+gg.innerHTML}
 	}
-    cor.onclick = function() {
-        var element = document.getElementById("mudanca");
-        element.classList.add("mudanca");
-    }
+    
+    var header = document.getElementById("myDIV");
+    var btns = header.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+    });
+}
 	
 	
 </script>
