@@ -19,12 +19,12 @@ foreach ($dados as $q) {
     echo "<div class='col-3 btn'><div class='card' style='background-color: #4F4F4F'>
 	                     <img src='../imagens/{$q["imagem"]}' class='card-img-top'alt='#' >
 						<div class='card-body' style='color:white'>
-                            <h4 class='card-title' >{$q["estampa"]}</h4>
-                            <h6 class='card-body'>tamanho: 
+                            <h4 class='card-title mb-1' >{$q["estampa"]}</h4>
+                            <h6 class='card-body mb-0'>tamanho: 
                             {$q["tamanho"]}</h6>
-                            <p class='card-text'>cor: {$q["cor"]}</p>
-                            <p class='card-text'> quantidade: {$q["quantidade"]}</p
-                            <p class='card-text'>R$ {$q["preco"]}</p>  
+                            <p class='card-text mb-0'>cor: {$q["cor"]}</p>
+                            <p class='card-text mb-0'> quantidade: {$q["quantidade"]}</p
+                            <p class='card-text mb-0'>R$ {$q["preco"]}</p>  
                 
 	<a href='deleteproduto.php?delete={$q['id_carrinho']}' class='btn btn-danger'>Remover produto</a>
 	</div>
