@@ -11,15 +11,18 @@
     //Se tiver $_SESSION e se ela for vazia, selecione a pessoa pelo id, dado pelo usuário. 
 
 	include "cabecalho.php";
-    if(isset($_GET['sucess']) and $_GET['sucess'] != ''){
-		echo "<div class='alert alert-success alert-dimissible fade show' role='success'>Produto adicionado ao carrinho com sucesso!<button type='button' class='btn-close' data-bs-dismiss='success' aria-label='Close'></button></div>";
-	}
+   
     $sql="SELECT `id_camisa`,`imagem`,`marca`,`descricao`,`avaliacao`,`preco`,`estampa` FROM camisa LIMIT 0,8";
 	$query = mysqli_query($mysql,$sql);
 	$fetchvisual = mysqli_fetch_all($query);
 
 ?>
 <div class="container">
+		<?php 
+		 if(isset($_GET['sucess']) and $_GET['sucess'] != ''){
+			echo "<div class='alert alert-success alert-dimissible fade show' role='success'>Produto adicionado ao carrinho com sucesso!<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+		}
+		?>
         <!----Slide Central-->
         <div class="row">
             <div class="col-6 mt-1">
