@@ -1,20 +1,27 @@
 <?php
+    session_start();
 	include "conexao.php";
     $id = $_GET['id_camisa'];
     $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
     $info = mysqli_query($mysql, $select);
     $camisa = mysqli_fetch_assoc($info);
-    var_dump($camisa);
-    var_dump($camisa['id_camisa']);
+    #var_dump($camisa);
+    #var_dump($camisa['id_camisa']);
 	$titlePage = $camisa['estampa'];
-	include "cabecalho.php";
-    session_start();
+    
+    include "cabecalho.php";
 ?>
 <!--
     Preco e avaliacoes na mesma linha
     Todos alinhados
     Muda a ordem do preco
     Separa o menu da compra
+-->
+<!--
+    adiciona uma classe quando a pessoa clica
+    remove a classe quando outro botao for clicado
+    se clipar P fica preto
+    remover as classes dos botoes nao selecionados
 -->
 <div class="container">
     <div class="row">
@@ -41,8 +48,7 @@
                 <div class="col">
                     <h2 style="color: orange;">R$<?php echo $camisa['preco'];?> </h2>
                 </div>
-		</div>
-
+		    </div>
             <div class="row">
                 <div class="col-4 mt-4" style="color: gray;">
                     <span>Frete</span>
@@ -54,15 +60,15 @@
                     <span style="margin-left: 20px; color: gray;">Para compras acima de R$29,00</span>
                 </div>
             </div>
-	<div class="row mb-2">
-             <div class="col-4" style="color: gray;">
+	        <div class="row mb-2">
+                <div class="col-4" style="color: gray;">
                     <p>TAMANHO</p>
                 </div>
-                <div  class="col-8 flex items-center TvGNLb">
-                    <button id='P' class='btn third'>'P'</button>
-                    <button id='M' class='btn third'>'M'</button>
-                    <button id='G' class='btn third'>'G'</button>
-                    <button id='GG' class='btn third'>'GG'</button>
+                <div  id="aparencia" class="col-8 flex items-center TvGNLb">
+                    <button id='P' class='btn third'>P</button>
+                    <button id='M' class='btn third'>M</button>
+                    <button id='G' class='btn third'>G</button>
+                    <button id='GG' class='btn third'>GG</button>
                 </div>
 		    </div>
             <div class="row mt-2 mb-3">
