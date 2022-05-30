@@ -12,6 +12,7 @@
 		//idpessoa
 		$senha = base64_encode($_POST['senha']);
 		$sqlusuario="INSERT INTO `usuario`(`fk_id_pessoa`, `email`, `senha`) VALUES ('{$last_id}','{$_POST['email']}','{$senha}')";
+echo "$sqlusuario";
 		$query=mysqli_query($mysql,$sqlusuario);
 		header('Location:login.php');
 	}else{
