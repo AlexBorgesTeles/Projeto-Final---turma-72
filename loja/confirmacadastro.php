@@ -12,10 +12,16 @@
 		//idpessoa
 		$senha = base64_encode($_POST['senha']);
 		$sqlusuario="INSERT INTO `usuario`(`fk_id_pessoa`, `email`, `senha`) VALUES ('{$last_id}','{$_POST['email']}','{$senha}')";
-echo "$sqlusuario";
+
 		$query=mysqli_query($mysql,$sqlusuario);
 		
+if ($_POST['nome'] and $_POST['cpf'] and $_POST['rg'] and $_POST['endereco'] and $_POST['idade'] and $_POST['telefone'] and $_POST['email'] and $_POST['senha']){
+echo "Cadastro realizado com sucesso";
+header('Location:login.php');
+}else{
 
+header('Location:cadastro.php');
+}
 
   
   
