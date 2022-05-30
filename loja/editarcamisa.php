@@ -4,10 +4,10 @@
     include "cabecalho.php";
 
     if(isset($_GET['id_camisa']) and $_GET['id_camisa'] != ""){
-        //$sql= "UPDATE `camisa` SET `estampa`='{$_GET['estampa']}',`marca`='{$_GET['marca']}',`imagem`='{$_GET['imagem']}',`descricao`='{$_GET['descricao-texto']}',`avaliacao`='{$_GET['avaliacao']}',`preco`='{$_GET['preco']}' WHERE = {$_GET['id_camisa']} ";
-        //mysqli_query($mysql,$sql_uptade);
-        //header('Location: tabelacamisa.php');
-        die();
+        $sql= "UPDATE `camisa` SET `estampa`='{$_GET['estampa']}',`marca`='{$_GET['marca']}',`imagem`='{$_GET['imagem']}',`descricao`='{$_GET['descricao-texto']}',`avaliacao`='{$_GET['avaliacao']}',`preco`='{$_GET['preco']}' WHERE = {$_GET['id_camisa']} ";
+        mysqli_query($mysql,$sql_uptade);
+        header('Location: tabelacamisa.php');
+
     }
 
     $id_tabela = $_GET['tabela_editar'];
