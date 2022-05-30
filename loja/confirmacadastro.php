@@ -21,6 +21,7 @@ header('Location:login.php');
 }else{
 if (isset($_POST['nome']) and $_POST['cpf'] ){
  echo "incorreto ou Incompleto";
+}
 header('Location:cadastro.php');
 }
 
