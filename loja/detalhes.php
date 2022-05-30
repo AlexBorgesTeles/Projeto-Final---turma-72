@@ -8,9 +8,14 @@
     #var_dump($camisa);
     #var_dump($camisa['id_camisa']);
 	$titlePage = $camisa['estampa'];
-    
     include "cabecalho.php";
 ?>
+<style>
+    .mudanca {
+    background-color: coral;
+    color: black;
+    }
+</style>
 <!--
     Preco e avaliacoes na mesma linha
     Todos alinhados
@@ -18,10 +23,10 @@
     Separa o menu da compra
 -->
 <!--
-    adiciona uma classe quando a pessoa clica
-    remove a classe quando outro botao for clicado
-    se clipar P fica preto
-    remover as classes dos botoes nao selecionados
+    Adiciona uma classe quando a pessoa clica no botao
+    Remove a classe quando outro botao for clicado
+    Se clicar em P por exemplo, fica preto
+    Remover as classes dos botoes nao selecionados
 -->
 <div class="container">
     <div class="row">
@@ -64,11 +69,11 @@
                 <div class="col-4" style="color: gray;">
                     <p>TAMANHO</p>
                 </div>
-                <div  id="aparencia" class="col-8 flex items-center TvGNLb">
-                    <button id='P' class='btn third'>P</button>
-                    <button id='M' class='btn third'>M</button>
-                    <button id='G' class='btn third'>G</button>
-                    <button id='GG' class='btn third'>GG</button>
+                <div id="mudanca" class="col-8 flex items-center TvGNLb">
+                    <button id='P' class='btn third' onclick="cor()">P</button>
+                    <button id='M' class='btn third' onclick="cor()">M</button>
+                    <button id='G' class='btn third' onclick="cor()">G</button>
+                    <button id='GG' class='btn third' onclick="cor()">GG</button>
                 </div>
 		    </div>
             <div class="row mt-2 mb-3">
@@ -96,39 +101,43 @@
 <script type="text/javascript">
 	let p = document.getElementById('P')
 	let m = document.getElementById('M')
-        let g = document.getElementById('G')
-        let gg = document.getElementById('GG')
+    let g = document.getElementById('G')
+    let gg = document.getElementById('GG')
 	let quantidade = document.getElementById('quantidade')
 	let link = document.getElementById('link')
 	let hlink = link.href
 	p.onclick = function(){
 		console.log('clicou em P')
-                console.log(p.innerHTML)
+        console.log(p.innerHTML)
         quantidade.onchange = function(){
 		console.log('mudou')
-		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+p.innerHTML   
-	}}
-        m.onclick = function(){
+		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+p.innerHTML}
+    }
+    m.onclick = function(){
 		console.log('clicou em M')
-                console.log(m.innerHTML)
+        console.log(m.innerHTML)
         quantidade.onchange = function(){
 		console.log('mudou')
-		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+m.innerHTML
-	}}
-        g.onclick = function(){
+		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+m.innerHTML}
+    }
+    g.onclick = function(){
 		console.log('clicou em G')
-                console.log(g.innerHTML)
+        console.log(g.innerHTML)
         quantidade.onchange = function(){
 		console.log('mudou')
 		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+g.innerHTML}
 	}
-        gg.onclick = function(){
+    gg.onclick = function(){
 		console.log('clicou em GG')
-                console.log(gg.innerHTML)
+        console.log(gg.innerHTML)
         quantidade.onchange = function(){
 		console.log('mudou')
 		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+gg.innerHTML}
 	}
+    cor.onclick = function() {
+        var element = document.getElementById("mudanca");
+        element.classList.add("mudanca");
+    }
 	
 	
 </script>
