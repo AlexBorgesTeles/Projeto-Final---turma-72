@@ -30,7 +30,7 @@
 								<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
 					  			</div>
 							</div>";
-						}
+						}else{
 						if(isset($_GET['error']) and $_GET['error'] == 2){
 							echo "<div class='row'>
 							<div class='alert alert-warning alert-dismissible fade show' role='alert'>
@@ -39,6 +39,7 @@
 							</div>
 						  </div>";
 						}
+					}
 					?>
 					<div class="d-grid gap-2">
 					<button type="submit" class="btn btn-dark">Enviar</button>
