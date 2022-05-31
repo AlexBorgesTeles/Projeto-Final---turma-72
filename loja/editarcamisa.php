@@ -25,7 +25,7 @@
 <body>
     <div class="container">
         <div class="row">
-        <div class="d-flex flex-column col-2 flex-shrink-0 p-3 text-white bg-dark" style="width: 280;">
+            <div class="d-flex flex-column col-2 flex-shrink-0 p-3 text-white bg-dark" style="width: 280;">
                 <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <i class="bi bi-boxes"></i>
                     <span class="fs-4"> Opções</span>
