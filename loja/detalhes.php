@@ -23,6 +23,7 @@
     Remover as classes dos botoes nao selecionados
 -->
 <div class="container">
+<?php if(isset($_GET['error']) and $_GET['error'] == 1){echo "<div class='alert alert-danger alert-dimissible fade show' role='danger'><h6>Você não selecionou a quantidade que deseja ou o tamanho desejado!</h6><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";}?>
     <div class="row">
         <div class="col-4">
             <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block w-100 mb-3 mt-2" alt="casal vestidos na camisa" height: 60px;>
