@@ -20,9 +20,9 @@ if ($_POST['nome'] and $_POST['cpf'] and $_POST['rg'] and $_POST['endereco'] and
 header('Location:login.php');
 }else{
 $laranja="Incorreto ou Incompleto";
-if (isset($_POST['nome']) and $_POST['cpf'] != )
+if(isset($_POST['nome']) and $_POST['cpf'] !==$dados['email']){
  echo "$laranja";
-
+}
 header('Location:cadastro.php');
 }
 
