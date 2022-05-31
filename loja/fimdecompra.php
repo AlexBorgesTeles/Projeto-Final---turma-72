@@ -1,12 +1,14 @@
 <?php
     session_start();
+    var_dump($_SESSION);
     include "conexao.php";
     $id = $_GET['id_camisa'];
     $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
-    $selec = "SELECT * FROM pessoa WHERE ";
+    #$selec = "SELECT * FROM pessoa WHERE id_pessoa = $_SESSION['user_id']";
     include "dadosentrega.php";
-    $info = mysqli_query($mysql, $select);
+    $info = mysqli_query($mysql, $select, $selec);
     $camisa = mysqli_fetch_assoc($info);
+    $pessoa = mysqli_fetch_assoc($info);
 	#var_dump($camisa);
 	$titlePage = "Finalizando sua compra!";
 	include "cabecalho.php";
@@ -17,13 +19,13 @@
             <div class="col">
                 <!--
                     Dados de entrega tem que estar no Banco de dados ()
-                    Ligar com a tabela PESSOA pra ter o nome e telefone
+                    Ligar com a tabela PESSOA pra ter o nome e telefone ()
                     Colocar cabecalho ()
                     Colocar a compra embaixo e o botao maior ()
                     Colocar subtotal na pagina dos dados da entrega
                 -->
                 <h2 class="mt-2 mb-3">Dados de entrega</h2>
-                <form action="confirmacadastro.php" method="post" class="row">
+                <form action="confirmacadastro.php" method="post">
                     <div class="row">
                         <div class="col-8 mb-3">
                             <label for="nome" class="form-label">Nome Completo</label>
@@ -116,27 +118,27 @@
                     <div class="row">
                         <div class="col-7">
                             <div class="row">
-                                <div class="col">
+                                <div class="col-1">
                                     <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block mb-3 mt-2" alt="roupa" style="height: 100px";>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col">
+                                <div class="col-1">
                                     <span class="mt-1"><?php echo $camisa['estampa']; ?></span>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col">
+                                <div class="col-2">
                                     <span class="mt-1">mostar o tamanho escolhido</span>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row-2">
                                 <div class="col">
                                     <span>R$<?php echo $camisa['preco']; ?></span>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col">
+                                <div class="col-1">
                                     <span class="mt-1">mostrar quantidade escolhida</span>
                                 </div>
                             </div>

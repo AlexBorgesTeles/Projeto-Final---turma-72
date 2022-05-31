@@ -111,7 +111,10 @@
 		htam = p.innerHTML
     }
     m.onclick = function(){
+        p.classList.remove("btn-dark");
 		m.classList.add("btn-dark");
+		g.classList.remove("btn-dark");
+		gg.classList.remove("btn-dark");
 		console.log('clicou em M')
         console.log(m.innerHTML)
 		console.log('mudou')
@@ -120,6 +123,10 @@
     }
     g.onclick = function(){
 		console.log('clicou em G')
+        p.classList.remove("btn-dark");
+		m.classList.remove("btn-dark");
+		g.classList.add("btn-dark");
+		gg.classList.remove("btn-dark");
         console.log(g.innerHTML)
 		console.log('mudou')
 		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+g.innerHTML
@@ -127,6 +134,10 @@
 	}
     gg.onclick = function(){
 		console.log('clicou em GG')
+        p.classList.remove("btn-dark");
+		m.classList.remove("btn-dark");
+		g.classList.remove("btn-dark");
+		gg.classList.add("btn-dark");
         console.log(gg.innerHTML)
         link.href = hlink+"&quantidade="+quantidade.value+"&tam="+gg.innerHTML
 		htam = gg.innerHTML
@@ -135,10 +146,6 @@
 		console.log('mudou')
 		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+htam
 	}
-  
-
-	
-	
 </script>
 <?php 
 	include "footer.php";
