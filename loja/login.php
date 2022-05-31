@@ -2,7 +2,14 @@
     include "conexao.php";
 	$titlePage = 'Login';
     include "cabecalho.php";
-    if(isset($_GET['carrinho']) and $_GET['carrinho'] ==1 ){echo "<div class='alert alert-danger alert-dimissible fade show' role='danger'><h6>Você não pode acessar o carrinho pois você não está logado!Logue-se e você terá acesso ao carrrinho!</h6><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";}
+    if(isset($_GET['carrinho']) and $_GET['carrinho'] ==1 ){
+		echo "<div class='alert alert-danger alert-dimissible fade show' role='danger'>
+				<img src='../imagens/atenção.jpg' width='50' height='50' id='Slide1' alt='Slide1'/>
+				<h6>Você não pode acessar o carrinho pois você não está logado! Logue-se e você terá acesso ao carrrinho!</h6>
+					<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'>
+					</button>
+				</div>";
+	}
 ?>
 	<div class="container">
 		<div class="row justify-content-center">

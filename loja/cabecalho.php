@@ -31,16 +31,16 @@
             <div class="2">
                 <button type="button" class="btn btn-dark">
                         <?php if(isset($_SESSION['user_id']) and $_SESSION['user_id'] != ''){
-		                $sql2 = "select * from pessoa where id_pessoa = ".$_SESSION['user_id'];
-		                $query = mysqli_query($mysql,$sql2);
+		                $sql02 = "select * from pessoa where id_pessoa = ".$_SESSION['user_id'];
+		                $query = mysqli_query($mysql,$sql02);
 		                $pessoa = mysqli_fetch_assoc($query);
-		                $nome = $pessoa['nome'];
-                        echo "<a href='clientepagina.php' class='d-inline p-2  text-white'>".$nome."</a>";
+                        $name = $pessoa['nome'];
+                        echo "<a href='clientepagina.php' class='d-inline p-2  text-white'>".$name."</a>";
 	                    }else{echo "<a href='login.php' class='d-inline p-2  text-white'><i class='bi bi-person-circle'> Login</i></a>";}?>
                 </button>
                 <button type="button" class="btn btn-dark">
                 <?php if(isset($_SESSION['user_id']) and $_SESSION['user_id'] != ''){
-                    echo "<a href='sairdaconta.php' class='d-inline p-2  text-white'><i class='bi bi-box-arrow-right'> Sair</i></a>";
+                    echo "<a href='logout.php' class='d-inline p-2 text-white'><i class='bi bi-box-arrow-right'> Sair</i></a>";
                 }else{
                     echo "<a class='d-inline p-2 text-white' href='cadastro.php'><i class='bi bi-door-open-fill'> Cadastra-se</i></a>;";
                 }
