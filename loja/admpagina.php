@@ -1,4 +1,5 @@
 <?php
+    session_start();
 	include "conexao.php";
 	$titlePage = "Página Interna ADM";
 	include "cabecalho.php";
@@ -10,7 +11,6 @@
     #$sql_seleciona="SELECT `id_usuario`,`email`,`senha`,`nivel`,`fk_id_pessoa` FROM usuario;";
 	$query_ler = mysqli_query($mysql, $sql_seleciona);
 	$fetch_organiza = mysqli_fetch_assoc($query_ler);
-    echo $fetch_organiza['id_usuario'];
     //var_dump($fetch_organiza);
 ?>
 <style>
@@ -33,7 +33,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link text-white">
+                        <a href="admpagina.php" class="nav-link text-white">
+                        <i class="bi bi-newspaper"> Informações da conta</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="costumizaconta.php" class="nav-link text-white">
                             <i class="bi bi-wrench-adjustable-circle"> Customizar</i>
                         </a>
                     </li>

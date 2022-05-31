@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include "conexao.php";
 	$titlePage = "Página Adcionar Produto";
 	include "cabecalho.php";
@@ -27,8 +28,13 @@
                         <i class="bi bi-graph-up"> Relatórios</i>
                         </a>
                     </li>
+					<li>
+                        <a href="admpagina.php" class="nav-link text-white">
+						<i class="bi bi-newspaper"> Informações da conta</i>
+                        </a>
+                    </li>
                     <li>
-                        <a href="#" class="nav-link text-white">
+                        <a href="costumizaconta.php" class="nav-link text-white">
                             <i class="bi bi-wrench-adjustable-circle"> Customizar</i>
                         </a>
                     </li>

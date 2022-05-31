@@ -1,4 +1,5 @@
 <?php
+    session_start();
 	include "conexao.php";
 	$titlePage = "Página Adicionar Produto";
 	include "cabecalho.php";
@@ -29,7 +30,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link text-white">
+                        <a href="admpagina.php" class="nav-link text-white">
+                        <i class="bi bi-newspaper"> Informações da conta</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="costumizaconta.php" class="nav-link text-white">
                             <i class="bi bi-wrench-adjustable-circle"> Customizar a conta</i>
                         </a>
                     </li>
@@ -98,7 +104,7 @@
 			                                <h5 class="modal-title" id="exampleModalLabel">CONFIRMAÇÃO DE ENVIO:</h5>
 		                                </div>
                                         <div class='modal-body'>
-                                            <span id='error'>Suas informações estão corretas e foram enviadas com sucesso!</span>
+                                            <span id='error'>Análise de informações não viu nada de faltando, presssione para o link continuar, para confirmar o envio!</span>
                                         </div>
                                         <div class='modal-footer'>
                                             <a name="btn btn-dark" id='coisa' href="adicionarcamisa.php?">Confirmar</a>
@@ -116,7 +122,7 @@
                     <div class="row">
                         <div class="col-4 offset-4">
                         <button type="button" id="butao" class="w-100 btn-dark mt-3" >
-                            Enviar02
+                            Enviar
                         </button>
                     </div>
                 </div>
@@ -141,7 +147,7 @@
 			if(estampa.value == "" || marca.value == "" || imagem.value == ""  || avaliacao.value == "" || preco.value == "" || descricao.value  == ""){
 				console.log('Está algo errado!')
                 let error = document.getElementById('error')
-                error.innerHTML = "<p><h3 style='color: red'>Aviso!</h3><b> Alguma informação está vazia, retorne e a complete. </b></p>"
+                error.innerHTML = "<p><h3 style='color: red'>Aviso!</h3><b> Alguma informação está faltando, retorne e a complete. </b></p>"
                 if(estampa.value == ""){
                     error.innerHTML += "<p>Estampa faltando!</p>"+estampa.value
                 }

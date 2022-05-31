@@ -1,18 +1,19 @@
 <?php
+    session_start();
     include "conexao.php";
     $titlePage = "Página de Edição";
     include "cabecalho.php";
 
     if(isset($_POST['id_camisa']) and $_POST['id_camisa'] != ""){
-        $sql_update= "UPDATE `camisa` SET `estampa`='{$_POST['estampa']}',`marca`='{$_POST['marca']}',`imagem`='{$_POST['imagem']}',`descricao`='{$_POST['descricao-texto']}',`avaliacao`='{$_POST['avaliacao']}',`preco`='{$_POST['preco']}' WHERE = {$_POST['id_camisa']} ";
+        $sql_update= "UPDATE `camisa` SET `estampa`='{$_POST['estampa']}',`marca`='{$_POST['marca']}',`imagem`='{$_POST['imagem']}',`descricao`='{$_POST['descricao-texto']}',`avaliacao`='{$_POST['avaliacao']}',`preco`='{$_POST['preco']}' WHERE id_camisa = {$_POST['id_camisa']} ";
         mysqli_query($mysql,$sql_update);
         header('Location: tabelacamisa.php');
         die();
     }
 
 
-    if(isset($_POST['tabela_editar']) and $_POST['tabela_editar'] != ""){
-        $id_tabela = $_POST['tabela_editar'];
+    if(isset($_GET['tabela_editar']) and $_GET['tabela_editar'] != ""){
+        $id_tabela = $_GET['tabela_editar'];
         $sql ="SELECT * FROM `camisa` WHERE `id_camisa` = {$id_tabela}";
         $query_02 = mysqli_query($mysql,$sql);
         $fetch_02 = mysqli_fetch_assoc($query_02);
@@ -37,7 +38,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link text-white">
+                        <a href="admpagina.php" class="nav-link text-white">
+                        <i class="bi bi-newspaper"> Informações da conta</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="costumizaconta.php" class="nav-link text-white">
                             <i class="bi bi-wrench-adjustable-circle"> Customizar</i>
                         </a>
                     </li>
@@ -78,8 +84,8 @@
                         <div class="col-7 mb-3">
                             <!----Imagem--->
                             <label for="imagem">Imagem:</label>
-                            <input type="hidden" name="id_camisa" id='id_camisa' value="<?php echo $fetch_02['tabela_editar']?>"  >
                             <input type="text" class="form-control" name="imagem" id="imagem" value="<?php echo $fetch_02['imagem']?>" required>
+                            <input type="hidden" name="id_camisa" id="id_camisa" value="<?php echo $fetch_02['id_camisa']?>">
                         </div>
                         <div class="col-3 mb-3">
                             <!----Preço--->
