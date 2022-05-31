@@ -21,7 +21,7 @@
                         </a>
                     </li>
                     <?php 
-                        if(isset($_SESSION['nivel']) and $_SESSION['nivel'] == 1){
+                        if(isset($_SESSION['nivel']) and $_SESSION['nivel'] != 2){
                             echo "<hr>
                             <li>
                                 <a href='adicionarcamisa.php' class='nav-link text-white'>
