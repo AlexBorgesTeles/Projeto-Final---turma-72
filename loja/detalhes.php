@@ -8,9 +8,26 @@
     #var_dump($camisa);
     #var_dump($camisa['id_camisa']);
 	$titlePage = $camisa['estampa'];
-    
     include "cabecalho.php";
 ?>
+<style>
+    .mudanca {
+    background-color: green;
+    color: black;
+    }
+    
+    .btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 18px;
+    }
+    .active, .btn:hover {
+    background-color: #666;
+    color: white;}
+</style>
 <!--
     Preco e avaliacoes na mesma linha
     Todos alinhados
@@ -18,10 +35,10 @@
     Separa o menu da compra
 -->
 <!--
-    adiciona uma classe quando a pessoa clica
-    remove a classe quando outro botao for clicado
-    se clipar P fica preto
-    remover as classes dos botoes nao selecionados
+    Adiciona uma classe quando a pessoa clica no botao
+    Remove a classe quando outro botao for clicado
+    Se clicar em P por exemplo, fica preto
+    Remover as classes dos botoes nao selecionados
 -->
 <div class="container">
     <div class="row">
@@ -60,15 +77,15 @@
                     <span style="margin-left: 20px; color: gray;">Para compras acima de R$29,00</span>
                 </div>
             </div>
-	        <div class="row mb-2">
+	        <div class="row mt-1 mb-2">
                 <div class="col-4" style="color: gray;">
                     <p>TAMANHO</p>
                 </div>
-                <div  id="aparencia" class="col-8 flex items-center TvGNLb">
-                    <button id='P' class='btn third'>P</button>
-                    <button id='M' class='btn third'>M</button>
-                    <button id='G' class='btn third'>G</button>
-                    <button id='GG' class='btn third'>GG</button>
+                <div id="botao" class="col-8 flex items-center TvGNLb">
+                    <button id='P' class='btn' onclick="estilo()">P</button>
+                    <button id='M' class='btn' onclick="estilo()">M</button>
+                    <button id='G' class='btn' onclick="estilo()">G</button>
+                    <button id='GG' class='btn' onclick="estilo()">GG</button>
                 </div>
 		    </div>
             <div class="row mt-2 mb-3">
@@ -96,39 +113,49 @@
 <script type="text/javascript">
 	let p = document.getElementById('P')
 	let m = document.getElementById('M')
-        let g = document.getElementById('G')
-        let gg = document.getElementById('GG')
+    let g = document.getElementById('G')
+    let gg = document.getElementById('GG')
 	let quantidade = document.getElementById('quantidade')
 	let link = document.getElementById('link')
 	let hlink = link.href
 	p.onclick = function(){
 		console.log('clicou em P')
-                console.log(p.innerHTML)
+        console.log(p.innerHTML)
         quantidade.onchange = function(){
 		console.log('mudou')
-		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+p.innerHTML   
-	}}
-        m.onclick = function(){
+		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+p.innerHTML}
+    }
+    m.onclick = function(){
 		console.log('clicou em M')
-                console.log(m.innerHTML)
+        console.log(m.innerHTML)
         quantidade.onchange = function(){
 		console.log('mudou')
-		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+m.innerHTML
-	}}
-        g.onclick = function(){
+		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+m.innerHTML}
+    }
+    g.onclick = function(){
 		console.log('clicou em G')
-                console.log(g.innerHTML)
+        console.log(g.innerHTML)
         quantidade.onchange = function(){
 		console.log('mudou')
 		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+g.innerHTML}
 	}
-        gg.onclick = function(){
+    gg.onclick = function(){
 		console.log('clicou em GG')
-                console.log(gg.innerHTML)
+        console.log(gg.innerHTML)
         quantidade.onchange = function(){
 		console.log('mudou')
 		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+gg.innerHTML}
 	}
+    
+    var header = document.getElementById("myDIV");
+    var btns = header.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+    });
+}
 	
 	
 </script>
