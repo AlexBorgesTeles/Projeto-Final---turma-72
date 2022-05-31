@@ -10,24 +10,6 @@
 	$titlePage = $camisa['estampa'];
     include "cabecalho.php";
 ?>
-<style>
-    .mudanca {
-    background-color: green;
-    color: black;
-    }
-    
-    .btn {
-    border: none;
-    outline: none;
-    padding: 10px 16px;
-    background-color: #f1f1f1;
-    cursor: pointer;
-    font-size: 18px;
-    }
-    .active, .btn:hover {
-    background-color: #666;
-    color: white;}
-</style>
 <!--
     Preco e avaliacoes na mesma linha
     Todos alinhados
@@ -41,6 +23,7 @@
     Remover as classes dos botoes nao selecionados
 -->
 <div class="container">
+<?php if(isset($_GET['error']) and $_GET['error'] == 1){echo "<div class='alert alert-danger alert-dimissible fade show' role='danger'><h6>Você não selecionou a quantidade que deseja ou o tamanho desejado!</h6><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";}?>
     <div class="row">
         <div class="col-4">
             <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block w-100 mb-3 mt-2" alt="casal vestidos na camisa" height: 60px;>
@@ -82,7 +65,7 @@
                     <p>TAMANHO</p>
                 </div>
                 <div id="botao" class="col-8 flex items-center TvGNLb">
-                    <button id='P' class='btn' onclick="estilo()">P</button>
+                    <button id='P' class='btn' >P</button>
                     <button id='M' class='btn' onclick="estilo()">M</button>
                     <button id='G' class='btn' onclick="estilo()">G</button>
                     <button id='GG' class='btn' onclick="estilo()">GG</button>
@@ -118,44 +101,43 @@
 	let quantidade = document.getElementById('quantidade')
 	let link = document.getElementById('link')
 	let hlink = link.href
+	let htam = ''
 	p.onclick = function(){
 		console.log('clicou em P')
-        console.log(p.innerHTML)
-        quantidade.onchange = function(){
-		console.log('mudou')
-		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+p.innerHTML}
+		p.classList.add("btn-dark");
+		m.classList.remove("btn-dark");
+		g.classList.remove("btn-dark");
+		gg.classList.remove("btn-dark");
+		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+p.innerHTML
+		htam = p.innerHTML
     }
     m.onclick = function(){
+		m.classList.add("btn-dark");
 		console.log('clicou em M')
         console.log(m.innerHTML)
-        quantidade.onchange = function(){
 		console.log('mudou')
-		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+m.innerHTML}
+		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+m.innerHTML
+		htam = m.innerHTML
     }
     g.onclick = function(){
 		console.log('clicou em G')
         console.log(g.innerHTML)
-        quantidade.onchange = function(){
 		console.log('mudou')
-		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+g.innerHTML}
+		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+g.innerHTML
+		htam = g.innerHTML
 	}
     gg.onclick = function(){
 		console.log('clicou em GG')
         console.log(gg.innerHTML)
-        quantidade.onchange = function(){
-		console.log('mudou')
-		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+gg.innerHTML}
+        link.href = hlink+"&quantidade="+quantidade.value+"&tam="+gg.innerHTML
+		htam = gg.innerHTML
 	}
-    
-    var header = document.getElementById("myDIV");
-    var btns = header.getElementsByClassName("btn");
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-    });
-}
+    quantidade.onchange = function(){
+		console.log('mudou')
+		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+htam
+	}
+  
+
 	
 	
 </script>
