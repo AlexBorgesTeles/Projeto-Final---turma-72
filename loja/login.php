@@ -22,25 +22,23 @@
 						<label for="senha" class="form-label">Senha:</label>
 						<input type="password" class="form-control" name="senha">
 					</div>
+					<div>
 					<?php 
 					if(isset($_GET['error']) and $_GET['error'] == 1){
-						echo "<div class='row'>
-								<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+						echo "	<div class='alert alert-warning alert-dismissible fade show' role='alert'>
 								<strong>Email incorreta!</strong> Esse email não está vinculado a sua conta.
 								<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-					  			</div>
-							</div>";
+					  			</div>";
 						}else{
 						if(isset($_GET['error']) and $_GET['error'] == 2){
-							echo "<div class='row'>
-							<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+							echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
 								<strong>Senha incorreta!</strong> Essa senha não está vinculada a sua conta.
 								<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-							</div>
-						  </div>";
+							</div>";
 						}
 					}
 					?>
+					</div>
 					<div class="d-grid gap-2">
 					<button type="submit" class="btn btn-dark">Enviar</button>
 					</div>

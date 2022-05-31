@@ -17,11 +17,12 @@
 			$_SESSION['nivel'] = $dados['nivel'];
 			header('Location:home.php');
 		}
+		if(base64_encode($_POST['senha']) != $dados['senha']){
+			header('location:login.php?error=2');
+		}
+	}else{
 		if($_POST['email'] != $dados['email']){
 			header('location:login.php?error=1');
-		}
-		if($_POST['senha'] != $dados['senha']){
-			header('location:login.php?error=2');
 		}
 	}
 
