@@ -1,4 +1,5 @@
 <?php
+    session_start();
 	include "conexao.php";
 	$titlePage = "Página Adicionar Produto";
 	include "cabecalho.php";
@@ -16,36 +17,9 @@
 <body>
     <div class="container">
         <div class="row justicy-content-center">
-            <div class="d-flex flex-column col-2 flex-shrink-0 p-3 text-white bg-dark" style="width: 280;">
-                <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <i class="bi bi-boxes"></i>
-                    <span class="fs-4"> Opções</span>
-                </a>
-                <hr>
-                <ul class="nav nav-pills flex-column mb-auto">                    
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white">
-                        <i class="bi bi-graph-up"> Relatórios</i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link text-white">
-                            <i class="bi bi-wrench-adjustable-circle"> Customizar a conta</i>
-                        </a>
-                    </li>
-                    <hr>
-                    <li>
-                        <a href="adicionarcamisa.php" class="nav-link text-white">
-                            <i class="bi bi-plus-circle"></i> Adcionar Produtos</i>
-                        </a>
-                    </li>
-                    <li>
-                    <a href="tabelacamisa.php" class="nav-link text-white">
-                            <i class="bi bi-scissors"></i> Alterar Produtos</i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <?php 
+                include 'admmenu.php';
+            ?>
                 <div class="col-10">
                     <span class="text center-align "><h4 class="border border-dark"><b>Adicione as informações do produto:</b></h4></span>
                     <form method="post" action="adicionarcamisa.php">
@@ -98,7 +72,7 @@
 			                                <h5 class="modal-title" id="exampleModalLabel">CONFIRMAÇÃO DE ENVIO:</h5>
 		                                </div>
                                         <div class='modal-body'>
-                                            <span id='error'>Suas informações estão corretas e foram enviadas com sucesso!</span>
+                                            <span id='error'>Análise de informações não viu nada de faltando, presssione para o link continuar, para confirmar o envio!</span>
                                         </div>
                                         <div class='modal-footer'>
                                             <a name="btn btn-dark" id='coisa' href="adicionarcamisa.php?">Confirmar</a>
@@ -116,7 +90,7 @@
                     <div class="row">
                         <div class="col-4 offset-4">
                         <button type="button" id="butao" class="w-100 btn-dark mt-3" >
-                            Enviar02
+                            Enviar
                         </button>
                     </div>
                 </div>
@@ -141,7 +115,7 @@
 			if(estampa.value == "" || marca.value == "" || imagem.value == ""  || avaliacao.value == "" || preco.value == "" || descricao.value  == ""){
 				console.log('Está algo errado!')
                 let error = document.getElementById('error')
-                error.innerHTML = "<p><h3 style='color: red'>Aviso!</h3><b> Alguma informação está vazia, retorne e a complete. </b></p>"
+                error.innerHTML = "<p><h3 style='color: red'>Aviso!</h3><b> Alguma informação está faltando, retorne e a complete. </b></p>"
                 if(estampa.value == ""){
                     error.innerHTML += "<p>Estampa faltando!</p>"+estampa.value
                 }

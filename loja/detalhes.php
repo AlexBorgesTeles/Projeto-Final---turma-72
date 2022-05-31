@@ -23,6 +23,7 @@
     Remover as classes dos botoes nao selecionados
 -->
 <div class="container">
+<?php if(isset($_GET['error']) and $_GET['error'] == 1){echo "<div class='alert alert-danger alert-dimissible fade show' role='danger'><h6>Você não selecionou a quantidade que deseja ou o tamanho desejado!</h6><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";}?>
     <div class="row">
         <div class="col-4">
             <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block w-100 mb-3 mt-2" alt="casal vestidos na camisa" height: 60px;>
@@ -111,7 +112,10 @@
 		htam = p.innerHTML
     }
     m.onclick = function(){
+        p.classList.remove("btn-dark");
 		m.classList.add("btn-dark");
+		g.classList.remove("btn-dark");
+		gg.classList.remove("btn-dark");
 		console.log('clicou em M')
         console.log(m.innerHTML)
 		console.log('mudou')
@@ -120,6 +124,10 @@
     }
     g.onclick = function(){
 		console.log('clicou em G')
+        p.classList.remove("btn-dark");
+		m.classList.remove("btn-dark");
+		g.classList.add("btn-dark");
+		gg.classList.remove("btn-dark");
         console.log(g.innerHTML)
 		console.log('mudou')
 		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+g.innerHTML
@@ -127,6 +135,10 @@
 	}
     gg.onclick = function(){
 		console.log('clicou em GG')
+        p.classList.remove("btn-dark");
+		m.classList.remove("btn-dark");
+		g.classList.remove("btn-dark");
+		gg.classList.add("btn-dark");
         console.log(gg.innerHTML)
         link.href = hlink+"&quantidade="+quantidade.value+"&tam="+gg.innerHTML
 		htam = gg.innerHTML
@@ -135,10 +147,6 @@
 		console.log('mudou')
 		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+htam
 	}
-  
-
-	
-	
 </script>
 <?php 
 	include "footer.php";
