@@ -1,17 +1,18 @@
 <?php
     session_start();
-    var_dump($_SESSION);
+    #var_dump($_SESSION);
     include "conexao.php";
     $id = $_GET['id_camisa'];
-    $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
-    #$selec = "SELECT * FROM pessoa WHERE id_pessoa = $_SESSION['user_id']";
-    include "dadosentrega.php";
-    $info = mysqli_query($mysql, $select, $selec);
+    $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}"; #echo $select;
+    $info = mysqli_query($mysql, $select);
     $camisa = mysqli_fetch_assoc($info);
-    $pessoa = mysqli_fetch_assoc($info);
-	#var_dump($camisa);
+
+    $selecionar = "SELECT * FROM pessoa WHERE id_pessoa = ".$_SESSION['user_id']; #echo $selecionar;
+    $pegar = mysqli_query($mysql, $selecionar);
+    $pessoa = mysqli_fetch_assoc($pegar);
 	$titlePage = "Finalizando sua compra!";
 	include "cabecalho.php";
+    include "dadosentrega.php";
 ?>
 <body>
     <div class="container">
