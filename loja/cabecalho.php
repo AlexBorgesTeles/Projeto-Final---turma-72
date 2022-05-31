@@ -42,7 +42,7 @@
                 <?php if(isset($_SESSION['user_id']) and $_SESSION['user_id'] != ''){
                     echo "<a href='logout.php' class='d-inline p-2 text-white'><i class='bi bi-box-arrow-right'> Sair</i></a>";
                 }else{
-                    echo "<a class='d-inline p-2 text-white' href='cadastro.php'><i class='bi bi-door-open-fill'> Cadastra-se</i></a>;";
+                    echo "<a class='d-inline p-2 text-white' href='cadastro.php'><i class='bi bi-door-open-fill'> Cadastra-se</i></a>";
                 }
                 ?>
                 </button>
