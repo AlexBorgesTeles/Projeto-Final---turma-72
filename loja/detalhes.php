@@ -90,6 +90,11 @@
                 <div class="col-4">
                     <span><?php echo $camisa['quantidade_e']; ?> unidades disponíveis</span>
                 </div>
+                <?php
+                    If($GET_['quantidade'] <= 1){
+                        echo "Defina uma quantidade válida";
+                    }
+                ?>
 			</div>
             <div class="row mt-2">
                 <div class="col" style="padding-left: 33px;">
