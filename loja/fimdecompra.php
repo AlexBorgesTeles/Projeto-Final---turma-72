@@ -119,27 +119,19 @@
                     <div class="row">
                         <div class="col-7">
                             <div class="row">
-                                <div class="col-1">
+                                <div class="col-2">
                                     <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block mb-3 mt-2" alt="roupa" style="height: 100px";>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-1">
+                                <div class="col-2">
                                     <span class="mt-1"><?php echo $camisa['estampa']; ?></span>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-2">
                                     <span class="mt-1">mostar o tamanho escolhido</span>
                                 </div>
-                            </div>
-                            <div class="row-2">
-                                <div class="col">
+                                <div class="col-2">
                                     <span>R$<?php echo $camisa['preco']; ?></span>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-1">
+                                <div class="col-2">
                                     <span class="mt-1">mostrar quantidade escolhida</span>
                                 </div>
                             </div>
@@ -147,7 +139,7 @@
                         <div class="col-5">
                             <div class="row">
                                 <div class="col-2">
-                                    <span>i love you</span>
+                                    <h3>TOTAL</h3>
                                 </div>
                             </div>
                         </div>
