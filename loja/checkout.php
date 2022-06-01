@@ -1,15 +1,5 @@
 <?php
     session_start();
-    if (isset($_SESSION["user_id"]) and $_SESSION["user_id"] == 0){
-        header('Location: login.php?usuarionaolocalizado=4');
-    }
-	include "conexao.php";
-    if (isset($_SESSION["user_id"]) and $_SESSION["user_id"] != ""){
-        $consulta = "SELECT * FROM pessoa WHERE id_pessoa = ". $_SESSION["user_id"];
-        $busca = mysqli_query($mysql, $consulta);
-        $pessoa = mysqli_fetch_assoc($busca);
-        $nome = $pessoa["nome"];
-    }
 	include "conexao.php";
     include "cabecalho.php";
     $titlePage = "Pagamento";

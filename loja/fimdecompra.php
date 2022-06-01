@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if (isset($_SESSION["user_id"]) and $_SESSION["user_id"] == 0){
+    if (isset($_SESSION["user_id"]) and $_SESSION["user_id"] == ""){
         header('Location: login.php?usuarionaolocalizado=4');
     }
 	include "conexao.php";
@@ -11,6 +11,7 @@
         $nome = $pessoa["nome"];
     }
     #var_dump($_SESSION);
+    include "conexao.php";
     $id = $_GET['id_camisa'];
     $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}"; #echo $select;
     $info = mysqli_query($mysql, $select);
