@@ -1,8 +1,8 @@
 <?php
     session_start();
-    if (isset($_SESSION["user_id"]) and $_SESSION["user_id"] == ""){
-        header('Location: login.php?usuarionaolocalizado=4');
-    }
+	if(!isset($_SESSION['user_id']) or $_SESSION['user_id'] == null){
+		header("Location: login.php?erro=34");
+	}
 	include "conexao.php";
     if (isset($_SESSION["user_id"]) and $_SESSION["user_id"] != ""){
         $consulta = "SELECT * FROM pessoa WHERE id_pessoa = ". $_SESSION["user_id"];
