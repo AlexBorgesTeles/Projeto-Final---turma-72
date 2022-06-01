@@ -73,7 +73,7 @@
                 <div class="col-4" style="color: gray;">
                     <p>TAMANHO</p>
                 </div>
-                <div id="botao" class="col-8 flex items-center TvGNLb">
+                <div class="col-8 flex items-center TvGNLb">
                     <button id='P' class='btn'>P</button>
                     <button id='M' class='btn'>M</button>
                     <button id='G' class='btn'>G</button>
