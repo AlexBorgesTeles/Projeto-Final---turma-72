@@ -6,7 +6,7 @@
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">                    
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-white">
+                        <a href="relatorioconta.php" class="nav-link text-white">
                         <i class="bi bi-graph-up"> Relatórios</i>
                         </a>
                     </li>

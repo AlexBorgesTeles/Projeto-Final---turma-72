@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include 'admteste.php';
 	include "conexao.php";
 	$titlePage = "Página Adicionar Produto";
 	include "cabecalho.php";

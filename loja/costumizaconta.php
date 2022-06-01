@@ -3,9 +3,8 @@
 	include "conexao.php";
 	$titlePage = "Costumizar Conta";
 	include "cabecalho.php";
-    //include "admteste.php";
 
-    var_dump($_SESSION['user_id']);
+    //var_dump($_SESSION['user_id']);
     if(isset($_SESSION['id_usuario']) and $_SESSION['id_usuario'] != ''){
         $sql_conta= "SELECT * FROM `usuario` JOIN `pessoa` ON `id_pessoa` = `fk_id_pessoa` WHERE `fk_id_pessoa` = {$_SESSION['user_id']};";
         $query_envia= mysqli_query($mysql,$sql_conta);
@@ -20,9 +19,9 @@
     }else{
         header('location: home.php');
     }
-    echo "<pre>";
-    var_dump($fetch_organiza);
-    echo "</pre>";
+    //echo "<pre>";
+    //var_dump($fetch_organiza);
+    //echo "</pre>";
 ?>
 <body>
     <div class="container">
@@ -41,7 +40,7 @@
                         </div>
                         <div class="col-6">
                             <!----Senha--->
-                            <label for="marca">Trocar senha:</label>
+                            <label for="marca">Trocar Senha:</label>
                             <input type="texto" class="form-control" name="senha" id="senha" value="<?php echo $fetch_organiza['senha']?>" required>
                         </div>
                     </div>
