@@ -5,12 +5,20 @@
 	include "cabecalho.php";
     //include "admteste.php";
 
+    var_dump($_SESSION['user_id']);
     if(isset($_SESSION['id_usuario']) and $_SESSION['id_usuario'] != ''){
-        $sql_conta="SELECT * FROM `usuario` JOIN `pessoa` ON `id_pessoa` = `fk_id_pessoa`;";
+        $sql_conta= "SELECT * FROM `usuario` JOIN `pessoa` ON `id_pessoa` = `fk_id_pessoa` WHERE `fk_id_pessoa` = {$_SESSION['user_id']};";
         $query_envia= mysqli_query($mysql,$sql_conta);
         $fetch_organiza = mysqli_fetch_assoc($query_envia);
+
+        if(isset($senha) and $senha != ''){
+            $sqlusuario = "INSERT INTO `usuario`(`fk_id_pessoa`,`senha`) VALUES ('{$last_id}','{$senha}')";
+            $senha = base64_encode($_POST['senha']);
+            $last_id = mysqli_insert_id($mysql);
+		    $query = mysqli_query($mysql,$sqlusuario);
+        }
     }else{
-        //header('location: home.php');
+        header('location: home.php');
     }
     echo "<pre>";
     var_dump($fetch_organiza);
@@ -34,14 +42,14 @@
                         <div class="col-6">
                             <!----Senha--->
                             <label for="marca">Trocar senha:</label>
-                            <input type="password" class="form-control" name="senha" id="senha" value="<?php echo $fetch_organiza['senha']?>" required>
+                            <input type="texto" class="form-control" name="senha" id="senha" value="<?php echo $fetch_organiza['senha']?>" required>
                         </div>
                     </div>
                         <div class="row">
                         <div class="col-4 mb-3">
                             <!----Endereço--->
                             <label for="avaliação">Atualizar endereço:</label>
-                            <input type="text" class="form-control" placeholder="endereço..." id="endereço" value="<?php echo $fetch_organiza['endereço']?>" name="endereço" required>
+                            <input type="text" class="form-control" placeholder="endereço..." id="endereço" value="<?php echo $fetch_organiza['endereco']?>" name="endereço" required>
                         </div>
                         <div class="col-6 mb-3">
                             <!----Telefone--->
