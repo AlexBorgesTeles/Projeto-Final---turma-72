@@ -34,7 +34,6 @@
                                 </a>
                             </li>";
                         }
-                        var_dump($_SESSION['nivel']);
                     ?>
                 </ul>
             </div>

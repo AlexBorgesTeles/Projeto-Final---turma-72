@@ -3,7 +3,7 @@
 	include "conexao.php";
 	$titlePage = "Costumizar Conta";
 	include "cabecalho.php";
-    include "admteste.php";
+    //include "admteste.php";
 
     if(isset($_SESSION['id_usuario']) and $_SESSION['id_usuario'] != ''){
         $sql_conta="SELECT * FROM `usuario` JOIN `pessoa` ON `id_pessoa` = `fk_id_pessoa`;";
