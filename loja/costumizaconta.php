@@ -10,7 +10,10 @@
         $query_envia= mysqli_query($mysql,$sql_conta);
         $fetch_organiza = mysqli_fetch_assoc($query_envia);
 
-        if(isset($senha) and $senha != ''){
+        $senha02 = base64_decode($fetch_organiza['senha']);
+
+ 
+        if(isset($senha02) and $senha02 != ''){
             $sqlusuario = "INSERT INTO `usuario`(`fk_id_pessoa`,`senha`) VALUES ('{$last_id}','{$senha}')";
             $senha = base64_encode($_POST['senha']);
             $last_id = mysqli_insert_id($mysql);
@@ -31,7 +34,7 @@
             ?>
             <div class="col-10">
                 <span class="text center-align "><h4><b>ALTERANDO INFORMAÇÕES:</b></h4></span>
-                <form method="post" action="costumizar.php">
+                <form method="post" action="costumizaconta.php">
                     <div class="row flex">
                         <div class="col-6">
                             <!----Email--->
@@ -41,7 +44,7 @@
                         <div class="col-6">
                             <!----Senha--->
                             <label for="marca">Trocar Senha:</label>
-                            <input type="texto" class="form-control" name="senha" id="senha" value="<?php echo $fetch_organiza['senha']?>" required>
+                            <input type="texto" class="form-control" name="senha" id="senha" value="<?php echo $senha02?>" required>
                         </div>
                     </div>
                         <div class="row">

@@ -20,7 +20,15 @@
                                 <div class='todo_wrapper'>
                                     <div class='todo_head'>
                                         <h5>Aqui vai ficar a camsia comprada!</h5>
-                                        <p>data e Status</p>
+                                        <p>data e Status
+                                        
+<?php
+$str = 'This is an encoded string';
+echo base64_encode($str);
+$str02 = base64_encode($str);
+echo base64_decode($str02);
+?>
+</p>
                                         </div>
                                     </div>
                                 </div>
