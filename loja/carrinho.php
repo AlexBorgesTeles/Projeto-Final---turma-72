@@ -17,17 +17,15 @@ $dados = mysqli_fetch_all($query, MYSQLI_ASSOC);
 echo "<div class='container'>";
 foreach ($dados as $q) {
     echo "<div class='col-3 btn'><div class='card' style='background-color: #4F4F4F'>
-	                     <img src='../imagens/{$q["imagem"]}' class='card-img-top'alt='#' >
-						<div class='card-body' style='color:white'>
-                            <h4 class='card-title' >{$q["estampa"]}</h4>
-                            <h6 class='card-body'>tamanho: 
-                            {$q["tamanho"]}</h6>
-                            <p class='card-text'>cor: {$q["cor"]}</p>
-                            <p class='card-text'> quantidade: {$q["quantidade"]}</p
-                            <p class='card-text'>R$ {$q["preco"]}</p>  
-                
-	<a href='deleteproduto.php?delete={$q['id_carrinho']}' class='btn btn-danger'>Remover produto</a>
-	</div>
+	    <img src='../imagens/{$q["imagem"]}' class='card-img-top'alt='#' >
+		<div class='card-body' style='color:white'>
+            <h4 class='card-title' >{$q["estampa"]}</h4>
+            <h6 class='card-body'>tamanho:{$q["tamanho"]}</h6>
+            <p class='card-text'>cor: {$q["cor"]}</p>
+            <p class='card-text'> quantidade: {$q["quantidade"]}</p
+            <p class='card-text'>R$ {$q["preco"]}</p>  
+            <a href='deleteproduto.php?delete={$q['id_carrinho']}' class='btn btn-danger'>Remover produto</a>
+	    </div>
 	</div>
 	</div>";
 }
