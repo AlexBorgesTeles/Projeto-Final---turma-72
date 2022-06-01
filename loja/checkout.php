@@ -1,19 +1,41 @@
 <?php
     session_start();
+	if(!isset($_SESSION['user_id']) or $_SESSION['user_id'] == null){
+		header("Location: login.php?erro=34");
+	}
 	include "conexao.php";
-    include "cabecalho.php";
-    $titlePage = "Pagamento";
+    if (isset($_SESSION["user_id"]) and $_SESSION["user_id"] != ""){
+        $consulta = "SELECT * FROM pessoa WHERE id_pessoa = ". $_SESSION["user_id"];
+        $busca = mysqli_query($mysql, $consulta);
+        $pessoa = mysqli_fetch_assoc($busca);
+        $nome = $pessoa["nome"];
+    }
+    #var_dump($_SESSION);
+    include "conexao.php";
+    $id = $_GET['id_camisa'];
+    $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}"; #echo $select;
+    $info = mysqli_query($mysql, $select);
+    $camisa = mysqli_fetch_assoc($info);
+
+    $selecionar = "SELECT * FROM pessoa WHERE id_pessoa = ".$_SESSION['user_id']; #echo $selecionar;
+    $pegar = mysqli_query($mysql, $selecionar);
+    $pessoa = mysqli_fetch_assoc($pegar);
+	$titlePage = "Pagamento";
+	include "cabecalho.php";
+    include "dadosentrega.php";
 ?>
 <body>
     <div class="container">
         <div class="row">
-            <div class="checkout-payment-method-view__current checkout-payment-setting">
-            <div class="checkout-payment-method-view__current-title">Método de pagamento</div>
-                <div class="checkout-payment-setting__payment-methods-tab">
-                    <span tabindex="0"><button class="product-variation product-variation--disabled" aria-label="Cartão De Crédito" aria-disabled="true">Cartão De Crédito</button></span>
-                    <span tabindex="0"><button class="product-variation" aria-label="Boleto Bancário" aria-disabled="false">Boleto Bancário</button></span>
-                    <span tabindex="0"><button class="product-variation" aria-label="Pix" aria-disabled="false">Pix</button></span>
+            <h3>Método de pagamento</h3>
+            <div class="row">
+                <div class="col flex items-center TvGNLb">
+                    <button id="cartao" class="btn">Cartão De Crédito</button>
+                    <button id="boleto" class="btn">Boleto Bancário</button>
+                    <button id="pix" class="btn">Pix</button>
                 </div>
+            </div>
+            
             </div>
             <div class="checkout-payment-setting__payment-method-options"></div>
                 <div class="KqH1Px">
@@ -29,7 +51,37 @@
             
         </div>
     </div>
-    
+    <script type="text/javascript">
+        let cartao = document.getElementById('cartao')
+        let boleto = document.getElementById('boleto')
+        let pix = document.getElementById('pix')
+        let htam = ''
+        p.onclick = function(){
+            console.log('Pagamento no cartao de credito')
+            cartao.classList.add("btn-dark");
+            boleto.classList.remove("btn-dark");
+            pix.classList.remove("btn-dark");
+            console.log('mudou')
+            htam = p.innerHTML
+        }
+        m.onclick = function(){
+            console.log('Pagamento no boleto bancario')
+            cartao.classList.remove("btn-dark");
+            boleto.classList.add("btn-dark");
+            pix.classList.remove("btn-dark");
+            console.log('mudou')
+            htam = m.innerHTML
+        }
+        g.onclick = function(){
+            console.log('Pagamento PIX')
+            cartao.classList.remove("btn-dark");
+            boleto.classList.remove("btn-dark");
+            pix.classList.add("btn-dark");
+            console.log(g.innerHTML)
+            console.log('mudou')
+            htam = g.innerHTML
+        }
+</script>
 <?php 
 	include "footer.php";
 ?>
