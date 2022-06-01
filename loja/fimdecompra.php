@@ -1,5 +1,15 @@
 <?php
     session_start();
+	if(!isset($_SESSION['user_id']) or $_SESSION['user_id'] == null){
+		header("Location: login.php?erro=34");
+	}
+	include "conexao.php";
+    if (isset($_SESSION["user_id"]) and $_SESSION["user_id"] != ""){
+        $consulta = "SELECT * FROM pessoa WHERE id_pessoa = ". $_SESSION["user_id"];
+        $busca = mysqli_query($mysql, $consulta);
+        $pessoa = mysqli_fetch_assoc($busca);
+        $nome = $pessoa["nome"];
+    }
     #var_dump($_SESSION);
     include "conexao.php";
     $id = $_GET['id_camisa'];
@@ -119,27 +129,19 @@
                     <div class="row">
                         <div class="col-7">
                             <div class="row">
-                                <div class="col-1">
+                                <div class="col-2">
                                     <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block mb-3 mt-2" alt="roupa" style="height: 100px";>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-1">
+                                <div class="col-2">
                                     <span class="mt-1"><?php echo $camisa['estampa']; ?></span>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-2">
                                     <span class="mt-1">mostar o tamanho escolhido</span>
                                 </div>
-                            </div>
-                            <div class="row-2">
-                                <div class="col">
+                                <div class="col-2">
                                     <span>R$<?php echo $camisa['preco']; ?></span>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-1">
+                                <div class="col-2">
                                     <span class="mt-1">mostrar quantidade escolhida</span>
                                 </div>
                             </div>
@@ -147,7 +149,7 @@
                         <div class="col-5">
                             <div class="row">
                                 <div class="col-2">
-                                    <span>i love you</span>
+                                    <h3>TOTAL</h3>
                                 </div>
                             </div>
                         </div>

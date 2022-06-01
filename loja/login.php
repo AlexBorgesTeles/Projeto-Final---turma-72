@@ -36,6 +36,12 @@
 								<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
 						  </div>";
 						}
+						if(isset($_GET['erro']) and $_GET['erro'] == 34){
+							echo "<div class='alert mt-2 alert-warning alert-dismissible fade show' role='alert'>
+								<strong>Para continuar as compras, logue ou faça seu cadastro!
+								<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+						  </div>";
+						}
 					}
 					?>
 					</div>
