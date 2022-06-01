@@ -1,6 +1,9 @@
 <?php
     session_start();
-    #var_dump($_SESSION);
+    var_dump($_SESSION);
+	if(!isset($_SESSION['user_id']) or $_SESSION['user_id'] == null){
+		header("Location: login.php?erro=34");
+	}
     include "conexao.php";
     $id = $_GET['id_camisa'];
     $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}"; #echo $select;
