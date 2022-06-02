@@ -1,7 +1,7 @@
 <?php
     session_start();
 	include "conexao.php";
-	$titlePage = "Página a Conta";
+	$titlePage = "Página relátorio";
 	include "cabecalho.php";
     ?>
     <body>

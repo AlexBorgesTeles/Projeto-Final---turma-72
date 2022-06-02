@@ -4,14 +4,16 @@
 	$titlePage = "Página a Conta";
 	include "cabecalho.php";
 
-    $sql_seleciona= "SELECT * FROM `usuario` JOIN `pessoa` ON `id_pessoa` = `fk_id_pessoa`;";
+    $sql_seleciona= "SELECT * FROM `usuario` JOIN `pessoa` ON `id_pessoa` = `fk_id_pessoa` WHERE  `id_pessoa` = {$_SESSION['user_id']};";
     #select * from usuario join pessoa on id_pessoa = fk_id_pessoa
     #$sql_seleciona= "SELECT `id_pessoa`,`nome`,`cpf`,`rg`,`endereco`,`idade`,`telefone` FROM pessoa;";
     #$sql_seleciona= "SELECT `id_pessoa`,`nome`,`cpf`,`rg`,`endereco` FROM pessoa;";
     #$sql_seleciona="SELECT `id_usuario`,`email`,`senha`,`nivel`,`fk_id_pessoa` FROM usuario;";
 	$query_ler = mysqli_query($mysql, $sql_seleciona);
 	$fetch_organiza = mysqli_fetch_assoc($query_ler);
-    //var_dump($fetch_organiza);
+    echo "<pre>";
+    var_dump($fetch_organiza);
+    echo "</pre>";
 ?>
 <style>
 
