@@ -19,7 +19,6 @@
 ?>
 <div class="container">
 		<?php
-		var_dump($_SESSION);
 		if(isset($_GET['sucess']) and $_GET['sucess'] != ''){
 			echo "<div class='alert alert-success alert-dimissible fade show' role='success'>Produto adicionado ao carrinho com sucesso!<button type='button' class='btn-close' data-bs-dismiss='success' aria-label='Close'></button></div>";
 		}

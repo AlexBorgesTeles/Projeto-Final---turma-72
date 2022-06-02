@@ -6,7 +6,7 @@
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">                    
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-white">
+                        <a href="relatorioconta.php" class="nav-link text-white">
                         <i class="bi bi-graph-up"> Relatórios</i>
                         </a>
                     </li>
@@ -21,7 +21,7 @@
                         </a>
                     </li>
                     <?php 
-                        if(isset($_SESSION['nivel']) and $_SESSION['nivel'] == 1){
+                        if(isset($_SESSION['nivel']) and $_SESSION['nivel'] != 2){
                             echo "<hr>
                             <li>
                                 <a href='adicionarcamisa.php' class='nav-link text-white'>
@@ -34,7 +34,6 @@
                                 </a>
                             </li>";
                         }
-                        var_dump($_SESSION['nivel']);
                     ?>
                 </ul>
             </div>

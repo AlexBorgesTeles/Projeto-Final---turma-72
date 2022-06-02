@@ -35,7 +35,7 @@
 		                $query = mysqli_query($mysql,$sql02);
 		                $pessoa = mysqli_fetch_assoc($query);
                         $name = $pessoa['nome'];
-                        echo "<a href='clientepagina.php' class='d-inline p-2  text-white'>".$name."</a>";
+                        echo "<a href='admpagina.php' class='d-inline p-2  text-white'>".$name."</a>";
 	                    }else{echo "<a href='login.php' class='d-inline p-2  text-white'><i class='bi bi-person-circle'> Login</i></a>";}?>
                 </button>
                 <button type="button" class="btn btn-dark">

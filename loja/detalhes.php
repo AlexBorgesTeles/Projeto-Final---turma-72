@@ -1,6 +1,15 @@
 <?php
     session_start();
+    if (isset($_SESSION["user_id"]) and $_SESSION["user_id"] == ""){
+        header('Location: login.php?usuarionaolocalizado=4');
+    }
 	include "conexao.php";
+    if (isset($_SESSION["user_id"]) and $_SESSION["user_id"] != ""){
+        $consulta = "SELECT * FROM pessoa WHERE id_pessoa = ". $_SESSION["user_id"];
+        $busca = mysqli_query($mysql, $consulta);
+        $pessoa = mysqli_fetch_assoc($busca);
+        $nome = $pessoa["nome"];
+    }
     $id = $_GET['id_camisa'];
     $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}";
     $info = mysqli_query($mysql, $select);
@@ -23,7 +32,7 @@
     Remover as classes dos botoes nao selecionados
 -->
 <div class="container">
-<?php if(isset($_GET['error']) and $_GET['error'] == 1){echo "<div class='alert alert-danger alert-dimissible fade show' role='danger'><h6>Você não selecionou a quantidade que deseja ou o tamanho desejado!</h6><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";}?>
+    <?php if(isset($_GET['error']) and $_GET['error'] == 1){echo "<div class='alert alert-danger alert-dimissible fade show' role='danger'><h6>Você não selecionou a quantidade que deseja ou o tamanho desejado!</h6><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";}?>
     <div class="row">
         <div class="col-4">
             <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block w-100 mb-3 mt-2" alt="casal vestidos na camisa" height: 60px;>
@@ -64,11 +73,11 @@
                 <div class="col-4" style="color: gray;">
                     <p>TAMANHO</p>
                 </div>
-                <div id="botao" class="col-8 flex items-center TvGNLb">
-                    <button id='P' class='btn' >P</button>
-                    <button id='M' class='btn' onclick="estilo()">M</button>
-                    <button id='G' class='btn' onclick="estilo()">G</button>
-                    <button id='GG' class='btn' onclick="estilo()">GG</button>
+                <div class="col-8 flex items-center">
+                    <button id='P' class='btn'>P</button>
+                    <button id='M' class='btn'>M</button>
+                    <button id='G' class='btn'>G</button>
+                    <button id='GG' class='btn'>GG</button>
                 </div>
 		    </div>
             <div class="row mt-2 mb-3">
@@ -84,7 +93,7 @@
 			</div>
             <div class="row mt-2">
                 <div class="col" style="padding-left: 33px;">
-                    <a id="link" class="btn btn-outline-success btn-lg" href="insertcarrinho.php?id_camisa=<?php echo $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
+                    <a id="link" class="btn btn-outline-success btn-lg" href="insertcarrinho.php?id_estoque=<?php echo $camisa['id_estoque']; ?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
                 </div>
                 <div class="col">
                     <a class="btn btn-dark btn-lg" href="fimdecompra.php?id_camisa=<?php echo $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Comprar agora</a>

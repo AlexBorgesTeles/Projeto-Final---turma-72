@@ -21,14 +21,42 @@
 						<input type="email" class="form-control" name="email">
 						<label for="senha" class="form-label">Senha:</label>
 						<input type="password" class="form-control" name="senha">
+					
+					<?php 
+					if(isset($_GET['error']) and $_GET['error'] == 1){
+						echo "
+								<div class='alert mt-2 alert-warning alert-dismissible fade show' role='alert'>
+								<strong>Email incorreto!</strong> Esse email não está vinculado a sua conta.
+								<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+					  			</div>";
+						}else{
+						if(isset($_GET['error']) and $_GET['error'] == 2){
+							echo "<div class='alert mt-2 alert-warning alert-dismissible fade show' role='alert'>
+								<strong>Senha incorreta!</strong> Essa senha não está vinculada a sua conta.
+								<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+						  </div>";
+						}
+						if(isset($_GET['erro']) and $_GET['erro'] == 34){
+							echo "<div class='alert mt-2 alert-warning alert-dismissible fade show' role='alert'>
+								<strong>Para continuar as compras, logue ou faça seu cadastro!
+								<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+						  </div>";
+						}
+					}
+					?>
 					</div>
 					<div class="d-grid gap-2">
-					<button type="submit" class="btn btn-primary">Enviar</button>
+					<button type="submit" class="btn btn-dark">Enviar</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
+	<script>
+		const alertList = document.querySelectorAll('.alert')
+		const alerts = [...alertList].map(element => new bootstrap.Alert(element))
+
+	</script>
 
 <?php
     include "footer.php";

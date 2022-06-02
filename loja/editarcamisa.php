@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include 'admteste.php';
     include "conexao.php";
     $titlePage = "Página de Edição";
     include "cabecalho.php";

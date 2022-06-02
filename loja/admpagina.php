@@ -1,7 +1,7 @@
 <?php
     session_start();
 	include "conexao.php";
-	$titlePage = "Página Interna ADM";
+	$titlePage = "Página a Conta";
 	include "cabecalho.php";
 
     $sql_seleciona= "SELECT * FROM `usuario` JOIN `pessoa` ON `id_pessoa` = `fk_id_pessoa`;";
