@@ -127,32 +127,32 @@
                     </div>
                     <h2 class="mt-3">Compra a ser realizada</h2>
                     <div class="row">
-                        <div class="col-7">
+                        <div class="col">
                             <div class="row">
-                                <div class="col-2">
-                                    <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block mb-3 mt-2" alt="roupa" style="height: 100px";>
+                                <div class="col">
+                                    <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block mb-3 mt-2" alt="roupa" style="height: 130px";>
                                 </div>
-                                <div class="col-2">
-                                    <span class="mt-1"><?php echo $camisa['estampa']; ?></span>
+                                <div class="col">
+                                    <span style="font-size: 20px;" class="mt-1"><?php echo $camisa['estampa']; ?></span>
                                 </div>
-                                <div class="col-2">
-                                    <span class="mt-1">mostar o tamanho escolhido</span>
+                                <div class="col">
+                                    <span style="font-size: 20px;" class="mt-1">mostar o tamanho escolhido</span>
                                 </div>
-                                <div class="col-2">
-                                    <span>R$<?php echo $camisa['preco']; ?></span>
+                                <div class="col">
+                                    <span style="font-size: 20px;" class="mt-1">mostrar quantidade escolhida</span>
                                 </div>
-                                <div class="col-2">
-                                    <span class="mt-1">mostrar quantidade escolhida</span>
+                                <div class="col">
+                                    <span style="font-size: 20px;">R$<?php echo $camisa['preco']; ?></span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-5">
+                        <!--<div class="col-5">
                             <div class="row">
                                 <div class="col-2">
                                     <h3>TOTAL</h3>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     <a class="btn btn-success btn-lg mt-3" href="checkout.php?id_camisa=<?php echo $camisa['id_camisa']; ?>" role="button">Fazer pedido</a>
                 </form>
