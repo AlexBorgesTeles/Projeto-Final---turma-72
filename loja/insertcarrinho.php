@@ -74,8 +74,6 @@ echo "<br>";
 		if($carrinho['id_carrinho']){
 			
 			$update = "update `carrinho` set `quantidade` = ".$_GET['quantidade']." + 1 where `id_carrinho` = ". $carrinho['id_carrinho']."";
-			$consulta = mysqli_query($mysql, $update);
-			$fetchupdate = mysqli_fetch_assoc($consulta);
 			echo "<br>";
 		}else{
 			$insertcarrinho = "insert into `carrinho` (`fk_id_pessoa`,`fk_id_estoque`, `quantidade`, `fk_id_pedido`) values ('{$pessoa['id_pessoa']}','{$estoque['id_estoque']}','{$_GET['quantidade']}','{$pedido['id_pedido']}')";
