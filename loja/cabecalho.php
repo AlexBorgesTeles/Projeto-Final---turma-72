@@ -20,7 +20,7 @@
                 <a class="py-2 d-none d-md-inline-block" style="color:black" href="home.php"><i class="bi bi-house-fill"> Início</i></a>
             </div>
             <div class="col">
-                <a class="py-2 d-none d-md-inline-block" style="color:black" href="home.php"><i class="bi bi-box2-fill"> Estoque</i></a>
+                <a class="py-2 d-none d-md-inline-block" style="color:black" href="clienteestoque.php"><i class="bi bi-box2-fill"> Estoque</i></a>
             </div>
             <div class="col-2">
                 <a class="py-2 d-none d-md-inline-block" style="color:black" href="carrinho.php?id_carrinho=1"><i class="bi bi-cart-fill"> Carrinho</i></a>

@@ -10,7 +10,7 @@
                 include 'admmenu.php';
             ?>
             <div class='col-10'>
-
+                
             </div>
         </div>
     </div>
