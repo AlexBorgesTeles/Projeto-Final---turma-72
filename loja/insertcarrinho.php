@@ -4,6 +4,7 @@ session_start();
 $titlePage = "Adicionar ao carrinho";
 include "cabecalho.php";
 $id = $_GET["id_estoque"];
+$ide = $_GET['id_estoque'];
 
 $select = "select * from estoque where id_estoque = {$id} and tamanho = '{$_GET["tam"]}'";
 $query4 = mysqli_query($mysql, $select);
@@ -72,8 +73,10 @@ echo "<br>";
 		$carrinho = mysqli_fetch_assoc($query);
 		var_dump($carrinho);
 		if($carrinho['id_carrinho']){
-			
-			$update = "update `carrinho` set `quantidade` = ".$_GET['quantidade']." + 1 where `id_carrinho` = ". $carrinho['id_carrinho']."";
+			$soma = $_GET['quantidade'] + $carrinho['quantidade'];
+			var_dump($soma);
+			if($soma != 0 and $soma > $estoque['quantidade_e']){echo "<u>error</u><p>produto esgotado</p>";}
+			$update = "update `carrinho` set `quantidade` = {$soma} where `id_carrinho` = ". $carrinho['id_carrinho']."";
 			echo "<br>";
 		}else{
 			$insertcarrinho = "insert into `carrinho` (`fk_id_pessoa`,`fk_id_estoque`, `quantidade`, `fk_id_pedido`) values ('{$pessoa['id_pessoa']}','{$estoque['id_estoque']}','{$_GET['quantidade']}','{$pedido['id_pedido']}')";
