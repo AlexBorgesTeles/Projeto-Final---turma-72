@@ -18,19 +18,24 @@
     #var_dump($camisa['id_camisa']);
 	$titlePage = $camisa['estampa'];
     include "cabecalho.php";
+
+    $tam = "SELECT * FROM estoque WHERE fk_id_camisa = {$id} and tamanho = 'P' ";
+    $tama = "SELECT * FROM estoque WHERE fk_id_camisa = {$id} and tamanho = 'M'";
+    $taman = "SELECT * FROM estoque WHERE fk_id_camisa = {$id} and tamanho = 'G'";
+    $tamanho = "SELECT * FROM estoque WHERE fk_id_camisa = {$id} and tamanho = 'GG'";
 ?>
 <!--
-    Preco e avaliacoes na mesma linha
-    Todos alinhados
-    Muda a ordem do preco
-    Separa o menu da compra
+    Preco e avaliacoes na mesma linha ()
+    Todos alinhados()
+    Muda a ordem do preco ()
+    Separa o menu da compra ()
 -->
 <!--
     so mostar o tamanho da camisa do banco de dados
-    Adiciona uma classe quando a pessoa clica no botao
-    Remove a classe quando outro botao for clicado
-    Se clicar em P por exemplo, fica preto
-    Remover as classes dos botoes nao selecionados
+    Adiciona uma classe quando a pessoa clica no botao ()
+    Remove a classe quando outro botao for clicado ()
+    Se clicar em P por exemplo, fica preto ()
+    Remover as classes dos botoes nao selecionados ()
 -->
 <div class="container">
     <?php 
