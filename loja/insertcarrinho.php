@@ -81,17 +81,16 @@ echo "<br>";
 				echo $update;
 				mysqli_query($mysql, $update);
 				echo "<br>";
+				header('Location: home.php?sucess=1');
 			}
 		
 		}else{
+		
 			$insertcarrinho = "insert into `carrinho` (`fk_id_pessoa`,`fk_id_estoque`, `quantidade`, `fk_id_pedido`) values ('{$pessoa['id_pessoa']}','{$estoque['id_estoque']}','{$_GET['quantidade']}','{$pedido['id_pedido']}')";
 			$query = mysqli_query($mysql, $insertcarrinho);
 			die();
-			header('Location: home.php?sucess=1');
-		}
-	}else{
-		header('Location: detalhes.php?id_camisa='.$idcamisa.'&error=1');
-	}
+			header('Location: home.php?sucess=1');}}else{
+		header('Location: detalhes.php?id_camisa='.$idcamisa.'&error=1');}
 //verificar se existe $id no $pedido
 //caso sim: adiciona um na quantidade
 //se não adiciona um novo
