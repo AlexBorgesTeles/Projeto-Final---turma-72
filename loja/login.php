@@ -38,7 +38,7 @@
 						}
 						if(isset($_GET['error']) and $_GET['error'] == 3){
 							echo "<div class='alert mt-2 alert alert-success alert-dismissible fade show' role='alert'>
-								<strong>Senha incorreta!</strong> Essa senha não está vinculada a sua conta.
+								<strong>Meus Parebes você foi cadastrado com sucesso!</strong>.
 								<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
 						  </div>";
 						}
