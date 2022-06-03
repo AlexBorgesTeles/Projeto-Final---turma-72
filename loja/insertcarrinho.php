@@ -83,6 +83,9 @@ if ($_GET['quantidade'] != '' and $_GET["tam"] != ''){
 
         $insertcarrinho = "insert into `carrinho` (`fk_id_pessoa`,`fk_id_estoque`, `quantidade`, `fk_id_pedido`) values ('{$pessoa['id_pessoa']}','{$estoque['id_estoque']}','{$_GET['quantidade']}','{$pedido['id_pedido']}')";
         $query = mysqli_query($mysql, $insertcarrinho);
+	$novovalor = $estoque['quantidade_e'] - $soma;
+        $updateestoque = "update `estoque` set `quantidade_e` = {$novovalor} where id_estoque = {$estoque['id_estoque']} ";
+        $queryestoque = mysqli_query($mysql, $updateestoque);
         header('Location: home.php?sucess=1');
         die();
     }
