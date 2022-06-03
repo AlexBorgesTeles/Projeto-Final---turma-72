@@ -24,7 +24,9 @@
 	include "cabecalho.php";
 ?>
 
-
+<img src"../imagens/relógio.jpg" width= '60' height='20'>
+<p>aguardamos o seu pagamento</p>
+<a href="home.php" class="btn btn-primary" role="btn">Compre mais</a>
 <?php
     include "footer.php";
 ?>
