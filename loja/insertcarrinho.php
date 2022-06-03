@@ -75,10 +75,12 @@ echo "<br>";
 		if($carrinho['id_carrinho']){
 			$soma = $_GET['quantidade'] + $carrinho['quantidade'];
 			var_dump($soma);
-			if($soma != 0 and $soma > $estoque['quantidade_e']){echo "<u>error</u><p>produto esgotado</p>";}
+			if($soma != 0 and $soma > $estoque['quantidade_e']){echo "<u>error</u><p>produto esgotado</p>"; header('Location: detalhes.php?esgotado=1');}else{
 			$update = "update `carrinho` set `quantidade` = {$soma} where `id_carrinho` = ". $carrinho['id_carrinho']."";
+			echo $update;
+			mysqli_query($mysql, $update);
 			echo "<br>";
-		}else{
+		}}else{
 			$insertcarrinho = "insert into `carrinho` (`fk_id_pessoa`,`fk_id_estoque`, `quantidade`, `fk_id_pedido`) values ('{$pessoa['id_pessoa']}','{$estoque['id_estoque']}','{$_GET['quantidade']}','{$pedido['id_pedido']}')";
 			$query = mysqli_query($mysql, $insertcarrinho);
 			die();
