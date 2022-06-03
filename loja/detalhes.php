@@ -18,21 +18,31 @@
     #var_dump($camisa['id_camisa']);
 	$titlePage = $camisa['estampa'];
     include "cabecalho.php";
+
+    $tam = "SELECT * FROM estoque WHERE fk_id_camisa = {$id} and tamanho = 'P' ";
+    $tama = "SELECT * FROM estoque WHERE fk_id_camisa = {$id} and tamanho = 'M'";
+    $taman = "SELECT * FROM estoque WHERE fk_id_camisa = {$id} and tamanho = 'G'";
+    $tamanho = "SELECT * FROM estoque WHERE fk_id_camisa = {$id} and tamanho = 'GG'";
 ?>
 <!--
-    Preco e avaliacoes na mesma linha
-    Todos alinhados
-    Muda a ordem do preco
-    Separa o menu da compra
+    Preco e avaliacoes na mesma linha ()
+    Todos alinhados()
+    Muda a ordem do preco ()
+    Separa o menu da compra ()
 -->
 <!--
-    Adiciona uma classe quando a pessoa clica no botao
-    Remove a classe quando outro botao for clicado
-    Se clicar em P por exemplo, fica preto
-    Remover as classes dos botoes nao selecionados
+    so mostar o tamanho da camisa do banco de dados
+    Adiciona uma classe quando a pessoa clica no botao ()
+    Remove a classe quando outro botao for clicado ()
+    Se clicar em P por exemplo, fica preto ()
+    Remover as classes dos botoes nao selecionados ()
 -->
 <div class="container">
-    <?php if(isset($_GET['error']) and $_GET['error'] == 1){echo "<div class='alert alert-danger alert-dimissible fade show' role='danger'><h6>Você não selecionou a quantidade que deseja ou o tamanho desejado!</h6><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";}?>
+    <?php 
+        if(isset($_GET['error']) and $_GET['error'] == 1){
+            echo "<div class='alert alert-danger alert-dimissible fade show' role='danger'><h6>Você não selecionou a quantidade que deseja ou o tamanho desejado!</h6><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";
+        }
+    ?>
     <div class="row">
         <div class="col-4">
             <img src="../imagens/<?php echo $camisa['imagem'];?>" class="d-block w-100 mb-3 mt-2" alt="casal vestidos na camisa" height: 60px;>
@@ -93,7 +103,7 @@
 			</div>
             <div class="row mt-2">
                 <div class="col" style="padding-left: 33px;">
-                    <a id="link" class="btn btn-outline-success btn-lg" href="insertcarrinho.php?id_estoque=<?php echo $camisa['id_estoque']; ?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
+                    <a id="link" class="btn btn-outline-success btn-lg" href="insertcarrinho.php?id_camisa=<?=$_GET['id_camisa']?>&id_estoque=<?php echo $camisa['id_estoque']; ?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
                 </div>
                 <div class="col">
                     <a class="btn btn-dark btn-lg" href="fimdecompra.php?id_camisa=<?php echo $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Comprar agora</a>

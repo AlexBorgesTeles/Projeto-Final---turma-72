@@ -30,7 +30,7 @@
             <h3>Método de pagamento</h3>
             <div class="row">
                 <div class="col flex items-center TvGNLb">
-                    <button id="cartao" class="btn">Cartão De Crédito</button>
+                    <button id="cartao" class="btn-success">Cartão De Crédito</button>
                     <button id="boleto" class="btn">Boleto Bancário</button>
                     <button id="pix" class="btn">Pix</button>
                 </div>

@@ -22,7 +22,6 @@
     $pessoa = mysqli_fetch_assoc($pegar);
 	$titlePage = "Finalizando sua compra!";
 	include "cabecalho.php";
-    include "dadosentrega.php";
 ?>
 <body>
     <div class="container">
@@ -36,7 +35,7 @@
                     Colocar subtotal na pagina dos dados da entrega
                 -->
                 <h2 class="mt-2 mb-3">Dados de entrega</h2>
-                <form action="confirmacadastro.php" method="post">
+                <form action="dadosentrega.php" method="post">
                     <div class="row">
                         <div class="col-8 mb-3">
                             <label for="nome" class="form-label">Nome Completo</label>
