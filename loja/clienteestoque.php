@@ -9,6 +9,21 @@
 	$query = mysqli_query($mysql,$sql);
 	$fetchvisual = mysqli_fetch_all($query);
 ?>
+<style>
+    .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    }
+    .pagination a.active {
+    background-color: WHITE;
+    color: white;
+    }
+    .pagination a:hover:not(.active) {background-color: #65785C;
+    }
+</style>
 <body>
     <div class='container'>
         <div class='row'>
@@ -36,6 +51,20 @@
                 ";
 			}
             ?>
+            <div class='row justify-content-md-center'>
+                    <div class='col-lg-4' >
+                        <ul class="pagination">
+                            <a href="#">&laquo;</a>
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">&raquo;</a>
+                        </ul>
+                    </div> 
+            </div>
         </div>
     </div>
 </body>
