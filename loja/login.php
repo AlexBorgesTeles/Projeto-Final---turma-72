@@ -4,7 +4,6 @@
     include "cabecalho.php";
     if(isset($_GET['carrinho']) and $_GET['carrinho'] ==1 ){
 		echo "<div class='alert alert-danger alert-dimissible fade show' role='danger'>
-				<img src='../imagens/atenção.jpg' width='50' height='50' id='Slide1' alt='Slide1'/>
 				<h6>Você não pode acessar o carrinho pois você não está logado! Logue-se e você terá acesso ao carrrinho!</h6>
 					<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'>
 					</button>
@@ -38,7 +37,7 @@
 						}
 						if(isset($_GET['error']) and $_GET['error'] == 3){
 							echo "<div class='alert mt-2 alert alert-success alert-dismissible fade show' role='alert'>
-								<strong>Meus Parebes você foi cadastrado com sucesso!</strong>.
+								<strong>Meus Parabéns você foi cadastrado com sucesso!</strong>.
 								<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
 						  </div>";
 						}
