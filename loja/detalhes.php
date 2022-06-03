@@ -76,7 +76,7 @@
                     <i class="bi bi-calendar-check" style="color: red;"></i> <span style="color: red;">Encomenda (envio em 30 dias)</span><br>
                     <i class="bi bi-truck" style="color: green;"></i>
                     <span>Frete grátis com cupom<span><br>
-                    <span style="margin-left: 20px; color: gray;">Para compras acima de R$29,00</span>
+                    <span style="margin-left: 20px; color: gray;">Para compras acima de R$69,90</span>
                 </div>
             </div>
 	        <div class="row mt-1 mb-2">
@@ -131,11 +131,11 @@
 		htam = p.innerHTML
     }
     m.onclick = function(){
+		console.log('clicou em M')
         p.classList.remove("btn-dark");
 		m.classList.add("btn-dark");
 		g.classList.remove("btn-dark");
 		gg.classList.remove("btn-dark");
-		console.log('clicou em M')
         console.log(m.innerHTML)
 		console.log('mudou')
 		link.href = hlink+"&quantidade="+quantidade.value+"&tam="+m.innerHTML

@@ -86,8 +86,8 @@
                             </select>
                         </div>
                         <div class="col-5 mb-3">
-                            <label for="capital" class="form-label">Cidade</label>
-                            <input type="text" class="form-control" name="capital">
+                            <label for="cidade" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" name="cidade">
                         </div>
                     </div>
                     <div class="row">
@@ -102,8 +102,8 @@
                     </div>
                     <div class="row">
                         <div class="col-2 mb-3">
-                            <label for="numcasa" class="form-label">Número</label>
-                            <input type="text" class="form-control" name="numcasa">
+                            <label for="numero" class="form-label">Número</label>
+                            <input type="text" class="form-control" name="numero">
                         </div>
                         <div class="col mb-3">
                             <label for="complemento" class="form-label">Complemento</label>
@@ -112,17 +112,17 @@
                     </div>
                     <div class="row">
                         <div class="col-2 mb-2">
-                            <label for="entrega" class="form-label">Salvar como:</label>
+                            <label for="salvar como" class="form-label">Salvar como:</label>
                         </div>
                         <div class="col-8 mb-2" class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value="casa" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">Casa</label>
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" type="checkbox" value="trabalho" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">Trabalho</label>
                         </div>
-                        <div class="col mb-2 d-grid gap-2 d-md-flex justify-content-md">
+                        <!--<div class="col mb-2 d-grid gap-2 d-md-flex justify-content-md">
                             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#pagar">Adicionar cartão</button>
-                        </div>
+                        </div>-->
                     </div>
                     <h2 class="mt-3">Compra a ser realizada</h2>
                     <div class="row">
@@ -145,14 +145,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!--<div class="col-5">
-                            <div class="row">
-                                <div class="col-2">
-                                    <h3>TOTAL</h3>
-                                </div>
-                            </div>
-                        </div>-->
                     </div>
+                    
                     <a class="btn btn-success btn-lg mt-3" href="checkout.php?id_camisa=<?php echo $camisa['id_camisa']; ?>" role="button">Fazer pedido</a>
                 </form>
 
@@ -160,6 +154,7 @@
         </div>
     </div>
     <!-- Modal -->
+    <!--
     <div class="modal fade" id="pagar" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -198,8 +193,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
 <?php
-    include "../modelos/footer.php"
+    include "footer.php"
 ?>
