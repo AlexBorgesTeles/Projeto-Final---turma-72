@@ -196,5 +196,5 @@
     </div>-->
 
 <?php
-    include "../modelos/footer.php"
+    include "footer.php"
 ?>
