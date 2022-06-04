@@ -61,11 +61,11 @@ if ($_GET['quantidade'] != '' and $_GET["tam"] != ''){
     $testesql = "select * from carrinho where fk_id_pessoa = {$_SESSION["user_id"]} and fk_id_estoque = {$id}";
     $query = mysqli_query($mysql, $testesql);
     $carrinho = mysqli_fetch_assoc($query);
-    var_dump($carrinho);
+    #var_dump($carrinho);
+	$soma = $_GET['quantidade'] + $carrinho['quantidade'];
     if ($carrinho['id_carrinho']){
 		
-        $soma = $_GET['quantidade'] + $carrinho['quantidade'];
-        var_dump($soma);
+        #var_dump($soma);
         if ($soma != 0 and $soma > $estoque['quantidade_e']){
 
             echo "<u>error</u><p>produto esgotado</p>";
@@ -75,6 +75,9 @@ if ($_GET['quantidade'] != '' and $_GET["tam"] != ''){
             $update = "update `carrinho` set `quantidade` = {$soma} where `id_carrinho` = " . $carrinho['id_carrinho'] . "";
             echo $update;
             mysqli_query($mysql, $update);
+			$novovalor = $estoque['quantidade_e'] - $soma;
+			$updateestoque = "update `estoque` set `quantidade_e` = {$novovalor} where id_estoque = {$estoque['id_estoque']} ";
+			$queryestoque = mysqli_query($mysql, $updateestoque);
             echo "<br>";
             header('Location: home.php?sucess=1');
         }
@@ -83,7 +86,7 @@ if ($_GET['quantidade'] != '' and $_GET["tam"] != ''){
 
         $insertcarrinho = "insert into `carrinho` (`fk_id_pessoa`,`fk_id_estoque`, `quantidade`, `fk_id_pedido`) values ('{$pessoa['id_pessoa']}','{$estoque['id_estoque']}','{$_GET['quantidade']}','{$pedido['id_pedido']}')";
         $query = mysqli_query($mysql, $insertcarrinho);
-	$novovalor = $estoque['quantidade_e'] - $soma;
+		$novovalor = $estoque['quantidade_e'] - $soma;
         $updateestoque = "update `estoque` set `quantidade_e` = {$novovalor} where id_estoque = {$estoque['id_estoque']} ";
         $queryestoque = mysqli_query($mysql, $updateestoque);
         header('Location: home.php?sucess=1');
