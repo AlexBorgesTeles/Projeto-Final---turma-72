@@ -51,9 +51,9 @@
                 ";
 			}
             ?>
-            <div class='row justify-content-md-center'>
+            <label><div class='row justify-content-md-center'>
                     <div class='col-lg-4' >
-                        <ul class="pagination">
+                            <div class="pagination">
                             <a href="#">&laquo;</a>
                             <a href="#">1</a>
                             <a href="#">2</a>
@@ -62,9 +62,9 @@
                             <a href="#">5</a>
                             <a href="#">6</a>
                             <a href="#">&raquo;</a>
-                        </ul>
-                    </div> 
-            </div>
+                            </div>
+                        </div> 
+            </label></div>
         </div>
     </div>
 </body>
