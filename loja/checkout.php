@@ -12,11 +12,10 @@
     }
     #var_dump($_SESSION);
     include "conexao.php";
-    $id = $_GET['id_camisa'];
-    $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}"; #echo $select;
+    $id = $_GET['id_pedido'];
+    $select = "select * from `pedido` join carrinho on carrinho.fk_id_pedido=53 join estoque on id_estoque=carrinho.fk_id_estoque join camisa where id_camisa=estoque.fk_id_camisa";
     $info = mysqli_query($mysql, $select);
     $camisa = mysqli_fetch_assoc($info);
-
     $selecionar = "SELECT * FROM pessoa WHERE id_pessoa = ".$_SESSION['user_id']; #echo $selecionar;
     $pegar = mysqli_query($mysql, $selecionar);
     $pessoa = mysqli_fetch_assoc($pegar);
@@ -35,14 +34,16 @@
             </div>
 
             <div class="">
+             <?php $precosub= $camisa['preco'] * $camisa['quantidade']; if($precosub > 70){$frete= 15; $total = $precosub + $frete;}?>
                 <div class="lhwDvd Exv9ow c5Dezq">Subtotal dos Produtos:</div>
-                <div class="lhwDvd Uu2y3K c5Dezq">R$22,98</div>
-                <div class="lhwDvd Exv9ow B6k-vE">Total de envio:</div>
-                <div class="lhwDvd Uu2y3K B6k-vE">R$15,61</div>
+                <div class="lhwDvd Uu2y3K c5Dezq"><?php echo "{$precosub}R$";?></div>
+                <div class="lhwDvd Exv9ow B6k-vE">Frete: </div>
+                <div class="lhwDvd Uu2y3K B6k-vE">R$15,00</div>
+                <div class="lhwDvd Exv9ow B6k-vE">Frete grátis se for menos de 70.00R$: </div>
                 <div class="lhwDvd Exv9ow A4gPS6">Pagamento Total:</div>
-                <div class="lhwDvd +0tdvp Uu2y3K A4gPS6">R$38,59</div>
+                <div class="lhwDvd +0tdvp Uu2y3K A4gPS6"><?php if($precosub > 70){$frete= 15; $total = $precosub + $frete; echo "{$total}R$";}else{if($precosub < 70){echo $precosub;}}?></div>
             </div>
-            <a class="btn btn-lg" style="background-color: #529A4A" href="aguardandopagamento.php?id_camisa=<?php echo $camisa['id_camisa']; ?>" role="button">Fazer pedido</a>
+            <a class="btn btn-lg" style="background-color: #529A4A" href="aguardandopagamento.php?id_camisa=<?php echo $camisa['id_camisa'];  $updatepedido = "UPDATE `pedido` SET `status`='aguardando pagamento' WHERE {$id}"; $querypedido= mysqli_query($mysql, $updatepedido);?>" role="button">Fazer pedido</a>
             
         </div>
     </div>
