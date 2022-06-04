@@ -147,7 +147,7 @@
                         </div>
                     </div>
                     
-                    <a class="btn btn-success btn-lg mt-3" href="dadosentrega.php?id_pedido=<?php echo $camisa['id_pedido']; ?>" role="button">Fazer pedido</a>
+                    <a class="btn btn-success btn-lg mt-3" href="checkout.php?id_pedido=<?php echo $camisa['id_pedido']; ?>" role="button">Fazer pedido</a>
                 </form>
 
             </div>
