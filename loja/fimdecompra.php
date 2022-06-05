@@ -12,8 +12,8 @@
     }
     #var_dump($_SESSION);
     include "conexao.php";
-    $id = $_GET['id_camisa'];
-    $select = "SELECT * FROM camisa JOIN estoque ON camisa.id_camisa = estoque.fk_id_camisa WHERE id_camisa = {$id}"; #echo $select;
+    $id = $_GET['id_pedido'];
+    $select = "SELECT * FROM `carrinho` join pedido on id_pedido=carrinho.fk_id_pedido join estoque on id_estoque=carrinho.fk_id_estoque join camisa where id_camisa=estoque.fk_id_camisa"; #echo $select;
     $info = mysqli_query($mysql, $select);
     $camisa = mysqli_fetch_assoc($info);
 
@@ -135,10 +135,10 @@
                                     <span style="font-size: 20px;" class="mt-1"><?php echo $camisa['estampa']; ?></span>
                                 </div>
                                 <div class="col">
-                                    <span style="font-size: 20px;" class="mt-1">mostar o tamanho escolhido</span>
+                                    <span style="font-size: 20px;" class="mt-1"><?php echo $camisa['tamanho']; ?></span>
                                 </div>
                                 <div class="col">
-                                    <span style="font-size: 20px;" class="mt-1">mostrar quantidade escolhida</span>
+                                    <span style="font-size: 20px;" class="mt-1"><?php echo $camisa['quantidade']; ?></span>
                                 </div>
                                 <div class="col">
                                     <span style="font-size: 20px;">R$<?php echo $camisa['preco']; ?></span>
@@ -147,7 +147,7 @@
                         </div>
                     </div>
                     
-                    <a class="btn btn-success btn-lg mt-3" href="checkout.php?id_camisa=<?php echo $camisa['id_camisa']; ?>" role="button">Fazer pedido</a>
+                    <a class="btn btn-success btn-lg mt-3" href="checkout.php?id_pedido=<?php echo $camisa['id_pedido']; ?>" role="button">Fazer pedido</a>
                 </form>
 
             </div>

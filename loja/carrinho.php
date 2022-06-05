@@ -1,3 +1,4 @@
+
 <?php
 include "conexao.php";
 session_start();
@@ -10,10 +11,10 @@ if (isset($_SESSION["user_id"]) and $_SESSION["user_id"] != "") {
     $nome = $pessoa["nome"];
 }else{header('Location: login.php?carrinho=1');}
 if(isset($_GET['ok']) and $_GET['ok'] == 1){echo "<div class='alert alert-success alert-dimissible fade show' role='success'>Produto foi retirado do carrinho!<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";}
-$sql = "SELECT * FROM carrinho JOIN estoque ON carrinho.fk_id_pessoa = {$_SESSION["user_id"]} join camisa on estoque.id_estoque = carrinho.fk_id_estoque WHERE id_camisa = estoque.fk_id_camisa;";
+$sql = "SELECT * FROM carrinho JOIN estoque ON carrinho.fk_id_pessoa = 8 join camisa on estoque.id_estoque = carrinho.fk_id_estoque join pedido on id_pedido=carrinho.fk_id_pedido WHERE id_camisa = estoque.fk_id_camisa;";
 $query = mysqli_query($mysql, $sql);
 $dados = mysqli_fetch_all($query, MYSQLI_ASSOC);
-#var_dump($dados);
+var_dump($dados);
 echo "<div class='container'>";
 foreach ($dados as $q) {
     echo "<div class='col-3 btn'><div class='card' style='background-color: #4F4F4F'>
@@ -33,7 +34,7 @@ foreach ($dados as $q) {
      	<div class='row'>
 	     <a href='home.php' class='btn btn-dark'> Continuar compra</a>
 	     <br>
-	     <a href='fimdecompra.php' class='btn btn-primary'> Finalizar compra</a>
+	     <a href='fimdecompra.php?id_pedido=<?php echo $dados[0]['fk_id_pedido'];?>' class='btn btn-primary'> Finalizar compra</a>
        </div>
 </div>
 <?php include "footer.php";
