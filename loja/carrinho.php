@@ -14,7 +14,7 @@ if(isset($_GET['ok']) and $_GET['ok'] == 1){echo "<div class='alert alert-succes
 $sql = "SELECT * FROM carrinho JOIN estoque ON carrinho.fk_id_pessoa = 8 join camisa on estoque.id_estoque = carrinho.fk_id_estoque join pedido on id_pedido=carrinho.fk_id_pedido WHERE id_camisa = estoque.fk_id_camisa;";
 $query = mysqli_query($mysql, $sql);
 $dados = mysqli_fetch_all($query, MYSQLI_ASSOC);
-var_dump($dados);
+#var_dump($dados);
 echo "<div class='container'>";
 foreach ($dados as $q) {
     echo "<div class='col-3 btn'><div class='card' style='background-color: #4F4F4F'>
