@@ -105,9 +105,9 @@
                 <div class="col" style="padding-left: 33px;">
                     <a id="link" class="btn btn-outline-success btn-lg" href="insertcarrinho.php?id_camisa=<?=$_GET['id_camisa']?>&id_estoque=<?php echo $camisa['id_estoque']; ?>" role="button"><i class="bi bi-cart-plus"></i>Adicionar ao carrinho</a>
                 </div>
-                <div class="col">
+                <!--<div class="col">
                     <a class="btn btn-dark btn-lg" href="fimdecompra.php?id_camisa=<?php echo $camisa['id_camisa']; ?>" role="button"><i class="bi bi-cart-plus"></i>Comprar agora</a>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
