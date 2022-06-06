@@ -39,9 +39,6 @@
                             <p class='card-text'>R$$colunaresposta[5]</p>
                             <div class='row'>
                                 <div class='col'>
-                                    <a href='carrinho.php?id_camisa=$colunaresposta[0]' class='btn btn-dark'>Comprar</a>
-                                </div>
-                                <div class='col'>
                                     <a href='detalhes.php?id_camisa=$colunaresposta[0]' class='btn btn-dark'>Detalhes</a>
                                 </div>
                             </div>
