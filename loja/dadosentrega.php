@@ -11,6 +11,6 @@
     $incluir = mysqli_query($mysql, $consulta);
     $novo_id = mysqli_insert_id($mysql);
     if($incluir){
-        echo "<html><h5 style='text-align:center'>Dados inseridos com sucesso!</h5></html>";
+       header('Location: fimdecompra.php?sucess=2&id_carrinho='.{$id}.'');
     }
 ?>
