@@ -35,7 +35,7 @@
                     Colocar subtotal na pagina dos dados da entrega
                 -->
                 <h2 class="mt-2 mb-3">Dados de entrega</h2>
-                <form action="dadosentrega.php?id_carrinho={$id}" method="post">
+                <form action="dadosentrega.php?id_carrinho=<?= $id;?>" method="post">
                     <div class="row">
                         <div class="col-8 mb-3">
                             <label for="nome" class="form-label">Nome Completo</label>
@@ -110,16 +110,10 @@
                             <input type="text" class="form-control" name="complemento">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-2 mb-2">
-                            <label for="salvar como" name="fb"  class="form-label">Salvar como:</label>
-                        </div>
-                        <div class="col-8 mb-2" class="form-check" name="fb">
-                            <input class="form-check-input" type="checkbox" value="casa" id="flexCheckDefault" >
-                            <label class="form-check-label" for="flexCheckDefault">Casa</label>
-                            <input class="form-check-input"type="checkbox" value="trabalho" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">Trabalho</label>
-                        </div>
+                    <?php
+                  if(isset($_GET['error']) and $_GET['error']== 1){echo "<div class='alert alert-danger alert-dimissible fade show' role='danger'><h6>Você não selecionou a quantidade que deseja ou o tamanho desejado!</h6><button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";}
+                  if(isset($_GET['sucess'])and $_GET['sucess'] == 2){echo "<div class='alert alert-success alert-dimissible fade show' role='success'>Dados inseridos com sucesso!<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>";}
+                  ?>
                                <div class="col-2 mb-2">
                                 <button class='btn btn-success' type='submit'>inserir dados</button>
                                </div>
