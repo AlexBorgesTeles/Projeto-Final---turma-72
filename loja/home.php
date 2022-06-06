@@ -78,7 +78,6 @@
                                 $contador++;
                             }
                             echo "</p>
-                            <a href='carrinho.php?id_camisa=$colunaresposta[0]' class='btn btn-dark'>Comprar</a>
                             <a href='detalhes.php?id_camisa=$colunaresposta[0]' class='btn btn-dark'>Detalhes</a>
                         </div>
                     </div>
