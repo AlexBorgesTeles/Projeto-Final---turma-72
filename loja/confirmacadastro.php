@@ -6,7 +6,7 @@
 	$query = mysqli_query($mysql,$sql);
 	$dados = mysqli_fetch_assoc($query);
 
-	#var_dump($dados);
+
 	//SE O POST NÃO VIER VAZIO
 	if(isset($dados['email']) and $_POST['email01'] == $dados['email'] ){
 			Header('location:cadastro.php?falta=9');
