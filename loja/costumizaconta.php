@@ -4,7 +4,7 @@
 	$titlePage = "Costumizar Conta";
 	include "cabecalho.php";
 
-    var_dump($_SESSION['user_id']);
+
     if(isset($_SESSION['id_usuario']) and $_SESSION['id_usuario'] != ''){
         $sql_conta= "SELECT * FROM `usuario` JOIN `pessoa` ON `id_pessoa` = `fk_id_pessoa` WHERE `fk_id_pessoa` = {$_SESSION['user_id']};";
         $query_envia= mysqli_query($mysql,$sql_conta);
@@ -45,10 +45,6 @@
     }else{
         header('location: home.php');
     }
-    echo "<pre>";
-    var_dump($fetch_organiza);
-    var_dump($senha_traduz);
-    echo "</pre>";
 ?>
 <body>
     <div class="container">
