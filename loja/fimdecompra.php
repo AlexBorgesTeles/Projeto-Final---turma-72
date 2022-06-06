@@ -12,7 +12,7 @@
     }
     #var_dump($_SESSION);
     include "conexao.php";
-    $id = $_GET['id_pedido'];
+    $id = $_GET['id_carrinho'];
     $select = "SELECT * FROM `carrinho` join pedido on id_pedido=carrinho.fk_id_pedido join estoque on id_estoque=carrinho.fk_id_estoque join camisa where id_camisa=estoque.fk_id_camisa"; #echo $select;
     $info = mysqli_query($mysql, $select);
     $camisa = mysqli_fetch_assoc($info);
