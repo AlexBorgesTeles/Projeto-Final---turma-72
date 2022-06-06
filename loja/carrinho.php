@@ -24,7 +24,8 @@ foreach ($dados as $q) {
             <h6 class='card-body'>tamanho:{$q["tamanho"]}</h6>
             <p class='card-text'>cor: {$q["cor"]}</p>
             <p class='card-text'> quantidade: {$q["quantidade"]}</p
-            <p class='card-text'>R$ {$q["preco"]}</p>  
+            <p class='card-text'>R$ {$q["preco"]}</p>
+            <a href='fimdecompra.php?id_carrinho={$q['id_carrinho']}' class='btn btn-primary'>comprar agora</a>
             <a href='deleteproduto.php?delete={$q['id_carrinho']}' class='btn btn-danger'>Remover produto</a>
 	    </div>
 	</div>
@@ -34,7 +35,6 @@ foreach ($dados as $q) {
      	<div class='row'>
 	     <a href='home.php' class='btn btn-dark'> Continuar compra</a>
 	     <br>
-	     <a href='fimdecompra.php?id_pedido=<?php echo $dados[0]['fk_id_pedido'];?>' class='btn btn-primary'> Finalizar compra</a>
        </div>
 </div>
 <?php include "footer.php";
