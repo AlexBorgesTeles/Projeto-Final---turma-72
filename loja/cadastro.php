@@ -5,7 +5,7 @@
 	//adicionar usuario no cadastro
 ?>
     <body>
-        <div class="container">
+        <div class="container"> 
             <div class="row justify-content-center">
                 <div class="col-6">
                     <h3 class="mt-5 text-center">Cadastro</h3>
