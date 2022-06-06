@@ -12,8 +12,8 @@
     }
     #var_dump($_SESSION);
     include "conexao.php";
-    $id = $_GET['id_pedido'];
-    $select = "select * from `pedido` join carrinho on carrinho.fk_id_pedido=53 join estoque on id_estoque=carrinho.fk_id_estoque join camisa where id_camisa=estoque.fk_id_camisa";
+    $id = $_GET['id_carrinho'];
+    $select = "SELECT * FROM `carrinho` join estoque on estoque.id_estoque=carrinho.fk_id_estoque join camisa on camisa.id_camisa=estoque.fk_id_camisa where carrinho.id_carrinho={$id}";
     $info = mysqli_query($mysql, $select);
     $camisa = mysqli_fetch_assoc($info);
     $selecionar = "SELECT * FROM pessoa WHERE id_pessoa = ".$_SESSION['user_id']; #echo $selecionar;
@@ -43,7 +43,7 @@
                 <div class="lhwDvd Exv9ow A4gPS6">Pagamento Total:</div>
                 <div class="lhwDvd +0tdvp Uu2y3K A4gPS6"><?php if($precosub > 70){$frete= 15; $total = $precosub + $frete; echo "{$total}R$";}else{if($precosub < 70){echo $precosub;}}?></div>
             </div>
-            <a class="btn btn-lg" style="background-color: #529A4A" href="aguardandopagamento.php?id_camisa=<?php echo $camisa['id_camisa'];  $updatepedido = "UPDATE `pedido` SET `status`='aguardando pagamento' WHERE {$id}"; $querypedido= mysqli_query($mysql, $updatepedido);?>" role="button">Fazer pedido</a>
+            <a class="btn btn-lg" style="background-color: #529A4A" href="aguardandopagamento.php?id_camisa=<?php echo $camisa['id_camisa'];?>" role="button">Fazer pedido</a>
             
         </div>
     </div>
