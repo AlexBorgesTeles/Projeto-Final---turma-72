@@ -1,7 +1,7 @@
 <?php
     session_start();
 	include "conexao.php";
-	$titlePage = "Página a Conta";
+	$titlePage = "Perfil";
 	include "cabecalho.php";
 
     $sql_seleciona= "SELECT * FROM `usuario` JOIN `pessoa` ON `id_pessoa` = `fk_id_pessoa` WHERE  `id_pessoa` = {$_SESSION['user_id']};";
@@ -12,7 +12,7 @@
 	$query_ler = mysqli_query($mysql, $sql_seleciona);
 	$fetch_organiza = mysqli_fetch_assoc($query_ler);
     echo "<pre>";
-    var_dump($fetch_organiza);
+    #var_dump($fetch_organiza);
     echo "</pre>";
 ?>
 <style>
@@ -23,13 +23,13 @@
     <div class="container">
         <div class="row ">
         <?php 
-                include 'admmenu.php';
-            ?>
+            include 'admmenu.php';
+        ?>
             <div class="col-5">
                 <h4 class="mb-3"><b>Informações da conta:</b></h4>
                     <div class="row g-3">
                         <div class="col-12">
-                            <h5><b>Usuario:</b></h5>
+                            <h5><b>Usuário:</b></h5>
                             <span><?php echo $fetch_organiza['email']; ?></span>
                         </div>
                         <div class="col-12">
