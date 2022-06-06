@@ -13,7 +13,7 @@
     #var_dump($_SESSION);
     include "conexao.php";
     $id = $_GET['id_carrinho'];
-    $select = "SELECT * FROM `carrinho` join pedido on id_pedido=carrinho.fk_id_pedido join estoque on id_estoque=carrinho.fk_id_estoque join camisa where id_camisa=estoque.fk_id_camisa"; #echo $select;
+    $select = "SELECT * FROM `carrinho` join estoque on estoque.id_estoque=carrinho.fk_id_estoque join camisa on camisa.id_camisa=estoque.fk_id_camisa where carrinho.id_carrinho={$id}"; #echo $select;
     $info = mysqli_query($mysql, $select);
     $camisa = mysqli_fetch_assoc($info);
 
@@ -35,7 +35,7 @@
                     Colocar subtotal na pagina dos dados da entrega
                 -->
                 <h2 class="mt-2 mb-3">Dados de entrega</h2>
-                <form action="dadosentrega.php" method="post">
+                <form action="dadosentrega.php?id_carrinho={$id}" method="post">
                     <div class="row">
                         <div class="col-8 mb-3">
                             <label for="nome" class="form-label">Nome Completo</label>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="col-3 mb-3">
                             <label for="estado" class="form-label">Estado</label>
-                            <select id="estado" class="form-select mb-2" aria-label=".form-select-lg example">
+                            <select name="estado" class="form-select mb-2" aria-label=".form-select-lg example">
                                 <option value="" disabled selected></option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
@@ -112,14 +112,18 @@
                     </div>
                     <div class="row">
                         <div class="col-2 mb-2">
-                            <label for="salvar como" class="form-label">Salvar como:</label>
+                            <label for="salvar como" name="fb"  class="form-label">Salvar como:</label>
                         </div>
-                        <div class="col-8 mb-2" class="form-check">
-                            <input class="form-check-input" type="checkbox" value="casa" id="flexCheckDefault">
+                        <div class="col-8 mb-2" class="form-check" name="fb">
+                            <input class="form-check-input" type="checkbox" value="casa" id="flexCheckDefault" >
                             <label class="form-check-label" for="flexCheckDefault">Casa</label>
-                            <input class="form-check-input" type="checkbox" value="trabalho" id="flexCheckDefault">
+                            <input class="form-check-input"type="checkbox" value="trabalho" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">Trabalho</label>
                         </div>
+                               <div class="col-2 mb-2">
+                                <button class='btn btn-success' type='submit'>inserir dados</button>
+                               </div>
+
                         <!--<div class="col mb-2 d-grid gap-2 d-md-flex justify-content-md">
                             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#pagar">Adicionar cartão</button>
                         </div>-->
@@ -147,7 +151,7 @@
                         </div>
                     </div>
                     
-                    <a class="btn btn-success btn-lg mt-3" href="checkout.php?id_pedido=<?php echo $camisa['id_pedido']; ?>" role="button">Fazer pedido</a>
+                    <a class="btn btn-success btn-lg mt-3" href="checkout.php?id_carrinho=<?php echo $camisa['id_carrinho']; ?>" role="button">Fazer pedido</a>
                 </form>
 
             </div>
