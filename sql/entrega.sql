@@ -29,8 +29,7 @@ CREATE TABLE `entrega` (
   `bairro` varchar(50) NOT NULL,
   `endereco` varchar(200) NOT NULL,
   `numero` int(10) NOT NULL,
-  `complemento` varchar(500) NOT NULL,
-  `salvar como` varchar(10) NOT NULL
+  `complemento` varchar(500) NOT NULl
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
